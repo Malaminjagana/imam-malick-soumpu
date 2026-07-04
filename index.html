@@ -3520,12 +3520,15 @@ In Numbers, We Achieve Excellence at Al‑Imam Malick Islamic Institute         
     <div class="nds-card-content">
         <div class="nds-card-text">
             <h3 class="nds-card-title" id="ndsCookiesTitle">Cookies</h3>
-            <p class="nds-card-description" id="ndsCookiesContent">This website uses cookies to ensure ease of use and provide an enhanced browsing experience. By continuing to browse this site, you acknowledge and accept the use of cookies.</p>
+           <p class="nds-card-description" id="ndsCookiesContent">
+                This website uses cookies to improve your browsing experience and to remember your preferences.
+                By continuing to use the Al-Imam Malik Islamic Institute website, you agree to our use of cookies.
+            </p>
         </div>
         <div class="nds-cookie-popup-links">
-            <a href="#" target="_blank" rel="noopener noreferrer" id="ndsCookiesTermsLink">Terms &amp; Conditions</a>
+            <a href="/terms.html" target="_blank" rel="noopener noreferrer" id="ndsCookiesTermsLink">Terms &amp; Conditions</a>
             <span>|</span>
-            <a href="#" target="_blank" rel="noopener noreferrer" id="ndsCookiesPrivacyLink">Privacy Policy</a>
+            <a href="/privacy.html" target="_blank" rel="noopener noreferrer" id="ndsCookiesPrivacyLink">Privacy Policy</a>
         </div>
     </div>
 
@@ -3540,6 +3543,69 @@ In Numbers, We Achieve Excellence at Al‑Imam Malick Islamic Institute         
         </button>
     </div>
 </div>
+
+<script>
+    <!-- Cookie Consent Logic -->
+document.addEventListener('DOMContentLoaded', function () {
+    const popup = document.getElementById('ndsCookiesPopup');
+    const acceptBtn = document.getElementById('ndsCookiesAcceptBtn');
+    const declineBtn = document.getElementById('ndsCookiesDeclineBtn');
+    const closeBtn = document.getElementById('ndsCookiesCloseBtn');
+
+    // 1. Check if user already made a choice
+    const cookieChoice = localStorage.getItem('imamMalikCookiesChoice');
+
+    if (!cookieChoice) {
+        // No choice yet → show popup
+        popup.hidden = false;
+    }
+
+    // 2. Accept button
+    acceptBtn.addEventListener('click', function () {
+        localStorage.setItem('imamMalikCookiesChoice', 'accepted');
+        popup.hidden = true;
+        // Here you could enable analytics or other optional scripts
+    });
+
+    // 3. Decline button
+    declineBtn.addEventListener('click', function () {
+        localStorage.setItem('imamMalikCookiesChoice', 'declined');
+        popup.hidden = true;
+        // Here you should avoid loading optional tracking scripts
+    });
+
+    // 4. Close button (just hides, no choice)
+    closeBtn.addEventListener('click', function () {
+        popup.hidden = true;
+    });
+});
+</script>
+
+
+<!--  . Later: connect this to real tracking (optional)
+Right now, this is just UI.
+If you ever add:
+
+Google Analytics
+
+Facebook Pixel
+
+Any tracking script
+
+You can wrap them like:
+
+js
+const cookieChoice = localStorage.getItem('imamMalikCookiesChoice');
+if (cookieChoice === 'accepted') {
+    // load analytics script here
+}
+So tracking only runs if user accepted.
+
+
+
+-->
+
+
 
 
 
