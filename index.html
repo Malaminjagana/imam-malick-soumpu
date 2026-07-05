@@ -2971,6 +2971,7 @@ In Numbers, We Achieve Excellence at Al‑Imam Malick Islamic Institute         
     
 
     </main>
+    
 
     <footer class="nds-footer nds-content-wrapper nds-green" data-nds-lazy role="contentinfo" aria-label="Site Footer">
     <nav class="nds-footer-content" aria-label="Footer navigation">
@@ -3619,9 +3620,9 @@ So tracking only runs if user accepted.
                 <p class="nds-card-description" id="ndsCookiesContent">This website uses cookies to ensure ease of use and provide an enhanced browsing experience. By continuing to browse this site, you acknowledge and accept the use of cookies.</p>
             </div>
             <div class="nds-cookie-popup-links">
-                <a href="https://iu.edu.sa/en-us/terms-and-conditions" id="ndsCookiesTermsLink">Terms &amp; Conditions</a>
+                <a href="/terms.html" id="ndsCookiesTermsLink">Terms &amp; Conditions</a>
                 <span>|</span>
-                <a href="https://iu.edu.sa/en-us/privacy-policy" id="ndsCookiesPrivacyLink">Privacy Policy</a>
+                <a href="/privacy.html" id="ndsCookiesPrivacyLink">Privacy Policy</a>
             </div>
         </div>
 
@@ -3685,14 +3686,71 @@ So tracking only runs if user accepted.
         ld.text = JSON.stringify({ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: listItems });
         document.head.appendChild(ld);
     })();
-    </script>
-    <link rel="preload" href="https://cdn.iu.edu.sa/NDS-iu/v107/assets/uhud/uhud.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.iu.edu.sa/NDS-iu/v107/assets/uhud/uhud.css"></noscript>
+
+
+
+
+ 
+ <!-- ===========================================================
+     IMAM MALICK AI CHATBOT (CURRENTLY USING IU "UHUD" CHATBOT)
+     ===========================================================
+
+     This section loads the current AI chatbot ("Uhud")
+     from the Islamic University of Madinah CDN.
+
+     Files:
+     - uhud.css  -> Chatbot design and styling
+     - uhud.js   -> Chatbot functionality
+
+     -----------------------------------------------------------
+     FUTURE PLAN
+     -----------------------------------------------------------
+
+     Replace this entire section with the custom
+     "Imam Malick AI" chatbot.
+
+     Future chatbot features:
+     ✓ Answer questions about Imam Malick Institute
+     ✓ Admissions
+     ✓ Tahfiz
+     ✓ Departments
+     ✓ School Fees
+     ✓ Teachers
+     ✓ Scholarships
+     ✓ Events
+     ✓ Research
+     ✓ Contact Information
+     ✓ Islamic Questions (optional)
+
+     Eventually this will connect to:
+     - OpenAI API
+     - Node.js Backend
+     - School Knowledge Base (RAG)
+
+     IMPORTANT:
+     If you remove the script below, the current
+     Uhud chatbot will disappear from the website.
+
+
+     the is the old code //<link rel="preload" href="https://cdn.iu.edu.sa/NDS-iu/v107/assets/uhud/uhud.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+//<noscript><link rel="stylesheet" href="https://cdn.iu.edu.sa/NDS-iu/v107/assets/uhud/uhud.css"></noscript>
+//<script src="https://cdn.iu.edu.sa/NDS-iu/v107/assets/uhud/uhud.js" defer></script>
+=========================================================== 
+-->
+
+<link rel="preload"
+      href="https://cdn.iu.edu.sa/NDS-iu/v107/assets/uhud/uhud.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'">
+
+<noscript>
+    <link rel="stylesheet"
+          href="https://cdn.iu.edu.sa/NDS-iu/v107/assets/uhud/uhud.css">
+</noscript>
+
 <script src="https://cdn.iu.edu.sa/NDS-iu/v107/assets/uhud/uhud.js" defer></script>
 
-
-    
-
+<!-- ================= END OF CURRENT UHUD CHATBOT ================= -->
 
 
     <!-- Microsoft Clarity — deferred on first user gesture, 10s fallback -->
