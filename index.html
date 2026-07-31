@@ -152,6 +152,174 @@
         })();
     </script>
 
+    <style>
+        .donate-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            min-width: 170px;
+            height: 70px;
+            margin: 1rem auto 0;
+            padding: 0 1.4rem;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #13aa61 0%, #0b7a47 100%);
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            box-shadow: 0 10px 24px rgba(11, 138, 74, 0.22);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease, background 0.2s ease;
+        }
+
+        .donate-btn:hover,
+        .donate-btn:focus-visible {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 28px rgba(11, 138, 74, 0.28);
+            filter: brightness(1.03);
+            color: #ffffff;
+        }
+
+        .donate-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 6px 16px rgba(11, 138, 74, 0.2);
+        }
+
+        .donate-modal-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: rgba(5, 15, 24, 0.72);
+            backdrop-filter: blur(6px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+
+        .donate-modal-backdrop.is-open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .donate-modal {
+            width: min(720px, 100%);
+            max-height: 90vh;
+            overflow: auto;
+            border-radius: 24px;
+            background: #ffffff;
+            color: #142033;
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+            padding: 1.5rem;
+            transform: translateY(18px) scale(0.98);
+            transition: transform 0.25s ease;
+            position: relative;
+        }
+
+        .donate-modal-backdrop.is-open .donate-modal {
+            transform: translateY(0) scale(1);
+        }
+
+        .donate-modal-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .donate-modal-title {
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            margin: 0;
+            color: #0f3b2e;
+        }
+
+        .donate-modal-subtitle {
+            margin-top: 0.4rem;
+            color: #526173;
+            line-height: 1.5;
+        }
+
+        .donate-close-btn {
+            border: 0;
+            background: #f2f6f8;
+            color: #314050;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .donate-options {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .donate-option-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 0.8rem;
+            min-height: 220px;
+            padding: 1rem;
+            border: 1px solid #e3ebef;
+            border-radius: 18px;
+            background: #fbfcfd;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .donate-option-card:hover,
+        .donate-option-card:focus-visible {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(20, 32, 51, 0.08);
+            border-color: #8cc7a7;
+        }
+
+        .donate-option-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #10372d;
+        }
+
+        .donate-option-text {
+            color: #576575;
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+
+        .donate-option-link {
+            color: #0b8a4a;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        @media (max-width: 640px) {
+            .donate-modal {
+                padding: 1rem;
+            }
+
+            .donate-options {
+                grid-template-columns: 1fr;
+            }
+
+            .donate-option-card {
+                min-height: auto;
+            }
+        }
+    </style>
+
 </head>
 
 <body class="nds-minimal">
@@ -3164,6 +3332,55 @@ In Numbers, We Achieve Excellence at Al‑Imam Malick Islamic Institute         
     </div>
 </footer>
 
+<div class="donate-modal-backdrop" id="donateModalBackdrop" aria-hidden="true">
+    <div class="donate-modal" role="dialog" aria-modal="true" aria-labelledby="donateModalTitle" tabindex="-1">
+        <div class="donate-modal-header">
+            <div>
+                <h3 class="donate-modal-title" id="donateModalTitle">Choose a donation method</h3>
+                <p class="donate-modal-subtitle">Your generosity helps support the Imam Malick Islamic Institute and its students. Select the option that works best for you.</p>
+            </div>
+            <button class="donate-close-btn" id="donateModalClose" type="button" aria-label="Close donation options">✕</button>
+        </div>
+
+        <div class="donate-options">
+            <a class="donate-option-card" href="https://wave.com/pay/placeholder" target="_blank" rel="noopener noreferrer">
+                <div>
+                    <div class="donate-option-title">Wave Mobile Money</div>
+                    <p class="donate-option-text">For Gambian donors. Send your donation directly to Wave using the number below.</p>
+                </div>
+                <div>
+                    <div class="donate-option-text"><strong>Wave </strong> #</div>
+                    <div class="donate-option-link">Open Wave PayLink →</div>
+                </div>
+            </a>
+
+            <a class="donate-option-card" href="https://www.paypal.com/donate/?hosted_button_id=YOUR_PAYPAL_BUTTON_ID" target="_blank" rel="noopener noreferrer">
+                <div>
+                    <div class="donate-option-title">PayPal Donate Button</div>
+                    <p class="donate-option-text">For international donors. Pay securely with PayPal, Visa, or Mastercard.</p>
+                </div>
+                <div class="donate-option-link">Donate with PayPal →</div>
+            </a>
+
+            <a class="donate-option-card" href="https://buy.stripe.com/test_000000000000" target="_blank" rel="noopener noreferrer">
+                <div>
+                    <div class="donate-option-title">Stripe Card Payment</div>
+                    <p class="donate-option-text">For donors using credit or debit cards. Accepts Visa, Mastercard, Apple Pay, and Google Pay.</p>
+                </div>
+                <div class="donate-option-link">Pay by card →</div>
+            </a>
+
+            <a class="donate-option-card" href="https://www.remitly.com/gb/en/" target="_blank" rel="noopener noreferrer">
+                <div>
+                    <div class="donate-option-title">Remitly</div>
+                    <p class="donate-option-text">For Gambians abroad. Send money directly to the Wave number listed above.</p>
+                </div>
+                <div class="donate-option-link">Use Remitly →</div>
+            </a>
+        </div>
+    </div>
+</div>
+
 <!-- Cookie Popup -->
 <div class="nds-cookie-popup nds-card" id="ndsCookiesPopup" hidden>
     <div class="nds-card-header">
@@ -3203,40 +3420,72 @@ In Numbers, We Achieve Excellence at Al‑Imam Malick Islamic Institute         
 </div>
 
 <script>
-    <!-- Cookie Consent Logic -->
-document.addEventListener('DOMContentLoaded', function () {
-    const popup = document.getElementById('ndsCookiesPopup');
-    const acceptBtn = document.getElementById('ndsCookiesAcceptBtn');
-    const declineBtn = document.getElementById('ndsCookiesDeclineBtn');
-    const closeBtn = document.getElementById('ndsCookiesCloseBtn');
+    document.addEventListener('DOMContentLoaded', function () {
+        const donateButtons = document.querySelectorAll('.donate-btn');
+        const backdrop = document.getElementById('donateModalBackdrop');
+        const modal = backdrop ? backdrop.querySelector('.donate-modal') : null;
+        const closeBtn = document.getElementById('donateModalClose');
 
-    // 1. Check if user already made a choice
-    const cookieChoice = localStorage.getItem('imamMalikCookiesChoice');
+        if (backdrop && modal) {
+            const openModal = function (event) {
+                if (event) event.preventDefault();
+                backdrop.classList.add('is-open');
+                backdrop.setAttribute('aria-hidden', 'false');
+                modal.focus();
+                document.body.style.overflow = 'hidden';
+            };
 
-    if (!cookieChoice) {
-        // No choice yet → show popup
-        popup.hidden = false;
-    }
+            const closeModal = function () {
+                backdrop.classList.remove('is-open');
+                backdrop.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            };
 
-    // 2. Accept button
-    acceptBtn.addEventListener('click', function () {
-        localStorage.setItem('imamMalikCookiesChoice', 'accepted');
-        popup.hidden = true;
-        // Here you could enable analytics or other optional scripts
+            donateButtons.forEach(function (button) {
+                button.addEventListener('click', openModal);
+            });
+
+            closeBtn.addEventListener('click', closeModal);
+            backdrop.addEventListener('click', function (event) {
+                if (event.target === backdrop) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && backdrop.classList.contains('is-open')) {
+                    closeModal();
+                }
+            });
+        }
+
+        const popup = document.getElementById('ndsCookiesPopup');
+        const acceptBtn = document.getElementById('ndsCookiesAcceptBtn');
+        const declineBtn = document.getElementById('ndsCookiesDeclineBtn');
+        const cookieCloseBtn = document.getElementById('ndsCookiesCloseBtn');
+
+        if (popup && acceptBtn && declineBtn && cookieCloseBtn) {
+            const cookieChoice = localStorage.getItem('imamMalikCookiesChoice');
+
+            if (!cookieChoice) {
+                popup.hidden = false;
+            }
+
+            acceptBtn.addEventListener('click', function () {
+                localStorage.setItem('imamMalikCookiesChoice', 'accepted');
+                popup.hidden = true;
+            });
+
+            declineBtn.addEventListener('click', function () {
+                localStorage.setItem('imamMalikCookiesChoice', 'declined');
+                popup.hidden = true;
+            });
+
+            cookieCloseBtn.addEventListener('click', function () {
+                popup.hidden = true;
+            });
+        }
     });
-
-    // 3. Decline button
-    declineBtn.addEventListener('click', function () {
-        localStorage.setItem('imamMalikCookiesChoice', 'declined');
-        popup.hidden = true;
-        // Here you should avoid loading optional tracking scripts
-    });
-
-    // 4. Close button (just hides, no choice)
-    closeBtn.addEventListener('click', function () {
-        popup.hidden = true;
-    });
-});
 </script>
 
 
