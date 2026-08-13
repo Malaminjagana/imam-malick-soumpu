@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Imam Malik Islamic Institute</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Cairo", sans-serif;
+            background: #f7f9f8;
+            color: #26332d;
+            line-height: 1.9;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================
+           Navbar
+        ========================= */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #ffffff;
+            border-bottom: 1px solid #e6ebe8;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: #176b4d;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 600;
+            color: #38443e;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #176b4d;
+        }
+
+        /* =========================
+           Hero
+        ========================= */
+
+        .hero {
+            background: linear-gradient(135deg, #0d5139, #176b4d);
+            color: white;
+            padding: 90px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* =========================
+           General
+        ========================= */
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 75px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            color: #135b42;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #707b76;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* =========================
+           Statistics
+        ========================= */
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid #e6ebe8;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 42px;
+            font-weight: 800;
+            color: #176b4d;
+            margin-bottom: 5px;
+        }
+
+        .stat-card h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            color: #7a847f;
+            font-size: 14px;
+        }
+
+        /* =========================
+           Programs
+        ========================= */
+
+        .programs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid #e5ebe8;
+            transition: 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+        }
+
+        .program-icon {
+            width: 55px;
+            height: 55px;
+            background: #e8f3ee;
+            color: #176b4d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .program-card h3 {
+            color: #135b42;
+            margin-bottom: 10px;
+        }
+
+        .program-card p {
+            color: #66716c;
+            font-size: 15px;
+        }
+
+        /* =========================
+           Rules
+        ========================= */
+
+        .rules-box {
+            background: white;
+            border-radius: 18px;
+            padding: 40px;
+            border: 1px solid #e5ebe8;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+        }
+
+        .rules-list {
+            list-style: none;
+            counter-reset: rules;
+        }
+
+        .rules-list li {
+            counter-increment: rules;
+            position: relative;
+            padding: 15px 10px 15px 55px;
+            border-bottom: 1px solid #edf0ee;
+        }
+
+        .rules-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rules-list li::before {
+            content: counter(rules);
+            position: absolute;
+            left: 0;
+            top: 13px;
+            width: 35px;
+            height: 35px;
+            background: #e8f3ee;
+            color: #176b4d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        /* =========================
+           Admission
+        ========================= */
+
+        .admission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            border: 1px solid #e5ebe8;
+        }
+
+        .info-card h3 {
+            color: #135b42;
+            margin-bottom: 20px;
+        }
+
+        .info-card ol,
+        .info-card ul {
+            padding-left: 25px;
+        }
+
+        .info-card li {
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           Future AI
+        ========================= */
+
+        .ai-section {
+            background: linear-gradient(135deg, #0d5139, #176b4d);
+            color: white;
+            text-align: center;
+            border-radius: 25px;
+            padding: 60px 30px;
+        }
+
+        .ai-section h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .ai-section p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 17px;
+            opacity: 0.92;
+        }
+
+        /* =========================
+           Social
+        ========================= */
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            background: white;
+            border: 1px solid #e1e8e4;
+            padding: 13px 25px;
+            border-radius: 10px;
+            color: #176b4d;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .social-link:hover {
+            background: #176b4d;
+            color: white;
+        }
+
+        /* =========================
+           Footer
+        ========================= */
+
+        footer {
+            background: #102d23;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        /* =========================
+           Responsive
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .stats-grid,
+            .programs {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .admission-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .stats-grid,
+            .programs {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 55px 18px;
+            }
+
+            .hero {
+                padding: 65px 20px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .rules-box,
+            .info-card {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     Navbar
+========================= -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <a href="#" class="logo">
+            Imam Malik Islamic Institute
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#statistics">Statistics</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#rules">Rules</a></li>
+            <li><a href="#admission">Admission</a></li>
+            <li><a href="#future">Future Plans</a></li>
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     Hero
+========================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <h1>Imam Malik Islamic Institute</h1>
+
+        <p>
+            Student Statistics, Programs, Regulations,
+            Admission and Future Development
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     Statistics
+========================= -->
+
+<section id="statistics">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Student & Graduate Statistics</h2>
+
+            <p>
+                Current statistics of students and graduates
+                across the different departments of the
+                Imam Malik Islamic Institute.
+            </p>
+
+        </div>
+
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <span class="stat-number">1,250</span>
+
+                <h3>Institute Students</h3>
+
+                <p>
+                    Current enrolled students
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-number">1,139</span>
+
+                <h3>Graduates</h3>
+
+                <p>
+                    Total institute graduates
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-number">173</span>
+
+                <h3>Qur'an Memorization</h3>
+
+                <p>
+                    Current students
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-number">364</span>
+
+                <h3>Qur'an Memorization</h3>
+
+                <p>
+                    Graduates
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-number">38</span>
+
+                <h3>English Department</h3>
+
+                <p>
+                    Current students
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span class="stat-number">92</span>
+
+                <h3>English Department</h3>
+
+                <p>
+                    Graduates
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     Additional Programs
+========================= -->
+
+<section id="programs">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Additional Programs</h2>
+
+            <p>
+                In addition to Arabic, English, Qur'an memorization
+                and regular courses, the institute provides several
+                community-focused programs.
+            </p>
+
+        </div>
+
+
+        <div class="programs">
+
+
+            <div class="program-card">
+
+                <div class="program-icon">🕌</div>
+
+                <h3>Khateeb Program</h3>
+
+                <p>
+                    A specialized program supporting Khateebs
+                    serving in 21 mosques across Serrekunda
+                    and its surrounding areas.
+                </p>
+
+            </div>
+
+
+            <div class="program-card">
+
+                <div class="program-icon">📖</div>
+
+                <h3>Qur'an Tafsir in Soninke</h3>
+
+                <p>
+                    During the holy month of Ramadan, the institute
+                    provides Qur'an interpretation sessions in the
+                    Soninke language to make Islamic knowledge more
+                    accessible to the local community.
+                </p>
+
+            </div>
+
+
+            <div class="program-card">
+
+                <div class="program-icon">🎓</div>
+
+                <h3>Annual School Visits</h3>
+
+                <p>
+                    The institute organizes annual visits to Arabic
+                    and Islamic schools to strengthen educational
+                    cooperation, exchange knowledge and build
+                    relationships between institutions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     Rules & Regulations
+========================= -->
+
+<section id="rules">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Institute Rules & Regulations</h2>
+
+            <p>
+                All students are expected to follow the institute's
+                regulations and maintain an Islamic, respectful and
+                disciplined learning environment.
+            </p>
+
+        </div>
+
+
+        <div class="rules-box">
+
+            <ol class="rules-list">
+
+                <li>
+                    Students must observe Islamic values and
+                    practices in all their dealings, both inside
+                    and outside the institute.
+                </li>
+
+                <li>
+                    Fighting, stealing, unauthorized selling,
+                    smoking, wearing garments below the ankles
+                    and other actions contrary to Islamic teachings
+                    are prohibited.
+                </li>
+
+                <li>
+                    All institute teachers must be respected
+                    without discrimination.
+                </li>
+
+                <li>
+                    Bringing smartphones and similar electronic
+                    devices to the institute is prohibited.
+                </li>
+
+                <li>
+                    Students must arrive early wearing the official
+                    institute uniform and must maintain its cleanliness.
+                </li>
+
+                <li>
+                    Students are expected to take their studies
+                    seriously and complete their homework.
+                </li>
+
+                <li>
+                    Any form of inappropriate or unauthorized
+                    relationship is strictly prohibited.
+                </li>
+
+                <li>
+                    Students are not permitted to walk around the
+                    institute grounds during class or prayer times.
+                </li>
+
+                <li>
+                    Female students are expected to maintain
+                    appropriate Islamic dress and modesty within
+                    the institute.
+                </li>
+
+            </ol>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     Admission
+========================= -->
+
+<section id="admission">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Registration & Admission</h2>
+
+            <p>
+                Registration for any level of study is completed
+                by visiting the institute and attending an interview
+                to determine the student's appropriate level.
+            </p>
+
+        </div>
+
+
+        <div class="admission-grid">
+
+
+            <!-- Application Steps -->
+
+            <div class="info-card">
+
+                <h3>Application Steps</h3>
+
+                <ol>
+
+                    <li>
+                        Students applying for lower levels,
+                        including kindergarten, must attend
+                        with their parent or guardian.
+                    </li>
+
+                    <li>
+                        The applicant receives a registration form
+                        containing student information and contact details.
+                    </li>
+
+                    <li>
+                        The registration fee must be paid.
+                        The fee is non-refundable.
+                    </li>
+
+                    <li>
+                        The student's level is determined through
+                        a personal interview.
+                    </li>
+
+                    <li>
+                        The student's parent or guardian signs an
+                        agreement confirming commitment to the
+                        institute's rules and regulations.
+                    </li>
+
+                </ol>
+
+            </div>
+
+
+            <!-- Admission Requirements -->
+
+            <div class="info-card">
+
+                <h3>Admission Requirements</h3>
+
+                <ol>
+
+                    <li>
+                        The student must be at least five years old.
+                    </li>
+
+                    <li>
+                        The student must demonstrate good character
+                        and conduct.
+                    </li>
+
+                    <li>
+                        Students who previously attended another
+                        institute must provide their academic record.
+                    </li>
+
+                    <li>
+                        The student must agree to follow all institute
+                        rules and regulations.
+                    </li>
+
+                </ol>
+
+            </div>
+
+
+            <!-- Documents -->
+
+            <div class="info-card">
+
+                <h3>Required Documents</h3>
+
+                <ol>
+
+                    <li>
+                        A copy of the student's birth certificate.
+                    </li>
+
+                    <li>
+                        Two recent passport-size photographs.
+                    </li>
+
+                </ol>
+
+            </div>
+
+
+            <!-- Registration -->
+
+            <div class="info-card">
+
+                <h3>Registration Process</h3>
+
+                <p>
+                    Students can apply for admission at the
+                    appropriate educational level according to
+                    the institute's admission requirements.
+                </p>
+
+                <br>
+
+                <p>
+                    Each student will participate in a personal
+                    interview to determine the most suitable
+                    academic level.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     Future Plans
+========================= -->
+
+<section id="future">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Future Goals & Development Plans</h2>
+
+            <p>
+                The institute aims to continuously improve its
+                educational and administrative services while
+                making information more accessible to students,
+                parents and staff.
+            </p>
+
+        </div>
+
+
+        <div class="ai-section">
+
+            <h2>🤖 Future AI Assistant</h2>
+
+            <p>
+                A sophisticated Artificial Intelligence system will
+                be added to the website in the future. The system
+                will be capable of answering questions about the
+                institute and providing useful information to
+                students, parents and staff, improving communication
+                and making access to information easier.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     Social Media
+========================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Follow the Institute</h2>
+
+            <p>
+                Stay connected with the institute through its
+                social media platforms.
+            </p>
+
+        </div>
+
+
+        <div class="social-links">
+
+
+            Social media links coming soon
+<!--
+            <a href="#" class="social-link">
+                Facebook: Imam Malick Soninkara
+            </a>
+
+            <a href="#" class="social-link">
+                YouTube
+            </a>
+
+            <a href="#" class="social-link">
+                TikTok
+            </a>
+
+            <a href="#" class="social-link">
+                Instagram
+            </a>-->
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     Footer
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026 Imam Malik Islamic Institute — All Rights Reserved
+    </p>
+
+</footer>
+
+
+</body>
+</html>

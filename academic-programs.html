@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academic Programs | Imam Malik Islamic Institute</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Cairo", sans-serif;
+            background: #f7f9f8;
+            color: #26332d;
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================
+           Navbar
+        ========================= */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: #ffffff;
+            border-bottom: 1px solid #e5ebe8;
+
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+
+            padding: 15px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+            color: #176b4d;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 600;
+            color: #3f4945;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: #176b4d;
+        }
+
+
+        /* =========================
+           Hero
+        ========================= */
+
+        .hero {
+            background:
+                linear-gradient(
+                    135deg,
+                    #0d5139,
+                    #176b4d
+                );
+
+            color: white;
+
+            text-align: center;
+
+            padding: 90px 20px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .hero h1 {
+            font-size: 44px;
+            font-weight: 800;
+
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.92;
+        }
+
+
+        /* =========================
+           Main Container
+        ========================= */
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+
+            padding: 75px 25px;
+        }
+
+
+        /* =========================
+           Section Header
+        ========================= */
+
+        .section-header {
+            text-align: center;
+
+            max-width: 750px;
+
+            margin: 0 auto 50px;
+        }
+
+        .section-header h2 {
+            color: #135b42;
+
+            font-size: 32px;
+
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: #6d7772;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           Programs
+        ========================= */
+
+        .programs {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .program-card {
+            background: #ffffff;
+
+            border: 1px solid #e3eae6;
+
+            border-radius: 18px;
+
+            padding: 35px 30px;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* =========================
+           Program Icon
+        ========================= */
+
+        .program-icon {
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #e8f3ee;
+
+            color: #176b4d;
+
+            border-radius: 16px;
+
+            font-size: 30px;
+
+            margin-bottom: 22px;
+        }
+
+
+        .program-number {
+            color: #7c8a84;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .program-card h3 {
+            color: #135b42;
+
+            font-size: 23px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .program-card > p {
+            color: #626d68;
+
+            font-size: 15px;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           Details
+        ========================= */
+
+        .details {
+            border-top: 1px solid #edf1ef;
+
+            padding-top: 20px;
+        }
+
+        .details h4 {
+            color: #26332d;
+
+            font-size: 16px;
+
+            margin-bottom: 12px;
+        }
+
+        .details ul {
+            padding-left: 20px;
+        }
+
+        .details li {
+            color: #66716c;
+
+            font-size: 14px;
+
+            margin-bottom: 7px;
+        }
+
+
+        /* =========================
+           Learn More
+        ========================= */
+
+        .program-button {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 10px 18px;
+
+            border-radius: 8px;
+
+            background: #176b4d;
+
+            color: white;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .program-button:hover {
+            background: #0d5139;
+        }
+
+
+        /* =========================
+           Why Programs
+        ========================= */
+
+        .why-section {
+            margin-top: 70px;
+
+            background: #ffffff;
+
+            border: 1px solid #e4ebe7;
+
+            border-radius: 20px;
+
+            padding: 45px;
+
+            text-align: center;
+        }
+
+        .why-section h2 {
+            color: #135b42;
+
+            font-size: 28px;
+
+            margin-bottom: 15px;
+        }
+
+        .why-section p {
+            max-width: 750px;
+
+            margin: auto;
+
+            color: #68736e;
+        }
+
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+            margin-top: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0d5139,
+                    #176b4d
+                );
+
+            color: white;
+
+            text-align: center;
+
+            border-radius: 22px;
+
+            padding: 50px 25px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            max-width: 700px;
+
+            margin: 0 auto 25px;
+
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+
+            background: white;
+
+            color: #176b4d;
+
+            padding: 12px 25px;
+
+            border-radius: 9px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           Footer
+        ========================= */
+
+        footer {
+            margin-top: 60px;
+
+            background: #102d23;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px 20px;
+        }
+
+        footer p {
+            font-size: 14px;
+
+            opacity: 0.8;
+        }
+
+
+        /* =========================
+           Responsive
+        ========================= */
+
+        @media (max-width: 950px) {
+
+            .programs {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 65px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .container {
+                padding: 55px 18px;
+            }
+
+            .programs {
+                grid-template-columns: 1fr;
+            }
+
+            .why-section {
+                padding: 30px 20px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     Navbar
+========================= -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            Imam Malik Islamic Institute
+        </a>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="academic-programs.html"
+                   class="active">
+                    Academic Programs
+                </a>
+            </li>
+
+            <li>
+                <a href="school.html">
+                    Institute
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     Hero
+========================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Academic Programs
+        </h1>
+
+        <p>
+            Building knowledge, character and skills
+            through Islamic, Qur'anic and language education.
+        </p>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     Programs
+========================= -->
+
+<main>
+
+    <section class="container">
+
+
+        <div class="section-header">
+
+            <h2>
+                Our Academic Programs
+            </h2>
+
+            <p>
+                Imam Malik Islamic Institute offers a range of
+                educational programs designed to provide students
+                with strong foundations in Islamic studies,
+                Qur'anic education and language development.
+            </p>
+
+        </div>
+
+
+
+        <div class="programs">
+
+
+            <!-- =========================
+                 Arabic & Islamic Studies
+            ========================= -->
+
+            <article class="program-card">
+
+                <div class="program-icon">
+                    📚
+                </div>
+
+
+                <div class="program-number">
+                    Program 01
+                </div>
+
+
+                <h3>
+                    Arabic & Islamic Studies
+                </h3>
+
+
+                <p>
+                    The institute's main academic program,
+                    focused on Arabic language and Islamic education.
+                    Students develop their Arabic language abilities
+                    while gaining knowledge of Islamic teachings,
+                    values and traditions.
+                </p>
+
+
+                <div class="details">
+
+                    <h4>
+                        Program Focus
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            Arabic language education
+                        </li>
+
+                        <li>
+                            Islamic studies
+                        </li>
+
+                        <li>
+                            Understanding Islamic values
+                        </li>
+
+                        <li>
+                            Development of Islamic character
+                        </li>
+
+                        <li>
+                            Religious and educational foundations
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =========================
+                 Qur'an Memorization
+            ========================= -->
+
+            <article class="program-card">
+
+                <div class="program-icon">
+                    📖
+                </div>
+
+
+                <div class="program-number">
+                    Program 02
+                </div>
+
+
+                <h3>
+                    Qur'an Memorization (Hifz)
+                </h3>
+
+
+                <p>
+                    A dedicated program for students who wish
+                    to study and memorize the Holy Qur'an.
+                    The program supports students throughout
+                    their memorization journey while strengthening
+                    their understanding and connection with the Qur'an.
+                </p>
+
+
+                <div class="details">
+
+                    <h4>
+                        Program Focus
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            Qur'an memorization
+                        </li>
+
+                        <li>
+                            Regular revision and recitation
+                        </li>
+
+                        <li>
+                            Development of consistent study habits
+                        </li>
+
+                        <li>
+                            Qur'anic learning and Islamic values
+                        </li>
+
+                        <li>
+                            Supporting students throughout their Hifz journey
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =========================
+                 English Language
+            ========================= -->
+
+            <article class="program-card">
+
+                <div class="program-icon">
+                    🌍
+                </div>
+
+
+                <div class="program-number">
+                    Program 03
+                </div>
+
+
+                <h3>
+                    English Language Program
+                </h3>
+
+
+                <p>
+                    The English Language Program provides students
+                    with opportunities to develop their English
+                    communication and language skills for education,
+                    everyday communication and future opportunities.
+                </p>
+
+
+                <div class="details">
+
+                    <h4>
+                        Program Focus
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            English language development
+                        </li>
+
+                        <li>
+                            Reading and comprehension
+                        </li>
+
+                        <li>
+                            Writing skills
+                        </li>
+
+                        <li>
+                            Communication skills
+                        </li>
+
+                        <li>
+                            Building confidence in English
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             Why Choose Programs
+        ========================= -->
+
+        <div class="why-section">
+
+            <h2>
+                A Balanced Approach to Education
+            </h2>
+
+            <p>
+                The institute combines Islamic education,
+                Qur'anic learning and language development
+                to help students build knowledge, character
+                and practical skills for their future.
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================
+             CTA
+        ========================= -->
+
+        <div class="cta">
+
+            <h2>
+                Interested in Our Programs?
+            </h2>
+
+            <p>
+                Learn more about admission requirements,
+                registration and the different educational
+                opportunities available at the institute.
+            </p>
+
+            <a href="school.html#admission"
+               class="cta-button">
+                Admission Information
+            </a>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================
+     Footer
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026 Imam Malik Islamic Institute
+        — All Rights Reserved
+    </p>
+
+</footer>
+
+
+</body>
+</html>
