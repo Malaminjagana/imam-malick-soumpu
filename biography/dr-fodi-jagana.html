@@ -1,17 +1,1043 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Dr. Fodi Jagana - Biography</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dr. Fodi Jagana | Biography</title>
+
+<meta name="description"
+    content="Discover the life, academic journey, research, and teaching career of Dr. Fodi Jagana, a Gambian scholar of Islamic Fiqh, author, and university lecturer.">
+
+<style>
+    :root {
+        --primary: #3a1f47;
+        --primary-dark: #271331;
+        --accent: #c99a3a;
+        --accent-light: #e6c274;
+        --text: #2c2530;
+        --muted: #6c6470;
+        --background: #f5f2f6;
+        --white: #ffffff;
+        --border: #e2dbe6;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                     Roboto, Helvetica, Arial, sans-serif;
+        background: var(--background);
+        color: var(--text);
+        line-height: 1.8;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+        background:
+            linear-gradient(
+                rgba(39, 19, 49, 0.97),
+                rgba(58, 31, 71, 0.97)
+            );
+
+        color: white;
+        padding: 90px 20px 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        width: 360px;
+        height: 360px;
+        border: 1px solid rgba(201, 154, 58, 0.25);
+        border-radius: 50%;
+        top: -190px;
+        left: -120px;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        width: 450px;
+        height: 450px;
+        border: 1px solid rgba(201, 154, 58, 0.18);
+        border-radius: 50%;
+        bottom: -280px;
+        right: -160px;
+    }
+
+    .hero-content {
+        max-width: 950px;
+        margin: auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .eyebrow {
+        display: inline-block;
+        color: var(--accent-light);
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+    }
+
+    .hero h1 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(40px, 7vw, 76px);
+        line-height: 1.1;
+        margin-bottom: 25px;
+    }
+
+    .hero-subtitle {
+        max-width: 780px;
+        margin: auto;
+        color: rgba(255, 255, 255, 0.86);
+        font-size: clamp(18px, 2.2vw, 23px);
+        line-height: 1.7;
+    }
+
+    .hero-meta {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+    }
+
+    .hero-meta span {
+        border: 1px solid rgba(255,255,255,0.2);
+        background: rgba(255,255,255,0.06);
+        padding: 8px 16px;
+        border-radius: 50px;
+        font-size: 14px;
+    }
+
+    /* =========================
+       MAIN ARTICLE
+    ========================= */
+
+    .container {
+        width: min(1120px, calc(100% - 40px));
+        margin: auto;
+    }
+
+    .article {
+        background: var(--white);
+        margin-top: -45px;
+        position: relative;
+        z-index: 5;
+        border-radius: 18px;
+        box-shadow: 0 20px 60px rgba(39, 19, 49, 0.12);
+        overflow: hidden;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+        padding: 60px 70px;
+        text-align: center;
+    }
+
+    .intro p {
+        max-width: 850px;
+        margin: auto;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 23px;
+        line-height: 1.8;
+        color: #423a48;
+    }
+
+    .gold-line {
+        width: 70px;
+        height: 3px;
+        background: var(--accent);
+        margin: 25px auto 0;
+    }
+
+    /* =========================
+       ORIGINAL PROFILE
+    ========================= */
+
+    .original-section {
+        padding: 20px 70px 70px;
+    }
+
+    .original-card {
+        background: #faf7fb;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 35px;
+        text-align: center;
+    }
+
+    .original-card h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--primary);
+        margin-bottom: 10px;
+        font-size: 28px;
+    }
+
+    .original-card p {
+        color: var(--muted);
+        margin-bottom: 25px;
+    }
+
+    .original-image {
+        width: min(100%, 650px);
+        display: block;
+        margin: 25px auto 0;
+        border-radius: 12px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+
+    /* =========================
+       CONTENT
+    ========================= */
+
+    .content {
+        padding: 20px 70px 70px;
+    }
+
+    .section {
+        max-width: 850px;
+        margin: 0 auto 65px;
+    }
+
+    .section-label {
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+
+    .section h2 {
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--primary);
+        font-size: clamp(30px, 4vw, 42px);
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .section p {
+        font-size: 17px;
+        color: #524a56;
+        margin-bottom: 18px;
+    }
+
+    .section p:first-of-type::first-letter {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 60px;
+        font-weight: bold;
+        float: left;
+        line-height: 0.85;
+        padding-right: 8px;
+        color: var(--accent);
+    }
+
+    /* =========================
+       TIMELINE
+    ========================= */
+
+    .timeline {
+        border-left: 2px solid var(--border);
+        margin-top: 35px;
+        padding-left: 35px;
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 38px;
+    }
+
+    .timeline-item::before {
+        content: "";
+        position: absolute;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: var(--accent);
+        left: -43px;
+        top: 8px;
+        box-shadow: 0 0 0 5px var(--white);
+    }
+
+    .timeline-year {
+        display: inline-block;
+        font-weight: 800;
+        color: var(--accent);
+        margin-bottom: 5px;
+    }
+
+    .timeline-item h3 {
+        color: var(--primary);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 22px;
+        margin-bottom: 6px;
+    }
+
+    .timeline-item p {
+        margin-bottom: 0;
+    }
+
+    /* =========================
+       PUBLICATIONS LIST
+    ========================= */
+
+    .pub-list {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .pub-item {
+        display: flex;
+        gap: 18px;
+        padding: 20px;
+        background: #faf7fb;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+    }
+
+    .pub-number {
+        flex-shrink: 0;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: var(--accent-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-family: Georgia, serif;
+    }
+
+    .pub-item h3 {
+        color: var(--primary);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 19px;
+        margin-bottom: 6px;
+    }
+
+    .pub-item p {
+        font-size: 15.5px;
+        color: #574f5b;
+        margin-bottom: 0;
+    }
+
+    /* =========================
+       HIGHLIGHTS
+    ========================= */
+
+    .highlights {
+        background: var(--primary);
+        color: white;
+        padding: 60px 70px;
+    }
+
+    .highlights-inner {
+        max-width: 850px;
+        margin: auto;
+    }
+
+    .highlights .section-label {
+        color: var(--accent-light);
+    }
+
+    .highlights h2 {
+        color: white;
+    }
+
+    .highlight-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin-top: 30px;
+    }
+
+    .highlight {
+        padding: 22px;
+        border: 1px solid rgba(255,255,255,0.13);
+        background: rgba(255,255,255,0.05);
+        border-radius: 12px;
+    }
+
+    .highlight strong {
+        display: block;
+        color: var(--accent-light);
+        margin-bottom: 5px;
+    }
+
+    .highlight span {
+        color: rgba(255,255,255,0.78);
+        font-size: 15px;
+    }
+
+    /* =========================
+       QUOTE
+    ========================= */
+
+    .quote {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 65px 30px;
+        text-align: center;
+    }
+
+    .quote-mark {
+        font-family: Georgia, serif;
+        font-size: 70px;
+        line-height: 0.5;
+        color: var(--accent);
+    }
+
+    .quote p {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 27px;
+        line-height: 1.6;
+        color: var(--primary);
+        margin: 25px 0;
+    }
+
+    .quote small {
+        color: var(--muted);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        text-align: center;
+        padding: 40px 20px;
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    .back-link {
+        display: inline-block;
+        margin-top: 12px;
+        color: var(--primary);
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .back-link:hover {
+        color: var(--accent);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 768px) {
+
+        .hero {
+            padding: 65px 20px 70px;
+        }
+
+        .article {
+            margin-top: -30px;
+            border-radius: 14px;
+        }
+
+        .intro {
+            padding: 40px 25px;
+        }
+
+        .intro p {
+            font-size: 19px;
+        }
+
+        .original-section,
+        .content {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        .original-card {
+            padding: 20px;
+        }
+
+        .highlights {
+            padding: 45px 25px;
+        }
+
+        .highlight-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section p {
+            font-size: 16px;
+        }
+
+        .pub-item {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .quote {
+            padding: 45px 20px;
+        }
+
+        .quote p {
+            font-size: 22px;
+        }
+    }
+</style>
+
 </head>
+
 <body>
 
-    <h1>Dr. Fodi Jagana</h1>
+<!-- =========================
+     HERO
+========================= -->
 
-    <img src="/assets/img/fodi_jagana_biography.webp" 
-         alt="Dr. Fodi Jagana" 
-         style="width:300px; border-radius:10px;">
+<header class="hero">
 
-   
+    <div class="hero-content">
+
+        <span class="eyebrow">
+            A Life of Research, Teaching & Fiqh
+        </span>
+
+        <h1>
+            Dr. Fodi Jagana
+        </h1>
+
+        <p class="hero-subtitle">
+            A Gambian academic and Islamic jurist, specialised in Fiqh
+            and Sharia Studies, whose path from Dakar to Madinah has
+            produced published research, a doctorate, and a career
+            devoted to teaching and guidance.
+        </p>
+
+        <div class="hero-meta">
+            <span>Islamic University of Madinah</span>
+            <span>PhD in Fiqh</span>
+            <span>Author</span>
+            <span>University Lecturer</span>
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <article class="article">
+
+
+        <!-- =========================
+             INTRODUCTION
+        ========================= -->
+
+        <section class="intro">
+
+            <p>
+                An academic and sharia researcher specialised in Islamic
+                Fiqh, Dr. Fodi Jagana has built a body of distinguished
+                scholarly work in research and authorship, matched by
+                years of experience in university teaching, guidance,
+                and da'wah.
+            </p>
+
+            <div class="gold-line"></div>
+
+        </section>
+
+
+        <!-- =========================
+             ORIGINAL ARABIC PROFILE
+        ========================= -->
+
+        <section class="original-section">
+
+            <div class="original-card">
+
+                <h2>
+                    His Original Biography
+                </h2>
+
+               
+
+                <img
+                    src="/assets/img/fodi_jagana_biography.webp"
+                    alt="Original Arabic biography of Dr. Fodi Jagana"
+                    class="original-image"
+                >
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FULL BIOGRAPHY
+        ========================= -->
+
+        <div class="content">
+
+
+            <!-- EARLY EDUCATION -->
+
+            <section class="section">
+
+                <div class="section-label">
+                    Early Life & Education
+                </div>
+
+                <h2>
+                    From Dakar's Classrooms to Madinah's Faculty of Sharia
+                </h2>
+
+                <p>
+                    Dr. Fodi Jagana's academic journey began in Dakar,
+                    Senegal, where he completed his primary, middle, and
+                    secondary education at schools of the Al-Falah
+                    Movement — a foundation that set him on a path of
+                    formal, structured learning from an early age.
+                </p>
+
+                <p>
+                    That foundation carried him to Saudi Arabia, where he
+                    joined the Faculty of Sharia at the Islamic University
+                    of Madinah. It was there that his academic path
+                    deepened significantly, moving step by step from
+                    undergraduate to doctoral study.
+                </p>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+
+                        <span class="timeline-year">
+                            Early Years
+                        </span>
+
+                        <h3>
+                            Schooling in Dakar
+                        </h3>
+
+                        <p>
+                            Completed primary, middle, and secondary
+                            education at Al-Falah Movement schools in
+                            Dakar, Senegal.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <span class="timeline-year">
+                            Bachelor's Degree
+                        </span>
+
+                        <h3>
+                            Faculty of Sharia, Madinah
+                        </h3>
+
+                        <p>
+                            Joined the Faculty of Sharia at the Islamic
+                            University of Madinah and earned his
+                            bachelor's degree there.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <span class="timeline-year">
+                            Master's Degree
+                        </span>
+
+                        <h3>
+                            Continued Study in Fiqh
+                        </h3>
+
+                        <p>
+                            Remained at the Islamic University of Madinah
+                            to pursue a master's degree in the Department
+                            of Fiqh.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <span class="timeline-year">
+                            Doctorate
+                        </span>
+
+                        <h3>
+                            PhD in Fiqh
+                        </h3>
+
+                        <p>
+                            Completed his doctoral studies in the
+                            Department of Fiqh, becoming Dr. Fodi Jagana.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RESEARCH & PUBLICATIONS -->
+
+            <section class="section">
+
+                <div class="section-label">
+                    Scholarly Output
+                </div>
+
+                <h2>
+                    Research, Writing & Publications
+                </h2>
+
+                <p>
+                    Across his academic career, Dr. Fodi Jagana has
+                    produced a body of research spanning fiqh, da'wah,
+                    and Islamic history — work that has been presented at
+                    academic symposia and published through respected
+                    institutions.
+                </p>
+
+                <div class="pub-list">
+
+                    <div class="pub-item">
+                        <div class="pub-number">1</div>
+                        <div>
+                            <h3>Master's Thesis on Imam al-Shanqiti's Fiqh</h3>
+                            <p>
+                                "The Fiqh Choices of Sheikh Muhammad
+                                al-Amin al-Shanqiti in Worship, through
+                                Adwaa' al-Bayan — Compilation and Study,"
+                                published by the Deanship of Scientific
+                                Research at the Islamic University of
+                                Madinah.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="pub-item">
+                        <div class="pub-number">2</div>
+                        <div>
+                            <h3>On Seeking Assistance in Research</h3>
+                            <p>
+                                A scholarly paper examining the ruling on
+                                seeking assistance from others in academic
+                                research and writing.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="pub-item">
+                        <div class="pub-number">3</div>
+                        <div>
+                            <h3>Wise Positions from the Lives of the Prophets</h3>
+                            <p>
+                                "Wise Positions from the Lives of
+                                Preachers, with Ibrahim (peace be upon
+                                him) as an Example," presented at the
+                                symposium "Wisdom in Renewing Da'wah
+                                Discourse" at the Islamic University of
+                                Madinah, 1435H / 2014.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="pub-item">
+                        <div class="pub-number">4</div>
+                        <div>
+                            <h3>Forum of Saudi Graduates, West Africa</h3>
+                            <p>
+                                Presented "The Efforts of Saudi University
+                                Graduates in Explaining Moderation and
+                                Warning against Extremism, Gambia as an
+                                Example" at the Forum of Saudi University
+                                Graduates from West Africa, held in the
+                                Gambia, 1438H.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="pub-item">
+                        <div class="pub-number">5</div>
+                        <div>
+                            <h3>Author of "The Precious Gem"</h3>
+                            <p>
+                                Authored the book "The Precious Gem in the
+                                History of New Dembakunda," published in
+                                2020.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+        <!-- =========================
+             HIGHLIGHTS
+        ========================= -->
+
+        <section class="highlights">
+
+            <div class="highlights-inner">
+
+                <div class="section-label">
+                    A Life of Service
+                </div>
+
+                <h2>
+                    Current Roles & Contributions
+                </h2>
+
+                <div class="highlight-grid">
+
+                    <div class="highlight">
+
+                        <strong>
+                            University Lecturer
+                        </strong>
+
+                        <span>
+                            Member of the teaching faculty at the
+                            University of Ihsan, The Gambia.
+                        </span>
+
+                    </div>
+
+
+                    <div class="highlight">
+
+                        <strong>
+                            University Lecturer
+                        </strong>
+
+                        <span>
+                            Member of the teaching faculty at Faith
+                            University, The Gambia.
+                        </span>
+
+                    </div>
+
+
+                    <div class="highlight">
+
+                        <strong>
+                            Administrative Advisor
+                        </strong>
+
+                        <span>
+                            Advises on administration at the Imam Malik
+                            Islamic Institute in Kanifing, The Gambia.
+                        </span>
+
+                    </div>
+
+
+                    <div class="highlight">
+
+                        <strong>
+                            Imam & Preacher
+                        </strong>
+
+                        <span>
+                            Serves as imam and preacher of Saleha Samir
+                            Al-Mutairi Mosque in Sukuta, The Gambia.
+                        </span>
+
+                    </div>
+
+
+                    <div class="highlight">
+
+                        <strong>
+                            Author
+                        </strong>
+
+                        <span>
+                            Published author of research papers and a
+                            book on local Islamic history.
+                        </span>
+
+                    </div>
+
+
+                    <div class="highlight">
+
+                        <strong>
+                            Da'wah & Moderation
+                        </strong>
+
+                        <span>
+                            Active voice in promoting moderation and
+                            countering extremism in Islamic discourse.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SKILLS & LEGACY
+        ========================= -->
+
+        <div class="content">
+
+            <section class="section">
+
+                <div class="section-label">
+                    Skills & Expertise
+                </div>
+
+                <h2>
+                    Research, Teaching & Institutional Leadership
+                </h2>
+
+                <p>
+                    Dr. Fodi Jagana's expertise spans scientific research
+                    and verification, university-level teaching, writing
+                    and authorship, preaching and guidance, and the
+                    management of educational programmes and
+                    institutions.
+                </p>
+
+                <p>
+                    This range of skills reflects a career built as much
+                    on the page as on the pulpit — someone equally at
+                    home producing academic research as he is teaching a
+                    lecture hall or delivering a Friday sermon.
+                </p>
+
+            </section>
+
+
+            <!-- LEGACY -->
+
+            <section class="section">
+
+                <div class="section-label">
+                    Legacy
+                </div>
+
+                <h2>
+                    A Scholar's Path, From Dakar to Madinah and Home
+                </h2>
+
+                <p>
+                    The path of Dr. Fodi Jagana traces a clear arc: from
+                    early schooling in Dakar, through a bachelor's,
+                    master's, and doctorate at the Islamic University of
+                    Madinah, to a career of teaching, research, and
+                    religious leadership back home in The Gambia.
+                </p>
+
+                <p>
+                    His published research on fiqh, moderation, and the
+                    lives of the prophets — alongside his book on local
+                    Islamic history — reflects a scholar committed not
+                    only to studying knowledge, but to recording and
+                    sharing it for future generations.
+                </p>
+
+                <p>
+                    Today, through his work at two universities, an
+                    Islamic institute, and a mosque, he continues to
+                    carry that same mission forward: knowledge pursued,
+                    lived, and passed on.
+                </p>
+
+            </section>
+
+
+            <!-- =========================
+                 CLOSING QUOTE
+            ========================= -->
+
+            <section class="quote">
+
+                <div class="quote-mark">
+                    "
+                </div>
+                <p>إنما يخشى الله من عباده العلماء</p>
+
+                <p>
+                    Knowledge is worship, acting upon it is a mission,
+                    and calling to it is the path of the prophets.
+                </p>
+
+                <small>
+                    Dr. Fodi Jagana A Life of Research, Teaching & Fiqh
+                </small>
+
+            </section>
+
+        </div>
+
+    </article>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        Biography of Dr. Fodi Jagana
+    </p>
+
+    <a href="javascript:history.back()" class="back-link">
+        ← Back to Scholars
+    </a>
+
+</footer>
+
 </body>
 </html>

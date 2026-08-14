@@ -1,17 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Musa muhammad jibo Biography</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Musa Muhammad Jibo | Educator & Administrator</title>
+<meta name="description" content="Biography of Musa Muhammad Jibo - Gambian educator, graduate of Islamic University of Madinah 2014, Deputy Director of Student Affairs at Imam Malik Institute.">
+
+<style>
+:root{
+  --primary:#123057;
+  --primary-dark:#0d2040;
+  --accent:#c8a34e;
+  --accent-light:#e6c77a;
+  --text:#26364a;
+  --muted:#6b7b8a;
+  --background:#f6f2ea;
+  --white:#ffffff;
+  --border:#e3d9c6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--background);color:var(--text);line-height:1.8}
+.hero{
+  background:linear-gradient(rgba(13,32,64,0.97),rgba(18,48,87,0.97));
+  color:white;padding:90px 20px 80px;text-align:center;position:relative;overflow:hidden
+}
+.hero::before{content:"";position:absolute;width:360px;height:360px;border:1px solid rgba(200,163,78,0.24);border-radius:50%;top:-180px;left:-120px}
+.hero::after{content:"";position:absolute;width:480px;height:480px;border:1px solid rgba(200,163,78,0.15);border-radius:50%;bottom:-280px;right:-150px}
+.hero-content{max-width:960px;margin:auto;position:relative;z-index:2}
+.eyebrow{display:inline-block;color:var(--accent-light);font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-family:Georgia,serif;font-size:clamp(38px,6.5vw,66px);line-height:1.05;margin-bottom:22px}
+.hero-subtitle{max-width:800px;margin:auto;color:rgba(255,255,255,0.88);font-size:clamp(18px,2.1vw,21px);line-height:1.7}
+.hero-meta{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-meta span{border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.06);padding:8px 16px;border-radius:50px;font-size:14px}
+.container{width:min(1120px,calc(100% - 40px));margin:auto}
+.article{background:var(--white);margin-top:-45px;position:relative;z-index:5;border-radius:18px;box-shadow:0 20px 60px rgba(18,48,87,0.12);overflow:hidden}
+.intro{padding:60px 70px;text-align:center}
+.intro p{max-width:860px;margin:auto;font-family:Georgia,serif;font-size:22px;line-height:1.8;color:#31425a}
+.gold-line{width:70px;height:3px;background:var(--accent);margin:25px auto 0}
+.original-section{padding:20px 70px 70px}
+.original-card{background:#faf7ef;border:1px solid var(--border);border-radius:16px;padding:35px;text-align:center}
+.original-card h2{font-family:Georgia,serif;color:var(--primary);margin-bottom:10px;font-size:28px}
+.original-card p{color:var(--muted);margin-bottom:25px}
+.original-image{width:min(100%,700px);display:block;margin:25px auto 0;border-radius:12px;box-shadow:0 15px 40px rgba(0,0,0,0.12)}
+.content{padding:20px 70px 70px}
+.section{max-width:850px;margin:0 auto 65px}
+.section-label{color:var(--accent);font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.section h2{font-family:Georgia,serif;color:var(--primary);font-size:clamp(28px,4vw,40px);line-height:1.2;margin-bottom:20px}
+.section p{font-size:17px;color:#4a5c6e;margin-bottom:18px}
+.section p:first-of-type::first-letter{font-family:Georgia,serif;font-size:58px;font-weight:bold;float:left;line-height:0.85;padding-right:8px;color:var(--accent)}
+.timeline{border-left:2px solid var(--border);margin-top:35px;padding-left:35px}
+.timeline-item{position:relative;margin-bottom:36px}
+.timeline-item::before{content:"";position:absolute;width:13px;height:13px;border-radius:50%;background:var(--accent);left:-43px;top:8px;box-shadow:0 0 0 5px var(--white)}
+.timeline-year{display:inline-block;font-weight:800;color:var(--accent);margin-bottom:5px}
+.timeline-item h3{color:var(--primary);font-family:Georgia,serif;font-size:21px;margin-bottom:6px}
+.highlights{background:var(--primary);color:white;padding:60px 70px}
+.highlights-inner{max-width:850px;margin:auto}
+.highlights .section-label{color:var(--accent-light)}
+.highlights h2{color:white}
+.highlight-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:30px}
+.highlight{padding:22px;border:1px solid rgba(255,255,255,0.13);background:rgba(255,255,255,0.05);border-radius:12px}
+.highlight strong{display:block;color:var(--accent-light);margin-bottom:5px}
+.highlight span{color:rgba(255,255,255,0.8);font-size:15px}
+.list{display:grid;gap:12px;margin-top:20px}
+.list-item{border:1px solid var(--border);background:#fdfcfa;padding:16px 18px;border-radius:12px;font-size:15px}
+.list-item strong{color:var(--primary)}
+.quote{max-width:800px;margin:0 auto;padding:65px 30px;text-align:center}
+.quote-mark{font-family:Georgia,serif;font-size:70px;line-height:0.5;color:var(--accent)}
+.quote p{font-family:Georgia,serif;font-size:26px;line-height:1.6;color:var(--primary);margin:25px 0}
+.quote small{color:var(--muted)}
+footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:14px}
+.back-link{display:inline-block;margin-top:12px;color:var(--primary);font-weight:700;text-decoration:none}
+.back-link:hover{color:var(--accent)}
+@media(max-width:768px){
+  .hero{padding:65px 20px 70px}.article{margin-top:-30px;border-radius:14px}
+  .intro{padding:40px 25px}.intro p{font-size:19px}
+  .original-section,.content{padding-left:25px;padding-right:25px}
+  .original-card{padding:20px}.highlights{padding:45px 25px}
+  .highlight-grid{grid-template-columns:1fr}.section{margin-bottom:50px}
+  .section p{font-size:16px}.quote{padding:45px 20px}.quote p{font-size:22px}
+}
+</style>
 </head>
 <body>
 
-    <h1>Musa muhammad jibo</h1>
+<header class="hero">
+  <div class="hero-content">
+    <span class="eyebrow">Islamic University of Madinah • Student Affairs • Qur'an Center</span>
+    <h1>Musa Muhammad Jibo</h1>
+    <p class="hero-subtitle">
+      A Gambian educator and administrator. Graduate of the Islamic University of Madinah in 2014, he serves as Deputy Director of Student Affairs at Imam Malik Islamic Institute and Head of the Supreme Committee at the Center for Qur'an Memorization and Islamic Studies.
+    </p>
+    <div class="hero-meta">
+      <span>Born 05/09/1988</span>
+      <span>Basse, The Gambia</span>
+      <span>Islamic University of Madinah</span>
+      <span>Student Affairs Leadership</span>
+    </div>
+  </div>
+</header>
 
-    <img src="/assets/img/musa_muhammad_jibo_biography.webp" 
-         alt="Musa muhammad jibo" 
-         style="width:300px; border-radius:10px;">
+<main class="container">
+<article class="article">
 
-   
+  <section class="intro">
+    <p>
+      From secondary studies at Ma'had al-Nour al-Islami in 2008 to graduating from the Islamic University of Madinah in 2014, Musa Muhammad Jibo has combined academic excellence with dedicated service to student development and Qur'an education in The Gambia.
+    </p>
+    <div class="gold-line"></div>
+  </section>
+
+  <section class="original-section">
+    <div class="original-card">
+      <h2>
+                    His Original Biography
+                </h2>
+      <img src="/assets/img/musa_muhammad_jibo_biography.webp" alt="Original Arabic profile of Musa Muhammad Jibo" class="original-image">
+    </div>
+  </section>
+
+  <div class="content">
+
+    <section class="section">
+      <div class="section-label">Academic Journey</div>
+      <h2>From Basse to the City of the Prophet</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-year">2008</span>
+          <h3>Secondary Certificate Ma'had al-Nour al-Islami</h3>
+          <p>Completed his secondary certificate at Ma'had al-Nour al-Islami in 2008, building a strong foundation in Islamic sciences and Arabic language.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2014</span>
+          <h3>Bachelor's Degree Islamic University of Madinah</h3>
+          <p>Admitted to the Islamic University of Madinah al-Munawwarah, one of the world's most prestigious centers for Islamic learning. Graduated in 2014 with a Bachelor's degree, returning to The Gambia to serve in Islamic education.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">Specialized Training</div>
+      <h2>Professional Development in Saudi Arabia</h2>
+      <p>
+        During his time in the Kingdom of Saudi Arabia, he participated in six specialized training programs in 1435-1436 AH, reflecting a commitment to student development, intellectual awareness, and educational excellence.
+      </p>
+      <div class="list">
+        <div class="list-item"><strong>Zakat Awareness Program 1435 AH</strong> Training program focused on Zakat education and community awareness, held in Saudi Arabia.</div>
+        <div class="list-item"><strong>Qualification and Training of Distinguished Students 1435 AH</strong> Program dedicated to nurturing and training outstanding students.</div>
+        <div class="list-item"><strong>Human Chain Initiative to Reject Terrorism 1435 AH</strong> Participation in a national initiative promoting peace and rejecting extremism.</div>
+        <div class="list-item"><strong>Graduate Qualification Project 1436 AH</strong> Professional development project for graduating students, focusing on career readiness.</div>
+        <div class="list-item"><strong>Phenomenon of Intellectual Alienation 1435 AH</strong> Course addressing intellectual challenges and their remedies, emphasizing critical thinking and authentic knowledge.</div>
+        <div class="list-item"><strong>Study of the Sunnah 1435 AH</strong> Specialized course in the sciences of the Prophetic Sunnah and its preservation.</div>
+      </div>
+    </section>
+
+  </div>
+
+  <section class="highlights">
+    <div class="highlights-inner">
+      <div class="section-label">Administrative Leadership</div>
+      <h2>Serving Education and the Qur'an</h2>
+      <div class="highlight-grid">
+        <div class="highlight"><strong>Deputy Director of Student Affairs</strong><span>At Imam Malik Islamic Institute, overseeing student welfare, discipline, and development programs.</span></div>
+        <div class="highlight"><strong>Head of Supreme Committee</strong><span>At the Center for Tahfiz al-Qur'an al-Karim and Islamic Studies, leading strategic planning and academic oversight.</span></div>
+        <div class="highlight"><strong>Student Development</strong><span>Trained in programs for distinguished students and graduate qualification, focused on building confident, capable students.</span></div>
+        <div class="highlight"><strong>Community Awareness</strong><span>Engaged in initiatives promoting peace, rejecting terrorism, and addressing intellectual challenges facing youth.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="content">
+
+    <section class="section">
+      <div class="section-label">Languages & Skills</div>
+      <h2>A Multilingual Educator</h2>
+      <p>
+        His linguistic and personal skills support his educational leadership. Arabic at an excellent level the language of his university studies in Madinah. English at an intermediate level. Fluent in Soninke and Mandinka, connecting with diverse communities across The Gambia.
+      </p>
+      <p>
+        His training in student affairs, Sunnah studies, and intellectual awareness, combined with his administrative roles, positions him as an educator who cares for both academic knowledge and character building.
+      </p>
+    </section>
+
+    <section class="quote">
+      <div class="quote-mark">“</div>
+     <p>إنما يخشى الله من عباده العلماء</p>
+
+      <small>From Al-Madinah Al-Munawwarah to serving the Book of Allah in The Gambia Musa Muhammad Jibo</small>
+    </section>
+
+  </div>
+
+</article>
+</main>
+
+<footer>
+  <p>Biography of Musa Muhammad Jibo</p>
+  <a href="javascript:history.back()" class="back-link">← Back to Scholars</a>
+</footer>
+
 </body>
 </html>

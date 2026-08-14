@@ -1,17 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Muhammad Muhammad TourayBiography</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Muhammad Touray | Biography</title>
+<meta name="description" content="Biography of Muhammad Muhammad Touray - Gambian teacher, preacher and orator, graduate of Al-Azhar University, teacher at Imam Malik Institute and Imam of Abu al-Khair Mosque Sukuta.">
+
+<style>
+:root{
+  --primary:#12365f;
+  --primary-dark:#0e2a4a;
+  --accent:#c49a3d;
+  --accent-light:#e7c57a;
+  --text:#23313b;
+  --muted:#6a767f;
+  --background:#f5f2ea;
+  --white:#ffffff;
+  --border:#e6ddd0;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--background);color:var(--text);line-height:1.8}
+.hero{
+  background:linear-gradient(rgba(14,42,74,0.97),rgba(18,54,95,0.97));
+  color:white;padding:90px 20px 80px;text-align:center;position:relative;overflow:hidden
+}
+.hero::before{content:"";position:absolute;width:360px;height:360px;border:1px solid rgba(196,154,61,0.24);border-radius:50%;top:-180px;left:-120px}
+.hero::after{content:"";position:absolute;width:480px;height:480px;border:1px solid rgba(196,154,61,0.16);border-radius:50%;bottom:-280px;right:-150px}
+.hero-content{max-width:960px;margin:auto;position:relative;z-index:2}
+.eyebrow{display:inline-block;color:var(--accent-light);font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-family:Georgia,serif;font-size:clamp(36px,6.5vw,70px);line-height:1.05;margin-bottom:22px}
+.hero-subtitle{max-width:800px;margin:auto;color:rgba(255,255,255,0.87);font-size:clamp(18px,2.1vw,21px);line-height:1.7}
+.hero-meta{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-meta span{border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.06);padding:8px 16px;border-radius:50px;font-size:14px}
+.container{width:min(1120px,calc(100% - 40px));margin:auto}
+.article{background:var(--white);margin-top:-45px;position:relative;z-index:5;border-radius:18px;box-shadow:0 20px 60px rgba(18,54,95,0.12);overflow:hidden}
+.intro{padding:60px 70px;text-align:center}
+.intro p{max-width:850px;margin:auto;font-family:Georgia,serif;font-size:22px;line-height:1.8;color:#33414c}
+.gold-line{width:70px;height:3px;background:var(--accent);margin:25px auto 0}
+.original-section{padding:20px 70px 70px}
+.original-card{background:#faf7ef;border:1px solid var(--border);border-radius:16px;padding:35px;text-align:center}
+.original-card h2{font-family:Georgia,serif;color:var(--primary);margin-bottom:10px;font-size:28px}
+.original-card p{color:var(--muted);margin-bottom:25px}
+.original-image{width:min(100%,700px);display:block;margin:25px auto 0;border-radius:12px;box-shadow:0 15px 40px rgba(0,0,0,0.12)}
+.content{padding:20px 70px 70px}
+.section{max-width:850px;margin:0 auto 65px}
+.section-label{color:var(--accent);font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.section h2{font-family:Georgia,serif;color:var(--primary);font-size:clamp(28px,4vw,40px);line-height:1.2;margin-bottom:20px}
+.section p{font-size:17px;color:#4c5b66;margin-bottom:18px}
+.section p:first-of-type::first-letter{font-family:Georgia,serif;font-size:58px;font-weight:bold;float:left;line-height:0.85;padding-right:8px;color:var(--accent)}
+.timeline{border-left:2px solid var(--border);margin-top:35px;padding-left:35px}
+.timeline-item{position:relative;margin-bottom:36px}
+.timeline-item::before{content:"";position:absolute;width:13px;height:13px;border-radius:50%;background:var(--accent);left:-43px;top:8px;box-shadow:0 0 0 5px var(--white)}
+.timeline-year{display:inline-block;font-weight:800;color:var(--accent);margin-bottom:5px}
+.timeline-item h3{color:var(--primary);font-family:Georgia,serif;font-size:21px;margin-bottom:6px}
+.highlights{background:var(--primary);color:white;padding:60px 70px}
+.highlights-inner{max-width:850px;margin:auto}
+.highlights .section-label{color:var(--accent-light)}
+.highlights h2{color:white}
+.highlight-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:30px}
+.highlight{padding:22px;border:1px solid rgba(255,255,255,0.13);background:rgba(255,255,255,0.05);border-radius:12px}
+.highlight strong{display:block;color:var(--accent-light);margin-bottom:5px}
+.highlight span{color:rgba(255,255,255,0.8);font-size:15px}
+.quote{max-width:800px;margin:0 auto;padding:65px 30px;text-align:center}
+.quote-mark{font-family:Georgia,serif;font-size:70px;line-height:0.5;color:var(--accent)}
+.quote p{font-family:Georgia,serif;font-size:26px;line-height:1.6;color:var(--primary);margin:25px 0}
+.quote small{color:var(--muted)}
+footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:14px}
+.back-link{display:inline-block;margin-top:12px;color:var(--primary);font-weight:700;text-decoration:none}
+.back-link:hover{color:var(--accent)}
+@media(max-width:768px){
+  .hero{padding:65px 20px 70px}.article{margin-top:-30px;border-radius:14px}
+  .intro{padding:40px 25px}.intro p{font-size:19px}
+  .original-section,.content{padding-left:25px;padding-right:25px}
+  .original-card{padding:20px}.highlights{padding:45px 25px}
+  .highlight-grid{grid-template-columns:1fr}.section{margin-bottom:50px}
+  .section p{font-size:16px}.quote{padding:45px 20px}.quote p{font-size:22px}
+}
+</style>
 </head>
 <body>
 
+<header class="hero">
+  <div class="hero-content">
+    <span class="eyebrow">Teacher • Preacher • Orator • Al-Azhar Graduate</span>
     <h1>Muhammad Muhammad Touray</h1>
+    <p class="hero-subtitle">
+      A Gambian educator, preacher and orator dedicated to teaching, guidance and community service. A graduate of Al-Azhar Al-Sharif, serving as teacher and Head of the English Department at Imam Malik Institute and as Imam and Khateeb of Abu al-Khair Mosque, Sukuta.
+    </p>
+    <div class="hero-meta">
+      <span>Born 10 Oct 1973</span>
+      <span>Koinya Kantora, The Gambia</span>
+      <span>Al-Azhar University</span>
+      <span>Imam & Teacher</span>
+    </div>
+  </div>
+</header>
 
-    <img src="/assets/img/muhammad_muhammad_touray_biography.webp" 
-         alt="Muhammad Muhammad Touray" 
-         style="width:300px; border-radius:10px;">
+<main class="container">
+<article class="article">
 
-   
+  <section class="intro">
+    <p>
+      From the Qur'anic learning circles of Gamibisara to the lecture halls of Al-Azhar in Cairo, the path of Muhammad Muhammad Touray has been shaped by a lifelong commitment to learning the religion and teaching it in the classroom, on the minbar, and through the airwaves.
+    </p>
+    <div class="gold-line"></div>
+  </section>
+
+  <section class="original-section">
+    <div class="original-card">
+       <h2>His Original Biography</h2>
+      <img src="/assets/img/muhammad_muhammad_touray_biography.webp" alt="Original Arabic biography of Muhammad Muhammad Touray" class="original-image">
+    </div>
+  </section>
+
+  <div class="content">
+
+    <section class="section">
+      <div class="section-label">Beginnings</div>
+      <h2>Where the Journey Started</h2>
+      <p>
+        Born on 10 October 1973 in Koinya Kantora, The Gambia, Muhammad Muhammad Touray grew up in a family rooted in faith son of Muhammad Touray and Hajja Fatima Mama Omani. His early education began in the traditional majlis of the late Al-Haj Babou Fouti in Gamibisara, where he built his foundation in Qur'an and Islamic sciences.
+      </p>
+      <p>
+        That early grounding sparked a desire to seek knowledge beyond his village, taking him to renowned centers of learning across West Africa and to Egypt.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="section-label">Educational Journey</div>
+      <h2>Seeking Knowledge Across Three Countries</h2>
+      <p>
+        His pursuit of knowledge reflects the classic path of West African scholars moving between local scholars, specialized institutes, and university education.
+      </p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-year">Early Years</span>
+          <h3>Traditional Studies Gamibisara</h3>
+          <p>Began his studies in the council of the late Al-Haj Babou Fouti in the village of Gamibisara, learning Qur'an and foundational Islamic sciences.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1993</span>
+          <h3>Dar al-Qur'an and Hadith Tuba, Mali</h3>
+          <p>Traveled to Tuba, Mali to study at Dar al-Qur'an and Hadith, deepening his knowledge in Qur'anic and Hadith sciences.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1997</span>
+          <h3>Institute of Islamic Research Cairo, Egypt</h3>
+          <p>Joined the Islamic Research Institute (Ma'had al-Buhuth al-Islamiyya) in Cairo, affiliated with Al-Azhar, where he completed his secondary education with a very good grade.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2002</span>
+          <h3>Al-Azhar University Faculty of Education, English Department</h3>
+          <p>Admitted to the prestigious Al-Azhar University in Cairo, Faculty of Education, English Department. He obtained his Licence (Bachelor's degree) with a good grade, combining Islamic education with strong English language training.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">Qualifications</div>
+      <h2>Academic Milestones</h2>
+      <p>
+        His academic record shows consistent excellence: a primary certificate with excellent honors from Dar al-Qur'an and Hadith, a secondary certificate with very good honors from the Al-Azhar Islamic Research Institute, and a university licence from Al-Azhar University's Faculty of Education.
+      </p>
+      <p>
+        This combination of traditional grounding and modern university training gave him the ability to teach in both Arabic and English, and to connect with diverse audiences.
+      </p>
+    </section>
+
+  </div>
+
+  <section class="highlights">
+    <div class="highlights-inner">
+      <div class="section-label">Current Service</div>
+      <h2>Teaching, Leading, and Guiding</h2>
+      <div class="highlight-grid">
+        <div class="highlight"><strong>Teacher & Administrator</strong><span>Teacher and member of the administrative board at Imam Malik Institute for Islamic Education.</span></div>
+        <div class="highlight"><strong>Head of English Department</strong><span>Leads the English Department at Imam Malik Institute, bridging Islamic knowledge and English education.</span></div>
+        <div class="highlight"><strong>Imam & Khateeb</strong><span>Imam and Friday preacher at Abu al-Khair Mosque, Sukuta Serekunda, guiding the community through sermons and lessons.</span></div>
+        <div class="highlight"><strong>Radio Da'wah</strong><span>Regular preacher and advisor on Unique FM, extending religious guidance to a wider audience through media.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="content">
+
+    <section class="section">
+      <div class="section-label">Languages & Strengths</div>
+      <h2>A Voice That Connects</h2>
+      <p>
+        Muhammad Muhammad Touray is known for his strong communication skills and ability to reach people across linguistic communities in The Gambia.
+      </p>
+      <p>
+        His mother tongue is Soninke, alongside fluency in Mandinka and Wolof. In Arabic, he has very good command in both speaking and writing the language of his advanced studies. In English, the official language of The Gambia, he is also highly proficient in speaking and writing, a result of his specialization at Al-Azhar.
+      </p>
+      <p>
+        This multilingual ability, combined with years of experience in teaching, administration, da'wah, and khutbah, has made him a trusted teacher, orator, and guide in his community.
+      </p>
+    </section>
+
+    <section class="quote">
+      <div class="quote-mark">“</div>
+      <p>إنما يخشى الله من عباده العلماء</p>
+      <small>My Lord, increase me in knowledge and grant me understanding Muhammad Muhammad Touray</small>
+    </section>
+
+  </div>
+
+</article>
+</main>
+
+<footer>
+  <p>Biography of Muhammad Muhammad Touray</p>
+  <a href="javascript:history.back()" class="back-link">← Back to Scholars</a>
+</footer>
+
 </body>
 </html>
