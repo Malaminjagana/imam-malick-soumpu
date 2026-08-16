@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search | Imam Malick Islamic Institute</title>
+    <style>
+        :root { --green: #176b4d; --ink: #183128; --paper: #f4f7f5; --line: #c9d6ce; }
+        * { box-sizing: border-box; }
+        body { margin: 0; background: var(--paper); color: var(--ink); font-family: Georgia, "Times New Roman", serif; }
+        main { width: min(860px, calc(100% - 40px)); margin: 72px auto; }
+        a { color: var(--green); }
+        .site-header { margin-bottom: 38px; }
+        .site-header a { font-family: Arial, sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; }
+        h1 { margin: 0 0 24px; font-size: clamp(32px, 6vw, 52px); }
+        form { display: flex; gap: 10px; margin-bottom: 34px; }
+        input { flex: 1; min-width: 0; padding: 13px 14px; border: 1px solid var(--line); font: 16px Arial, sans-serif; }
+        button { border: 0; padding: 13px 20px; background: var(--green); color: #fff; font: 700 15px Arial, sans-serif; cursor: pointer; }
+        .search-results-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+        .search-results-list li { padding: 19px 20px; background: #fff; border: 1px solid var(--line); }
+        .search-results-list a { font-size: 22px; font-weight: 700; }
+        .search-results-list p, .search-results-empty { margin: 8px 0 0; color: #4f6259; font-family: Arial, sans-serif; line-height: 1.5; }
+        @media (max-width: 560px) { main { width: min(100% - 28px, 860px); margin: 42px auto; } form { flex-direction: column; } button { width: 100%; } }
+    </style>
+</head>
+<body>
+    <main>
+        <header class="site-header"><a href="index.html">Imam Malick Islamic Institute</a></header>
+        <form role="search">
+            <input id="resultsSearch" type="search" name="q" placeholder="Search in School Website..." autocomplete="off" aria-label="Search the school website">
+            <button type="submit">Search</button>
+        </form>
+        <section data-search-results aria-live="polite"></section>
+    </main>
+    <script defer src="search.js"></script>
+</body>
+</html>
