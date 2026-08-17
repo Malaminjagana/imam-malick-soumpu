@@ -1,167 +1,244 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-translate-title="pages.school_history_index.pageTitle">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>School History – Al-Imam Malik Islamic Institute</title>
-
-    <!-- Fonts: Merriweather (headings) + Inter (body) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Basic site CSS (matches main site) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School History - Al-Imam Malik Islamic Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preload" href="https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds.critical.min.css?ver=1.013" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds.critical.min.css?ver=1.013">
-    </noscript>
+    <noscript><link rel="stylesheet" href="https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds.critical.min.css?ver=1.013"></noscript>
     <link rel="preload" href="https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds-main.min.css?ver=1.069" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds-main.min.css?ver=1.069">
-    </noscript>
+    <noscript><link rel="stylesheet" href="https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds-main.min.css?ver=1.069"></noscript>
 
     <style>
-        :root{
-            --heritage-green: #0F3D2E;
-            --parchment-beige: #F7F3E9;
-            --accent-gold: #C9A44A;
-            --container-bg: #FFFFFF;
-            --body-text: #142033;
+        /* Foundation */
+        :root {
+            --history-blue: #092d61;
+            --history-deep-blue: #061d42;
+            --history-green: #0a4c3d;
+            --history-gold: #c59b45;
+            --history-paper: #f6f5f0;
+            --history-ink: #1f2c38;
+            --history-line: rgba(9, 45, 97, .16);
         }
-
-        /* Page scoped to avoid affecting other pages */
-        body.school-history-page{ background-color: var(--parchment-beige); font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial; color: var(--body-text); }
-
-        /* Hero header */
-        .blog-hero{ background: linear-gradient(180deg, var(--heritage-green) 0%, color-mix(in srgb, var(--heritage-green) 90%, #0b3928 10%) 100%); padding: 44px 0; margin-bottom: 24px; }
-        .blog-hero .blog-container{ padding-top: 12px; padding-bottom: 12px; }
-        .blog-title{ font-family: 'Merriweather', serif; font-size: clamp(1.8rem, 3.2vw, 2.6rem); color: #fff; margin: 0 0 6px 0; }
-        .blog-subtitle{ font-family: 'Merriweather', serif; color: var(--accent-gold); margin: 0 0 0; font-size: 1rem; }
-
-        /* Content container */
-        .blog-container{ max-width: 900px; margin: 0 auto; padding: 24px; background: var(--container-bg); border: 2px solid var(--accent-gold); border-radius: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
-        .blog-content{ padding: 8px 4px 4px 4px; }
-        .blog-content p{ margin: 0 0 1rem 0; line-height: 1.75; color: var(--body-text); font-size: 1rem; }
-        .blog-content ol{ margin: 0 0 1rem 1.25rem; color: var(--body-text); }
-        .blog-content li{ margin-bottom: .45rem; }
-
-        /* Decorative gold rule */
-        .gold-rule{ height: 4px; background: linear-gradient(90deg, transparent, var(--accent-gold) 20%, var(--accent-gold) 80%, transparent); border-radius: 2px; margin: 18px 0; }
-
-        @media (max-width: 640px){
-            .blog-container{ margin: 16px; padding: 18px; }
-            .blog-title{ font-size: 1.5rem; }
+        body.school-history-page {
+            margin: 0;
+            overflow-x: hidden;
+            background: var(--history-paper);
+            color: var(--history-ink);
+            font-family: Cairo, sans-serif;
+            line-height: 1.8;
         }
+        body.school-history-page::before {
+            position: fixed;
+            z-index: -1;
+            inset: 0;
+            content: "";
+            opacity: .28;
+            background-image: radial-gradient(circle at 1px 1px, rgba(9, 45, 97, .06) 1px, transparent 0);
+            background-size: 24px 24px;
+            pointer-events: none;
+        }
+        .history-shell { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+        .history-eyebrow { display: flex; align-items: center; gap: .8rem; color: var(--history-gold); font-size: .76rem; font-weight: 800; letter-spacing: .12em; }
+        .history-eyebrow::before, .history-eyebrow::after { content: ""; width: 28px; height: 1px; background: currentColor; }
+        .history-section { padding-block: clamp(4.5rem, 9vw, 8rem); }
+        .history-section-title { margin: .6rem 0 1rem; color: var(--history-deep-blue); font-family: Merriweather, serif; font-size: clamp(1.65rem, 3.2vw, 2.65rem); line-height: 1.35; }
+        .history-section-copy { max-width: 760px; margin: 0; color: #4d5d68; font-size: 1.03rem; }
+
+        /* Navigation */
+        .history-nav { position: sticky; top: 0; z-index: 40; background: rgba(255, 255, 255, .94); border-bottom: 1px solid rgba(9, 45, 97, .1); backdrop-filter: blur(15px); }
+        .history-nav .nds-nav-container { min-height: 76px; gap: 1.25rem; }
+        .history-nav > *, .history-nav .nds-collapse, .history-nav .nds-collapse-content { visibility: visible !important; }
+        .history-nav .nds-collapse { display: block !important; position: static; flex: 1 1 auto; min-width: 0; }
+        .history-nav .nds-collapse-content { display: block; }
+        .history-nav .imam-brand { display: flex; align-items: center; }
+        .history-nav .imam-brand-logo { width: auto; height: 54px; object-fit: contain; }
+        .history-nav .nds-nav-primary { display: flex !important; flex-direction: row !important; flex-wrap: nowrap; align-items: center; justify-content: flex-end; gap: .35rem; width: 100%; margin: 0; padding: 0; list-style: none; }
+        .history-nav .nds-nav-link { color: var(--history-deep-blue); font-weight: 700; }
+        .history-nav .nds-nav-link[aria-current="page"] { color: var(--history-green); box-shadow: inset 0 -3px 0 var(--history-gold); }
+
+        /* Hero */
+        body.school-history-page .history-hero { display: block; position: relative; isolation: isolate; overflow: hidden; padding: clamp(4rem, 10vw, 8rem) 0 clamp(4.5rem, 10vw, 7rem); color: #fff; background: var(--history-deep-blue); }
+        .history-hero::before { position: absolute; z-index: -2; inset: 0; content: ""; background: linear-gradient(115deg, var(--history-deep-blue), var(--history-blue) 53%, var(--history-green)); }
+        .history-hero::after { position: absolute; z-index: -1; inset: 0; content: ""; opacity: .2; background-image: linear-gradient(30deg, transparent 48%, rgba(255,255,255,.3) 49%, rgba(255,255,255,.3) 51%, transparent 52%), linear-gradient(150deg, transparent 48%, rgba(255,255,255,.3) 49%, rgba(255,255,255,.3) 51%, transparent 52%); background-size: 70px 120px; }
+        .history-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, .42fr); gap: clamp(2rem, 7vw, 7rem); align-items: center; }
+        .history-hero .history-eyebrow { color: #f4d18d; }
+        .history-hero-title { max-width: 740px; margin: .8rem 0 1rem; color: #fff; font-family: Merriweather, serif; font-size: clamp(2.5rem, 6vw, 5.2rem); letter-spacing: 0; line-height: 1.16; }
+        .history-hero-subtitle { max-width: 620px; margin: 0; color: rgba(255,255,255,.84); font-size: clamp(1rem, 2vw, 1.2rem); }
+        .hero-ornament { display: flex; align-items: center; gap: .85rem; margin-top: 2rem; color: #f4d18d; font-size: 1.1rem; }
+        .hero-ornament::before, .hero-ornament::after { content: ""; width: 72px; height: 1px; background: currentColor; }
+        .history-hero-mark { display: grid; place-items: center; min-height: 260px; }
+        .history-logo-frame { position: relative; display: grid; place-items: center; width: min(100%, 280px); aspect-ratio: 1; padding: 1.3rem; border: 1px solid rgba(244,209,141,.8); border-radius: 50% 50% 42% 42%; background: rgba(255,255,255,.96); box-shadow: 0 28px 55px rgba(0,0,0,.24); animation: history-rise .8s ease-out both; }
+        .history-logo-frame::before, .history-logo-frame::after { position: absolute; content: "✦"; color: var(--history-gold); font-size: 1.2rem; }
+        .history-logo-frame::before { top: 18px; inset-inline-start: 24px; }
+        .history-logo-frame::after { bottom: 18px; inset-inline-end: 24px; }
+        .history-logo { width: 100%; height: 100%; object-fit: contain; }
+
+        /* Journey */
+        .journey-grid { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: start; }
+        .journey-symbol { position: relative; display: grid; place-items: center; width: 112px; aspect-ratio: 1; color: var(--history-green); border: 1px solid rgba(197,155,69,.6); border-radius: 50%; background: #fff; box-shadow: 0 14px 36px rgba(6,29,66,.1); font-size: 2.5rem; }
+        .journey-symbol::after { position: absolute; inset: 8px; content: ""; border: 1px solid rgba(9,45,97,.15); border-radius: 50%; }
+        .journey-copy { padding: clamp(1.5rem, 4vw, 2.5rem); border-inline-start: 4px solid var(--history-gold); background: #fff; box-shadow: 0 16px 36px rgba(6,29,66,.07); }
+        .journey-copy p { max-width: 800px; margin: 0 0 1rem; color: #43535e; }
+        .journey-copy p:last-child { margin-bottom: 0; }
+
+        /* Milestones */
+        .milestone-band { background: var(--history-green); color: #fff; }
+        .milestone-band .history-section-title, .milestone-band .history-section-copy { color: #fff; }
+        .milestone-band .history-section-copy { color: rgba(255,255,255,.78); }
+        .milestone-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1px; margin-top: 2.5rem; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.2); }
+        .milestone { min-height: 142px; padding: 1.4rem 1.1rem; background: rgba(4, 46, 37, .88); transition: background .2s ease, transform .2s ease; }
+        .milestone:hover { background: #0d5d49; transform: translateY(-4px); }
+        .milestone-year { display: block; color: #f5d68f; font-family: Merriweather, serif; font-size: 1.6rem; font-weight: 700; }
+        .milestone-label { display: block; margin-top: .55rem; color: rgba(255,255,255,.86); font-size: .86rem; line-height: 1.45; }
+
+        /* Timeline */
+        .timeline { position: relative; max-width: 1000px; margin: 3rem auto 0; padding: 0 0 0 3.2rem; list-style: none; }
+        .timeline::before { position: absolute; top: .7rem; bottom: .7rem; inset-inline-start: 15px; width: 2px; content: ""; background: linear-gradient(var(--history-gold), var(--history-green)); }
+        .timeline-item { position: relative; margin-bottom: 2.25rem; animation: history-rise .65s ease-out both; }
+        .timeline-item:nth-child(2) { animation-delay: .08s; }.timeline-item:nth-child(3) { animation-delay: .16s; }.timeline-item:nth-child(4) { animation-delay: .24s; }.timeline-item:nth-child(5) { animation-delay: .32s; }.timeline-item:nth-child(6) { animation-delay: .4s; }
+        .timeline-dot { position: absolute; top: 1.4rem; inset-inline-start: -3.2rem; display: grid; place-items: center; width: 34px; height: 34px; border: 3px solid var(--history-paper); border-radius: 50%; background: var(--history-gold); box-shadow: 0 0 0 1px var(--history-gold); color: var(--history-deep-blue); font-size: .9rem; }
+        .timeline-card { padding: clamp(1.35rem, 3vw, 2.15rem); border: 1px solid var(--history-line); border-radius: 8px; background: #fff; box-shadow: 0 14px 32px rgba(6,29,66,.07); }
+        .timeline-date { display: inline-block; margin-bottom: .55rem; color: var(--history-green); font-size: .8rem; font-weight: 800; letter-spacing: .08em; }
+        .timeline-title { margin: 0 0 .75rem; color: var(--history-deep-blue); font-family: Merriweather, serif; font-size: clamp(1.18rem, 2.3vw, 1.55rem); line-height: 1.45; }
+        .timeline-card p { margin: 0; color: #4c5c66; }
+        .timeline-card p + p { margin-top: 1rem; }
+        .institution-name { display: inline-block; margin-top: 1rem; padding: .55rem .75rem; border-inline-start: 3px solid var(--history-gold); color: var(--history-green); background: #fbf6ea; font-weight: 700; }
+
+        /* People */
+        .people-area { background: #fff; }
+        .people-groups { display: grid; gap: 1.4rem; margin-top: 2.5rem; }
+        .people-group { border-top: 3px solid var(--history-gold); background: var(--history-paper); }
+        .people-group-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.15rem 1.35rem; background: var(--history-deep-blue); color: #fff; }
+        .people-group-header h3 { margin: 0; font-family: Merriweather, serif; font-size: 1rem; }
+        .people-group-header span { color: #f4d18d; font-size: .8rem; font-weight: 800; }
+        .people-intro { margin: 0; padding: .9rem 1.35rem; color: #4c5c66; background: #fffdf8; font-size: .9rem; }
+        .people-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; margin: 0; padding: 1px; list-style: none; background: rgba(9,45,97,.1); }
+        .person-card { display: flex; align-items: center; gap: .8rem; min-height: 88px; padding: 1rem; background: #fff; }
+        .person-mark { display: grid; flex: 0 0 auto; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: #eef4f2; color: var(--history-green); font-weight: 800; }
+        .person-card span:last-child { color: #354650; font-size: .9rem; line-height: 1.55; }
+
+        /* Legacy */
+        .legacy { position: relative; overflow: hidden; padding: clamp(3.5rem, 7vw, 6rem) 0; color: #fff; background: var(--history-deep-blue); text-align: center; }
+        .legacy::before { position: absolute; inset: -70% 20%; content: ""; border: 1px solid rgba(244,209,141,.22); border-radius: 50%; transform: rotate(25deg); }
+        .legacy-inner { position: relative; z-index: 1; display: grid; justify-items: center; }
+        .legacy-logo { width: 90px; height: 90px; margin-bottom: 1.2rem; object-fit: contain; filter: drop-shadow(0 10px 20px rgba(0,0,0,.25)); }
+        .legacy h2 { margin: 0; font-family: Merriweather, serif; font-size: clamp(1.65rem, 3.5vw, 2.5rem); }
+        .legacy p { max-width: 620px; margin: 1rem auto 0; color: rgba(255,255,255,.8); }
+        .legacy-motto { color: #f4d18d !important; font-weight: 800; letter-spacing: .06em; }
+
+        @keyframes history-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 860px) { .history-hero-grid { grid-template-columns: 1fr; }.history-hero-mark { min-height: auto; justify-content: start; }.history-logo-frame { width: 160px; }.milestone-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }.history-nav .nds-nav-primary { flex-wrap: wrap; } }
+        @media (max-width: 620px) { .history-shell { width: min(100% - 28px, 1180px); }.history-nav .nds-nav-container { padding-inline: 14px; align-items: flex-start; }.history-nav .imam-brand-logo { height: 44px; }.history-nav .nds-collapse { display: block; min-width: 0; flex: 1; }.history-nav .nds-nav-primary { display: flex; flex-wrap: nowrap; gap: .2rem; overflow-x: auto; padding-block: .45rem; scrollbar-width: thin; }.history-nav .nds-nav-link { white-space: nowrap; font-size: .76rem; }.history-hero { padding-block: 4rem; }.history-logo-frame { width: 128px; padding: .8rem; }.journey-grid { grid-template-columns: 1fr; }.journey-symbol { width: 76px; font-size: 1.8rem; }.journey-copy { padding: 1.25rem; }.milestone-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.timeline { padding-inline-start: 2.6rem; }.timeline-dot { inset-inline-start: -2.6rem; }.people-list { grid-template-columns: 1fr; } }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
     </style>
 </head>
 <body class="nds-minimal school-history-page">
-
-<!-- Reuse main navigation (trimmed copy to match site) -->
-<nav class="nds-main-nav nds-content-wrapper" id="ndsMainNav" aria-label="Primary navigation">
-    <div class="nds-nav-container">
-        <a href="/index.html" class="imam-brand" aria-label="Imam Malick Islamic Institute Homepage">
-            <img class="imam-brand-logo" src="/assets/img/imam-malick-logo.png" width="140" height="50" loading="lazy" alt="Imam Malick logo">
-        </a>
-        <div class="nds-collapse" id="ndsNavCollapse">
-            <div class="nds-collapse-content">
-                <ul class="nds-nav-primary">
-                    <li class="nav-item nds-nav-item">
-                        <a class="nav-link nds-nav-link nds-btn nds-subtle nds-indicator external changeablefontsize" href="#">
-                            <span class="nds-label">About the School</span>
-                        </a>
-                    </li>
-                    <li class="nav-item nds-nav-item">
-                        <a class="nav-link nds-nav-link nds-btn nds-subtle nds-indicator external changeablefontsize" href="">
-                            <span class="nds-label">About the Tahfiz</span>
-                        </a>
-                    </li>
-                    <li class="nav-item nds-nav-item">
-                        <a class="nav-link nds-nav-link nds-btn nds-subtle nds-indicator external changeablefontsize" href="/index.html">
-                            <span class="nds-label">Departments</span>
-                        </a>
-                    </li>
-                    <li class="nav-item nds-nav-item">
-                        <a class="nav-link nds-nav-link nds-btn nds-subtle nds-indicator external changeablefontsize" href="/school-history/">
-                            <span class="nds-label">School History</span>
-                        </a>
-                    </li>
-                    <li class="nav-item nds-nav-item">
-                        <a class="nav-link nds-nav-link nds-btn nds-subtle nds-indicator nds-external external changeablefontsize" href="" target="_blank" rel="noopener noreferrer">
-                            <span class="nds-label">Research</span>
-                        </a>
-                    </li>
-                </ul>
+    <nav class="history-nav nds-main-nav nds-content-wrapper" id="ndsMainNav" aria-label="Primary navigation" data-translate-attr="aria-label:pages.school_history_index.attr001">
+        <div class="nds-nav-container">
+            <a href="/index.html" class="imam-brand" aria-label="Imam Malick Islamic Institute Homepage" data-translate-attr="aria-label:pages.school_history_index.attr002">
+                <img class="imam-brand-logo" src="/assets/img/imam-malick-logo.png" width="140" height="50" loading="eager" alt="Imam Malick logo" data-translate-attr="alt:pages.school_history_index.attr003">
+            </a>
+            <div class="nds-collapse" id="ndsNavCollapse">
+                <div class="nds-collapse-content">
+                    <ul class="nds-nav-primary">
+                        <li class="nav-item nds-nav-item"><a class="nav-link nds-nav-link nds-btn nds-subtle" href="/index.html"><span class="nds-label"><span data-translate="pages.school_history_index.text001">About the School</span></span></a></li>
+                        <li class="nav-item nds-nav-item"><a class="nav-link nds-nav-link nds-btn nds-subtle" href="/index.html#academic-programs"><span class="nds-label"><span data-translate="pages.school_history_index.text003">Departments</span></span></a></li>
+                        <li class="nav-item nds-nav-item"><a class="nav-link nds-nav-link nds-btn nds-subtle" href="/school-history/" aria-current="page"><span class="nds-label"><span data-translate="pages.school_history_index.text004">School History</span></span></a></li>
+                        <li class="nav-item nds-nav-item"><a class="nav-link nds-nav-link nds-btn nds-subtle" href="/school-rolls.html"><span class="nds-label"><span data-translate="pages.school_history_index.text002">About the Tahfiz</span></span></a></li>
+                        <li class="nav-item nds-nav-item"><a class="nav-link nds-nav-link nds-btn nds-subtle" href="#history-people"><span class="nds-label"><span data-translate="pages.school_history_index.text005">Research</span></span></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<main>
-    <article>
-        <div class="blog-hero">
-            <div class="blog-container">
-                <header>
-                    <h1 class="blog-title">School History</h1>
-                    <p class="blog-subtitle">The Official History of Imam Malik Islamic Institute</p>
-                </header>
+    <main>
+        <header class="history-hero">
+            <div class="history-shell history-hero-grid">
+                <div>
+                    <div class="history-eyebrow"><span data-translate="pages.school_history_index.heroLabel">AL-IMAM MALIK ISLAMIC INSTITUTE</span></div>
+                    <h1 class="history-hero-title"><span data-translate="pages.school_history_index.text006">School History</span></h1>
+                    <p class="history-hero-subtitle"><span data-translate="pages.school_history_index.text007">The Official History of Imam Malik Islamic Institute</span></p>
+                    <div class="hero-ornament" aria-hidden="true">✦</div>
+                </div>
+                <div class="history-hero-mark" aria-hidden="true"><div class="history-logo-frame"><img class="history-logo" src="/assets/img/imam-malick-logo.png" alt=""></div></div>
             </div>
-        </div>
+        </header>
 
-        <div class="blog-container">
-            <div class="gold-rule" aria-hidden="true"></div>
-            <section class="blog-content">
-            <p>The history of the institute begins with the founding of Samboudoukati Association in 1960. Its first headquarters was located in Banjul, in the house of Alhaji Musa Njai (may Allah have mercy on him) at 16 Lemon Street. When the place became too small, the association moved to the house of Alhaji Saibo Tankara on Lancaster Street.</p>
+        <section class="history-section">
+            <div class="history-shell journey-grid">
+                <div class="journey-symbol" aria-hidden="true">۞</div>
+                <div class="journey-copy">
+                    <div class="history-eyebrow"><span data-translate="pages.school_history_index.journeyLabel">JOURNEY THROUGH HISTORY</span></div>
+                    <h2 class="history-section-title"><span data-translate="pages.school_history_index.journeyTitle">From Traditional Kuttab to Modern Islamic Education</span></h2>
+                    <p><span data-translate="pages.school_history_index.text008">The history of the institute begins with the founding of Samboudoukati Association in 1960. Its first headquarters was located in Banjul, in the house of Alhaji Musa Njai (may Allah have mercy on him) at 16 Lemon Street. When the place became too small, the association moved to the house of Alhaji Saibo Tankara on Lancaster Street.</span></p>
+                    <p><span data-translate="pages.school_history_index.text009">Education began in the traditional kuttab (Qur’anic school) style, with students attending morning and evening sessions.</span></p>
+                </div>
+            </div>
+        </section>
 
-            <p>Education began in the traditional kuttab (Qur’anic school) style, with students attending morning and evening sessions.</p>
+        <section class="history-section milestone-band">
+            <div class="history-shell">
+                <div class="history-eyebrow"><span data-translate="pages.school_history_index.milestoneLabel">KEY MILESTONES</span></div>
+                <h2 class="history-section-title"><span data-translate="pages.school_history_index.milestoneTitle">A Legacy in Motion</span></h2>
+                <p class="history-section-copy"><span data-translate="pages.school_history_index.milestoneCopy">A chronological view of the milestones recorded in the institute's history.</span></p>
+                <div class="milestone-grid">
+                    <div class="milestone"><span class="milestone-year">1960</span><span class="milestone-label"><span data-translate="pages.school_history_index.milestone1960">Association founded</span></span></div>
+                    <div class="milestone"><span class="milestone-year">1996</span><span class="milestone-label"><span data-translate="pages.school_history_index.milestone1996">Formal academic system</span></span></div>
+                    <div class="milestone"><span class="milestone-year">2001</span><span class="milestone-label"><span data-translate="pages.school_history_index.milestone2001">Kanifing school opens</span></span></div>
+                    <div class="milestone"><span class="milestone-year">2003</span><span class="milestone-label"><span data-translate="pages.school_history_index.milestone2003">Junior secondary opens</span></span></div>
+                    <div class="milestone"><span class="milestone-year">2005</span><span class="milestone-label"><span data-translate="pages.school_history_index.milestone2005">Institute renamed</span></span></div>
+                    <div class="milestone"><span class="milestone-year">2008/09</span><span class="milestone-label"><span data-translate="pages.school_history_index.milestone2008">First graduating class</span></span></div>
+                </div>
+            </div>
+        </section>
 
-            <p>The teachers during this early period were:</p>
-            <ol>
-                <li>Sheikhba Sise (may Allah have mercy on him), the son‑in‑law of Alhaji Baba Kamara.</li>
-                <li>Alhaji Baba Kamara (may Allah have mercy on him).</li>
-                <li>Jindi Simiga Jani (may Allah have mercy on him).</li>
-            </ol>
+        <section class="history-section" aria-labelledby="timeline-title">
+            <div class="history-shell">
+                <div class="history-eyebrow"><span data-translate="pages.school_history_index.timelineLabel">THE ARCHIVE</span></div>
+                <h2 class="history-section-title" id="timeline-title"><span data-translate="pages.school_history_index.timelineTitle">The Institute's Historical Timeline</span></h2>
+                <p class="history-section-copy"><span data-translate="pages.school_history_index.timelineCopy">Each chapter below is drawn from the institute's recorded history.</span></p>
+                <ol class="timeline">
+                    <li class="timeline-item"><span class="timeline-dot" aria-hidden="true">✦</span><article class="timeline-card"><span class="timeline-date">1960</span><h3 class="timeline-title"><span data-translate="pages.school_history_index.timeline1960">The Samboudoukati Association</span></h3><p><span data-translate="pages.school_history_index.text008">The history of the institute begins with the founding of Samboudoukati Association in 1960. Its first headquarters was located in Banjul, in the house of Alhaji Musa Njai (may Allah have mercy on him) at 16 Lemon Street. When the place became too small, the association moved to the house of Alhaji Saibo Tankara on Lancaster Street.</span></p></article></li>
+                    <li class="timeline-item"><span class="timeline-dot" aria-hidden="true">✦</span><article class="timeline-card"><span class="timeline-date"><span data-translate="pages.school_history_index.earlyPeriod">EARLY PERIOD</span></span><h3 class="timeline-title"><span data-translate="pages.school_history_index.timelineKuttab">Traditional Kuttab Education</span></h3><p><span data-translate="pages.school_history_index.text009">Education began in the traditional kuttab (Qur’anic school) style, with students attending morning and evening sessions.</span></p></article></li>
+                    <li class="timeline-item"><span class="timeline-dot" aria-hidden="true">✦</span><article class="timeline-card"><span class="timeline-date">1996</span><h3 class="timeline-title"><span data-translate="pages.school_history_index.timeline1996">A Formal Academic System</span></h3><p><span data-translate="pages.school_history_index.text014">In 1996, the institute shifted from the traditional kuttab system to a formal academic system. The teachers at that time were:</span></p></article></li>
+                    <li class="timeline-item"><span class="timeline-dot" aria-hidden="true">✦</span><article class="timeline-card"><span class="timeline-date">2000</span><h3 class="timeline-title"><span data-translate="pages.school_history_index.timeline2000">The Primary Stage in Banjul</span></h3><p><span data-translate="pages.school_history_index.text019">The primary stage (Grades 1–3) was opened in Banjul and continued until the year 2000. At that time, the institute was known as “Samboudoukati Islamic School”.</span></p></article></li>
+                    <li class="timeline-item"><span class="timeline-dot" aria-hidden="true">✦</span><article class="timeline-card"><span class="timeline-date">2001</span><h3 class="timeline-title"><span data-translate="pages.school_history_index.timeline2001">Expansion to Kanifing</span></h3><p><span data-translate="pages.school_history_index.text020">In 2001, the association opened a new school in Kanifing, starting with Grade 5. Its name was:</span></p><span class="institution-name"><span data-translate="pages.school_history_index.text021">“The Islamic School for Qur’an Memorization and the Study of Islamic and Modern Sciences Samboudoukati Association Kanifing”.</span></span><p><span data-translate="pages.school_history_index.text025">Later, the school in Banjul along with its students and teachers moved to Kanifing, led by the Deputy Director Ustaz Ousman Muhammad Samba Drammeh, after Director Malamin Jagna traveled to the United States. Drammeh then assumed full responsibility for managing the school.</span></p></article></li>
+                    <li class="timeline-item"><span class="timeline-dot" aria-hidden="true">✦</span><article class="timeline-card"><span class="timeline-date">2002 - 2008/2009</span><h3 class="timeline-title"><span data-translate="pages.school_history_index.timeline2002">Growth and First Graduation</span></h3><p><span data-translate="pages.school_history_index.text026">By 2002, the school had reached Grade 6. In 2003, the junior secondary level was opened. The first graduating class completed their studies in 2008/2009, consisting of eight male students.</span></p></article></li>
+                    <li class="timeline-item"><span class="timeline-dot" aria-hidden="true">✦</span><article class="timeline-card"><span class="timeline-date">2004 - 2005</span><h3 class="timeline-title"><span data-translate="pages.school_history_index.timeline2004">New Leadership and a New Name</span></h3><p><span data-translate="pages.school_history_index.text027">The institute witnessed significant growth with the arrival of two teachers in October 2004:</span></p><p><span data-translate="pages.school_history_index.text033">In 2005, the name of the institute was officially changed to:</span></p><span class="institution-name"><span data-translate="pages.school_history_index.text034">“Imam Malik Islamic Institute”</span></span><p><span data-translate="pages.school_history_index.text035">based on a suggestion from Dr. Fodi Baba Jagna while he was a student at the Islamic University in Madinah.</span></p></article></li>
+                </ol>
+            </div>
+        </section>
 
-            <p>In 1996, the institute shifted from the traditional kuttab system to a formal academic system. The teachers at that time were:</p>
-            <ol>
-                <li>Malamin Jagna – Director</li>
-                <li>Ousman Muhammad Samba Drammeh – Deputy Director</li>
-                <li>Omar Sajo – Teacher</li>
-                <li>Sheikh Sise – Teacher</li>
-            </ol>
+        <section class="history-section people-area" id="history-people" aria-labelledby="people-title">
+            <div class="history-shell">
+                <div class="history-eyebrow"><span data-translate="pages.school_history_index.peopleLabel">THE PEOPLE WHO SERVED</span></div>
+                <h2 class="history-section-title" id="people-title"><span data-translate="pages.school_history_index.peopleTitle">Teachers and Academic Leadership</span></h2>
+                <p class="history-section-copy"><span data-translate="pages.school_history_index.peopleCopy">The names below are preserved from the recorded history of the institute.</span></p>
+                <div class="people-groups">
+                    <section class="people-group"><div class="people-group-header"><h3><span data-translate="pages.school_history_index.earlyTeachers">Early Teachers</span></h3><span><span data-translate="pages.school_history_index.earlyPeriod">EARLY PERIOD</span></span></div><p class="people-intro"><span data-translate="pages.school_history_index.text010">The teachers during this early period were:</span></p><ul class="people-list"><li class="person-card"><span class="person-mark">01</span><span data-translate="pages.school_history_index.text011">Sheikhba Sise (may Allah have mercy on him), the son‑in‑law of Alhaji Baba Kamara.</span></li><li class="person-card"><span class="person-mark">02</span><span data-translate="pages.school_history_index.text012">Alhaji Baba Kamara (may Allah have mercy on him).</span></li><li class="person-card"><span class="person-mark">03</span><span data-translate="pages.school_history_index.text013">Jindi Simiga Jani (may Allah have mercy on him).</span></li></ul></section>
+                    <section class="people-group"><div class="people-group-header"><h3><span data-translate="pages.school_history_index.academicLeadership">Academic Leadership</span></h3><span>1996</span></div><ul class="people-list"><li class="person-card"><span class="person-mark">01</span><span data-translate="pages.school_history_index.text015">Malamin Jagna Director</span></li><li class="person-card"><span class="person-mark">02</span><span data-translate="pages.school_history_index.text016">Ousman Muhammad Samba Drammeh Deputy Director</span></li><li class="person-card"><span class="person-mark">03</span><span data-translate="pages.school_history_index.text017">Omar Sajo Teacher</span></li><li class="person-card"><span class="person-mark">04</span><span data-translate="pages.school_history_index.text018">Sheikh Sise – Teacher</span></li></ul></section>
+                    <section class="people-group"><div class="people-group-header"><h3><span data-translate="pages.school_history_index.kanifingTeachers">Teachers in Kanifing</span></h3><span>2001</span></div><p class="people-intro"><span data-translate="pages.school_history_index.text022">Teachers during this period were:</span></p><ul class="people-list"><li class="person-card"><span class="person-mark">01</span><span data-translate="pages.school_history_index.text023">Omar Issa Dukureh</span></li><li class="person-card"><span class="person-mark">02</span><span data-translate="pages.school_history_index.text024">Maryam Baba Kamara</span></li></ul></section>
+                    <section class="people-group"><div class="people-group-header"><h3><span data-translate="pages.school_history_index.leadership2004">Leadership</span></h3><span>2004</span></div><ul class="people-list"><li class="person-card"><span class="person-mark">01</span><span data-translate="pages.school_history_index.text028">Ustaz Muhammad Kaba Musa (may Allah have mercy on him)</span></li><li class="person-card"><span class="person-mark">02</span><span data-translate="pages.school_history_index.text029">Ustaz Ibrahim Mari Jagna</span></li></ul><div class="people-group-header"><h3><span data-translate="pages.school_history_index.text030">They were appointed as follows:</span></h3></div><ul class="people-list"><li class="person-card"><span class="person-mark">01</span><span data-translate="pages.school_history_index.text031">Muhammad Kaba Musa Director</span></li><li class="person-card"><span class="person-mark">02</span><span data-translate="pages.school_history_index.text032">Ibrahim Mari Jagna Deputy Director</span></li></ul></section>
+                </div>
+            </div>
+        </section>
 
-            <p>The primary stage (Grades 1–3) was opened in Banjul and continued until the year 2000. At that time, the institute was known as “Samboudoukati Islamic School”.</p>
+        <section class="legacy">
+            <div class="history-shell legacy-inner">
+                <img class="legacy-logo" src="/assets/img/imam-malick-logo.png" width="90" height="90" alt="Imam Malick logo" data-translate-attr="alt:pages.school_history_index.attr003">
+                <div class="history-eyebrow"><span data-translate="pages.school_history_index.legacyLabel">CONTINUING THE LEGACY</span></div>
+                <h2><span data-translate="pages.school_history_index.legacyTitle">Al-Imam Malik Islamic Institute</span></h2>
+                <p><span data-translate="pages.school_history_index.legacyCopy">The history recorded here reflects a continuing journey of learning, service, and community.</span></p>
+                <p class="legacy-motto"><span data-translate="pages.school_history_index.legacyMotto">Knowledge is Light, Action is Worship</span></p>
+            </div>
+        </section>
+    </main>
 
-            <p>In 2001, the association opened a new school in Kanifing, starting with Grade 5. Its name was:<br>
-            “The Islamic School for Qur’an Memorization and the Study of Islamic and Modern Sciences – Samboudoukati Association – Kanifing”.</p>
-
-            <p>Teachers during this period were:</p>
-            <ol>
-                <li>Omar Issa Dukureh</li>
-                <li>Maryam Baba Kamara</li>
-            </ol>
-
-            <p>Later, the school in Banjul — along with its students and teachers — moved to Kanifing, led by the Deputy Director Ustaz Ousman Muhammad Samba Drammeh, after Director Malamin Jagna traveled to the United States. Drammeh then assumed full responsibility for managing the school.</p>
-
-            <p>By 2002, the school had reached Grade 6. In 2003, the junior secondary level was opened. The first graduating class completed their studies in 2008/2009, consisting of eight male students.</p>
-
-            <p>The institute witnessed significant growth with the arrival of two teachers in October 2004:</p>
-            <ol>
-                <li>Ustaz Muhammad Kaba Musa (may Allah have mercy on him)</li>
-                <li>Ustaz Ibrahim Mari Jagna</li>
-            </ol>
-
-            <p>They were appointed as follows:</p>
-            <ol>
-                <li>Muhammad Kaba Musa – Director</li>
-                <li>Ibrahim Mari Jagna – Deputy Director</li>
-            </ol>
-
-            <p>In 2005, the name of the institute was officially changed to:<br>
-            “Imam Malik Islamic Institute”<br>
-            based on a suggestion from Dr. Fodi Baba Jagna while he was a student at the Islamic University in Madinah.</p>
-            </section>
-        </div>
-    </article>
-</main>
-
-<script defer src="../search.js"></script>
+    <script defer src="../search.js"></script>
 </body>
 </html>

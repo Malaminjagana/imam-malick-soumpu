@@ -1,75 +1,99 @@
 (() => {
     "use strict";
 
-    // Add a new object here to make another page or section searchable.
-    const searchIndex = [
-        { title: "Imam Malick Islamic Institute", keywords: ["home", "school", "islamic institute", "imam malick", "imam malik"], url: "/index.html" },
-        { title: "Why Choose Imam Malick Islamic Institute?", keywords: ["why choose", "about", "education", "islamic values", "tahfiz"], url: "/index.html#whyIU" },
-        { title: "About the Institute", keywords: ["about", "imam malick", "school", "mission", "vision"], url: "/index.html#aboutIU" },
-        { title: "Graduates and Alumni", keywords: ["graduates", "alumni", "tahfiz", "school rolls"], url: "/index.html#AlumaniMap" },
-        { title: "Scholars and Teachers", keywords: ["scholars", "teachers", "biographies", "staff", "faculty"], url: "/index.html#success-stories" },
-        { title: "School Departments", keywords: ["departments", "department", "teaching departments", "academic departments", "faculty"], url: "/index.html#academic-programs" },
-        { title: "Academic Programs", keywords: ["academic", "programs", "elementary", "preparatory", "high school", "tahfiz", "quran"], url: "/academic-programs.html" },
-        { title: "Academic Programs Overview", keywords: ["academic programs", "courses", "curriculum", "education"], url: "/index.html#academic-programs" },
-        { title: "School History", keywords: ["history", "school history", "samboudoukati", "kanifing", "banjul", "imam malik"], url: "/school-history/index.html" },
-        { title: "School Admissions and Rolls", keywords: ["admission", "admissions", "school rolls", "registration", "enrollment", "students"], url: "/school-rolls.html" },
-        { title: "Frequently Asked Questions", keywords: ["faq", "questions", "help", "information"], url: "/faq.html" },
-        { title: "Privacy Policy", keywords: ["privacy", "policy", "data", "cookies"], url: "/privacy.html" },
-        { title: "Terms and Conditions", keywords: ["terms", "conditions", "rules"], url: "/terms.html" },
-        { title: "Security", keywords: ["security", "website security", "safety"], url: "/security.html" },
-        { title: "Dr. Ali Jagana", keywords: ["ali", "jagana", "jigna", "dr ali", "biography", "scholar", "hadith", "islamic studies", "researcher", "author"], url: "/biography/dr-ali-jagana.html" },
-        { title: "Dr. Fodi Jagana", keywords: ["fodi", "jagana", "dr fodi", "biography", "scholar", "fiqh", "sharia", "author", "lecturer"], url: "/biography/dr-fodi-jagana.html" },
-        { title: "Dr. Kisma Sheikh Sahoo", keywords: ["kisma", "sahoo", "sheikh sahoo", "biography", "scholar", "fiqh", "educator", "researcher"], url: "/biography/dr-kisma-sahoo.html" },
-        { title: "Dr. Suleiman Kamara", keywords: ["suleiman", "kamara", "dr suleiman", "biography", "scholar", "teacher"], url: "/biography/dr-suleiman-kamara.html" },
-        { title: "Baguri Kisma Sangare", keywords: ["baguri", "kisma", "sangare", "biography", "scholar", "teacher"], url: "/biography/baguri_kisma_sangare.html" },
-        { title: "Ebrahima Marry Jagana", keywords: ["ebrahima", "ibrahim", "marry", "mari", "jagana", "biography", "scholar", "service"], url: "/biography/Ebrahim-Marry-Jagana.html" },
-        { title: "Jaafar Fodi Gumani", keywords: ["jaafar", "fodi", "gumani", "biography", "scholar", "teacher", "daiyah", "sharia"], url: "/biography/jaafar_fodi_gumani.html" },
-        { title: "Malamin Zakaria Jagana", keywords: ["malamin", "zakaria", "jagana", "biography", "scholar", "teacher"], url: "/biography/Malamin-zakaria-jagana.html" },
-        { title: "Muhammad Issa Haydar", keywords: ["muhammad", "issa", "haydar", "biography", "scholar", "teacher"], url: "/biography/muhammad_issa_haydar.html" },
-        { title: "Muhammad Jola Camara", keywords: ["muhammad", "jola", "camara", "biography", "scholar", "teacher"], url: "/biography/muhammad_jola_camara.html" },
-        { title: "Muhammad Kaowjed Camara", keywords: ["muhammad", "kaowjed", "camara", "biography", "scholar", "teacher"], url: "/biography/muhammad_kaowjed_camara.html" },
-        { title: "Muhammad Muhammad Touray", keywords: ["muhammad", "touray", "biography", "scholar", "teacher", "preacher", "al azhar", "english department"], url: "/biography/muhammad_muhammad_touray.html" },
-        { title: "Muhammad Kaba Musa", keywords: ["muhammad", "kaba", "musa", "biography", "scholar", "director", "teacher"], url: "/biography/Muhammad-Kaba-Musa.html" },
-        { title: "Musa Muhammad Jibo", keywords: ["musa", "muhammad", "jibo", "biography", "scholar", "teacher"], url: "/biography/musa_muhammad_jibo.html" },
-        { title: "Omar Issa Dukureh", keywords: ["omar", "issa", "dukureh", "biography", "scholar", "teacher"], url: "/biography/omar_issa_dukureh.html" },
-        { title: "Shondi Muhammad Samba Dramme", keywords: ["shondi", "muhammad", "samba", "dramme", "drammeh", "shiek drameh", "biography", "scholar", "dawah"], url: "/biography/shiek-drameh.html" },
-        { title: "University Information", keywords: ["university", "islamic university", "academic information"], url: "/university/index%20copy.html" }
-    ];
-
     const scriptUrl = document.currentScript ? document.currentScript.src : window.location.href;
     const siteRoot = new URL(".", scriptUrl);
+    const dictionaries = {};
+    let activeLanguage = localStorage.getItem("site-language") === "ar" ? "ar" : "en";
+
+    function loadI18n() {
+        if (window.setLanguage) return Promise.resolve();
+        return new Promise((resolve, reject) => {
+            const existing = document.querySelector('script[data-site-i18n]');
+            if (existing) {
+                existing.addEventListener("load", resolve, { once: true });
+                existing.addEventListener("error", reject, { once: true });
+                return;
+            }
+            const script = document.createElement("script");
+            script.src = new URL("i18n.js", scriptUrl).href;
+            script.dataset.siteI18n = "true";
+            script.onload = resolve;
+            script.onerror = () => reject(new Error("Unable to load i18n.js."));
+            document.head.append(script);
+        });
+    }
+
+    const pages = [
+        ["index", "/index.html", "Imam Malick Islamic Institute", ["home", "school", "imam malick", "الإمام مالك", "المعهد"]],
+        ["academic_programs", "/academic-programs.html", "Academic Programs", ["academic", "programs", "tahfiz", "quran", "البرامج الأكاديمية", "تحفيظ", "القرآن"]],
+        ["school_history_index", "/school-history/index.html", "School History", ["history", "samboudoukati", "تاريخ المدرسة", "سمبودوكاتي"]],
+        ["school_rolls", "/school-rolls.html", "School Admissions and Rolls", ["admission", "enrollment", "registration", "القبول", "التسجيل"]],
+        ["faq", "/faq.html", "Frequently Asked Questions", ["faq", "questions", "الأسئلة الشائعة"]],
+        ["privacy", "/privacy.html", "Privacy Policy", ["privacy", "cookies", "الخصوصية"]],
+        ["terms", "/terms.html", "Terms and Conditions", ["terms", "conditions", "الشروط والأحكام"]],
+        ["security", "/security.html", "Information Security Policy", ["security", "الأمن", "أمن المعلومات"]],
+        ["university_index_copy", "/university/index%20copy.html", "University Information", ["university", "الجامعة"]],
+        ["biography_dr_ali_jagana", "/biography/dr-ali-jagana.html", "Dr. Ali Jagana", ["ali", "jagana", "علي", "جغنا"]],
+        ["biography_dr_fodi_jagana", "/biography/dr-fodi-jagana.html", "Dr. Fodi Jagana", ["fodi", "jagana", "فودي", "جغنا"]],
+        ["biography_dr_kisma_sahoo", "/biography/dr-kisma-sahoo.html", "Dr. Kisma Sheikh Sahoo", ["kisma", "sahoo", "كسما", "ساغو"]],
+        ["biography_dr_suleiman_kamara", "/biography/dr-suleiman-kamara.html", "Dr. Suleiman Muhammad Kamara", ["suleiman", "kamara", "سليمان", "كمارا"]],
+        ["biography_baguri_kisma_sangare", "/biography/baguri_kisma_sangare.html", "Baguri Kisma Sangare", ["baguri", "sangare", "باغوري", "سنقاري"]],
+        ["biography_ebrahim_marry_jagana", "/biography/Ebrahim-Marry-Jagana.html", "Ebrahima Marry Jagana", ["ebrahima", "marry", "jagana", "إبراهيم", "مري", "جغنا"]],
+        ["biography_jaafar_fodi_gumani", "/biography/jaafar_fodi_gumani.html", "Jaafar Fodi Gumani", ["jaafar", "gumani", "جعفره", "غوماني"]],
+        ["biography_malamin_zakaria_jagana", "/biography/Malamin-zakaria-jagana.html", "Malamin Zakaria Jagana", ["malamin", "zakaria", "jagana", "ملامين", "زكريا", "جغنا"]],
+        ["biography_muhammad_issa_haydar", "/biography/muhammad_issa_haydar.html", "Muhammad Issa Haydar", ["issa", "haydar", "محمد عيسى", "حيدري"]],
+        ["biography_muhammad_jola_camara", "/biography/muhammad_jola_camara.html", "Muhammad Jola Kamara", ["jola", "camara", "كمارا", "جولا"]],
+        ["biography_muhammad_kaowjed_camara", "/biography/muhammad_kaowjed_camara.html", "Muhammad Kaowjed Kamara", ["kaowjed", "camara", "كاوجد", "كمارا"]],
+        ["biography_muhammad_muhammad_touray", "/biography/muhammad_muhammad_touray.html", "Muhammad Muhammad Touray", ["touray", "محمد", "توراي"]],
+        ["biography_muhammad_kaba_musa", "/biography/Muhammad-Kaba-Musa.html", "Muhammad Kaba Musa", ["kaba", "musa", "محمد كاباموسى"]],
+        ["biography_musa_muhammad_jibo", "/biography/musa_muhammad_jibo.html", "Musa Muhammad Jibo", ["jibo", "موسى", "جيبو"]],
+        ["biography_omar_issa_dukureh", "/biography/omar_issa_dukureh.html", "Omar Issa Dukureh", ["omar", "dukureh", "عمر", "دكوري"]],
+        ["biography_shiek_drameh", "/biography/shiek-drameh.html", "Sheikh Shondi Muhammad Samba Drammeh", ["shondi", "samba", "drammeh", "شوندي", "صمب", "درامي"]]
+    ].map(([key, url, fallbackTitle, aliases]) => ({ key, url, fallbackTitle, aliases }));
+
+    function getValue(source, key) {
+        return key.split(".").reduce((value, part) => value && value[part], source);
+    }
+
+    function flatten(value) {
+        return typeof value === "string" ? [value] : Object.values(value || {}).flatMap(flatten);
+    }
 
     function normalise(value) {
-        return value.toLocaleLowerCase().trim().replace(/\s+/g, " ");
+        return String(value || "").toLocaleLowerCase().normalize("NFD")
+            .replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g, "")
+            .replace(/[إأآٱ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه")
+            .replace(/ؤ/g, "و").replace(/ئ/g, "ي")
+            .replace(/[^\p{L}\p{N}]+/gu, " ").trim().replace(/\s+/g, " ");
+    }
+
+    function translate(key, fallback) {
+        return getValue(dictionaries[activeLanguage], key) || fallback;
+    }
+
+    function titleFor(page) {
+        return getValue(dictionaries[activeLanguage], `pages.${page.key}.pageTitle`) ||
+            getValue(dictionaries[activeLanguage], `pages.${page.key}.text003`) || page.fallbackTitle;
+    }
+
+    function indexedText(page) {
+        return [page.fallbackTitle, ...page.aliases,
+            ...flatten(getValue(dictionaries.en, `pages.${page.key}`)),
+            ...flatten(getValue(dictionaries.ar, `pages.${page.key}`))].join(" ");
     }
 
     function findMatches(query) {
         const terms = normalise(query).split(" ").filter(Boolean);
-        if (!terms.length) {
-            return [];
-        }
-
-        return searchIndex
-            .map((item) => {
-                const title = normalise(item.title);
-                const keywords = normalise(item.keywords.join(" "));
-                const score = terms.reduce((total, term) => {
-                    if (title === term) {
-                        return total + 100;
-                    }
-                    if (title.includes(term)) {
-                        return total + 30;
-                    }
-                    if (keywords.split(" ").includes(term)) {
-                        return total + 20;
-                    }
-                    return keywords.includes(term) ? total + 10 : total;
-                }, 0);
-                return { item, score, matchedTerms: terms.filter((term) => title.includes(term) || keywords.includes(term)).length };
-            })
-            .filter(({ matchedTerms }) => matchedTerms === terms.length)
-            .sort((left, right) => right.score - left.score || left.item.title.localeCompare(right.item.title))
-            .map(({ item }) => item);
+        if (!terms.length) return [];
+        return pages.map((page) => {
+            const source = normalise(indexedText(page));
+            const title = normalise(titleFor(page));
+            const matches = terms.filter((term) => source.includes(term));
+            return { page, matches: matches.length, score: matches.reduce((score, term) => score + (title.includes(term) ? 30 : 10), 0) };
+        }).filter((result) => result.matches === terms.length)
+            .sort((left, right) => right.score - left.score || titleFor(left.page).localeCompare(titleFor(right.page)))
+            .map((result) => result.page);
     }
 
     function getUrl(path) {
@@ -82,182 +106,103 @@
         return url.href;
     }
 
-    function createSuggestionsContainer(input) {
+    function showSuggestions(container, query) {
+        const matches = findMatches(query).slice(0, 5);
+        container.replaceChildren();
+        container.hidden = normalise(query).length === 0;
+        if (container.hidden) return;
+        if (!matches.length) {
+            const message = document.createElement("p");
+            message.className = "site-search-empty";
+            message.textContent = translate("common.noResults", "No results found");
+            container.append(message);
+            return;
+        }
+        matches.forEach((page) => {
+            const link = document.createElement("a");
+            link.className = "site-search-suggestion";
+            link.href = getUrl(page.url);
+            link.setAttribute("role", "option");
+            link.textContent = titleFor(page);
+            container.append(link);
+        });
+    }
+
+    function attachSearch(input) {
+        const form = input?.closest("form");
+        if (!input || !form || input.dataset.searchReady) return;
+        input.dataset.searchReady = "true";
         const container = document.createElement("div");
         container.className = "site-search-suggestions";
         container.setAttribute("role", "listbox");
         container.hidden = true;
         input.closest(".nds-form-control")?.append(container);
-        return container;
-    }
-
-    function showSuggestions(container, query) {
-        const matches = findMatches(query).slice(0, 5);
-        container.replaceChildren();
-        container.hidden = false;
-
-        if (!normalise(query)) {
-            container.hidden = true;
-            return;
-        }
-
-        if (!matches.length) {
-            const message = document.createElement("p");
-            message.className = "site-search-empty";
-            message.textContent = "No results found";
-            container.append(message);
-            return;
-        }
-
-        matches.forEach((item) => {
-            const link = document.createElement("a");
-            link.href = getUrl(item.url);
-            link.className = "site-search-suggestion";
-            link.setAttribute("role", "option");
-            link.textContent = item.title;
-            container.append(link);
-        });
-    }
-
-    function attachSearch(input, form) {
-        const suggestions = createSuggestionsContainer(input);
-
-        input.addEventListener("input", () => showSuggestions(suggestions, input.value));
-        input.addEventListener("keydown", (event) => {
-            if (event.key !== "Enter") {
-                return;
-            }
-
-            event.preventDefault();
-            const firstMatch = findMatches(input.value)[0];
-            if (firstMatch) {
-                window.location.assign(getUrl(firstMatch.url));
-            } else {
-                showSuggestions(suggestions, input.value);
-            }
-        });
-
+        input.addEventListener("input", () => showSuggestions(container, input.value));
         form.addEventListener("submit", (event) => {
             event.preventDefault();
             window.location.assign(getResultsUrl(input.value));
         });
-
-        form.querySelector(".nds-search-btn")?.addEventListener("click", (event) => {
-            event.preventDefault();
-            window.location.assign(getResultsUrl(input.value));
+        input.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                window.location.assign(getResultsUrl(input.value));
+            }
         });
     }
 
-    function addSearchToStandalonePage() {
-        const launcher = document.createElement("button");
-        launcher.type = "button";
-        launcher.className = "site-search-launcher";
-        launcher.textContent = "Search site";
-        launcher.setAttribute("aria-label", "Search the school website");
-
-        const dialog = document.createElement("div");
-        dialog.className = "site-search-dialog";
-        dialog.hidden = true;
-        dialog.innerHTML = `
-            <form class="site-search-form" role="search">
-                <label for="mainSearch">Search the school website</label>
-                <div class="nds-form-control">
-                    <input id="mainSearch" class="nds-search-input" type="search" placeholder="Search in School Website..." autocomplete="off">
-                </div>
-                <button class="nds-search-btn" type="submit">Search</button>
-                <button class="site-search-close" type="button" aria-label="Close search">Close</button>
-            </form>`;
-
-        launcher.addEventListener("click", () => {
-            dialog.hidden = false;
-            dialog.querySelector("#mainSearch").focus();
-        });
-        dialog.querySelector(".site-search-close").addEventListener("click", () => {
-            dialog.hidden = true;
-            launcher.focus();
-        });
-
-        document.body.append(launcher, dialog);
-        attachSearch(dialog.querySelector("#mainSearch"), dialog.querySelector("form"));
-    }
-
-    function renderResultsPage() {
+    function renderResults() {
         const target = document.querySelector("[data-search-results]");
-        if (!target) {
-            return;
-        }
-
+        if (!target) return;
         const query = new URLSearchParams(window.location.search).get("q") || "";
-        const input = document.querySelector("#resultsSearch");
-        const form = input?.closest("form");
         const matches = findMatches(query);
-
-        document.title = query ? `Search: ${query} | Imam Malick Islamic Institute` : "Search | Imam Malick Islamic Institute";
         target.replaceChildren();
-
         const heading = document.createElement("h1");
-        heading.textContent = query ? `Search results for "${query}"` : "Search the school website";
+        heading.textContent = query ? `${translate("common.searchResultsFor", "Search results for")} "${query}"` : translate("common.searchWebsite", "Search the school website");
         target.append(heading);
-
         if (!query || !matches.length) {
             const message = document.createElement("p");
             message.className = "search-results-empty";
-            message.textContent = query ? "No results found" : "Enter a word or name to search the website.";
+            message.textContent = query ? translate("common.noResults", "No results found") : translate("common.searchPrompt", "Enter a word or name to search the website.");
             target.append(message);
         } else {
             const list = document.createElement("ul");
             list.className = "search-results-list";
-            matches.forEach((item) => {
-                const result = document.createElement("li");
+            matches.forEach((page) => {
+                const item = document.createElement("li");
                 const link = document.createElement("a");
-                link.href = getUrl(item.url);
-                link.textContent = item.title;
-                const keywords = document.createElement("p");
-                keywords.textContent = item.keywords.join(" | ");
-                result.append(link, keywords);
-                list.append(result);
+                link.href = getUrl(page.url);
+                link.textContent = titleFor(page);
+                item.append(link);
+                list.append(item);
             });
             target.append(list);
         }
+        const input = document.querySelector("#resultsSearch");
+        if (input) input.value = query;
+    }
 
-        if (input && form) {
-            input.value = query;
-            form.addEventListener("submit", (event) => {
-                event.preventDefault();
-                window.location.assign(getResultsUrl(input.value));
-            });
+    async function initialise() {
+        try {
+            await loadI18n();
+            await Promise.all(["en", "ar"].map(async (language) => {
+                const response = await fetch(new URL(`languages/${language}.json`, siteRoot));
+                if (!response.ok) throw new Error(`Unable to load ${language} search dictionary.`);
+                dictionaries[language] = await response.json();
+            }));
+            const style = document.createElement("style");
+            style.textContent = ".nds-form-control{position:relative}.site-search-suggestions{position:absolute;z-index:1000;top:calc(100% + 6px);inset-inline:0;max-height:260px;overflow-y:auto;background:#fff;border:1px solid #d6d6d6;box-shadow:0 8px 22px rgba(0,0,0,.16)}.site-search-suggestion,.site-search-empty{display:block;margin:0;padding:10px 12px;color:#163b2c;font:600 14px/1.35 Arial,sans-serif;text-decoration:none}.site-search-suggestion:hover,.site-search-suggestion:focus{background:#edf7f1}.site-search-empty{color:#666;font-weight:400}";
+            document.head.append(style);
+            attachSearch(document.querySelector("#mainSearch, #resultsSearch"));
+            renderResults();
+            window.schoolSearchIndex = pages;
+        } catch (error) {
+            console.error("Search initialisation failed:", error);
         }
     }
 
-    function addStyles() {
-        const styles = document.createElement("style");
-        styles.textContent = `
-            .nds-form-control { position: relative; }
-            .site-search-suggestions { position: absolute; z-index: 1000; top: calc(100% + 6px); left: 0; right: 0; max-height: 260px; overflow-y: auto; background: #fff; border: 1px solid #d6d6d6; box-shadow: 0 8px 22px rgba(0, 0, 0, .16); }
-            .site-search-suggestion, .site-search-empty { display: block; margin: 0; padding: 10px 12px; color: #163b2c; font: 600 14px/1.35 Arial, sans-serif; text-decoration: none; }
-            .site-search-suggestion:hover, .site-search-suggestion:focus { background: #edf7f1; }
-            .site-search-empty { color: #666; font-weight: 400; }
-            .site-search-launcher { position: fixed; z-index: 1000; right: 20px; bottom: 20px; border: 0; border-radius: 4px; padding: 11px 15px; background: #176b4d; color: #fff; font: 700 14px/1 Arial, sans-serif; cursor: pointer; box-shadow: 0 4px 14px rgba(0, 0, 0, .2); }
-            .site-search-dialog { position: fixed; z-index: 1001; top: 20px; right: 20px; width: min(440px, calc(100% - 40px)); padding: 18px; background: #fff; border: 1px solid #d6d6d6; box-shadow: 0 10px 30px rgba(0, 0, 0, .25); }
-            .site-search-form { display: grid; gap: 10px; }
-            .site-search-form label { color: #163b2c; font: 700 16px/1.35 Arial, sans-serif; }
-            .site-search-form input { width: 100%; padding: 10px; border: 1px solid #87938e; }
-            .site-search-form button { width: fit-content; padding: 9px 13px; border: 0; border-radius: 3px; cursor: pointer; }
-            .site-search-form .nds-search-btn { background: #176b4d; color: #fff; }
-            .site-search-close { background: #eee; color: #222; }
-        `;
-        document.head.append(styles);
-    }
-
-    addStyles();
-    renderResultsPage();
-
-    const mainSearch = document.querySelector("#mainSearch");
-    if (mainSearch) {
-        attachSearch(mainSearch, mainSearch.closest("form"));
-    } else if (!document.querySelector("[data-search-results]")) {
-        addSearchToStandalonePage();
-    }
-
-    window.schoolSearchIndex = searchIndex;
+    document.addEventListener("site-language-change", (event) => {
+        activeLanguage = event.detail.language;
+        renderResults();
+    });
+    initialise();
 })();
