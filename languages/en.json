@@ -1388,9 +1388,9 @@
       "text146": "Islamic Educator and Administrative Leader",
       "text147": "Musa Muhammad Jibo is a Gambian educator and administrator, born in 1988 in Basse. A graduate of the Islamic University of Madinah in 2014, he serves as Deputy Director of Student Affairs at Imam Malik Islamic Institute and Head of the Supreme Committee at the Center for Qur'an Memorization and Islamic Studies.",
       "text148": "View Full Biography",
-      "text149": "Events and News",
+      "text149": "Up Events and News",
       "text150": "Academic Year 2025 to 2026",
-      "text151": "Academic Seminar",
+      "text151": "Events & News 2026",
       "text152": "Speakers",
       "text153": "Topics:",
       "text154": "Sheikh Muhammad Isa Haidara The Importance of Students Learning Life Skills",
@@ -1809,5 +1809,148 @@
       "attr016": "Visual adjustments",
       "attr017": "Scroll panel"
     }
+  },
+  "eventsAndNews": {
+    "title": "Annual Activities Plan for Imam Malik Islamic Institute",
+    "period": "2025/2027",
+    "academicYear": "2026/2027 - Dawah and Culture Committee Programs",
+    "heading2026": "Events & News 2026",
+    "heading2027": "Events & News 2027",
+    "2026": [
+      {
+        "id": "oct-21-2026",
+        "date": "21 Oct 2026",
+        "type": "Academic Seminar",
+        "title": "Academic Seminar for Scholars",
+        "speakers": [
+          { "name": "Sheikh Muhammad Isa Haidara", "topic": "Importance of Life Skills for Students" },
+          { "name": "Sheikh Omar Isa Dukure", "topic": "Importance of Learning the Quran: Recitation, Reflection, and Rulings" }
+        ],
+        "note": "30 minutes for each speaker"
+      },
+      {
+        "id": "oct-28-2026",
+        "date": "28 Oct 2026",
+        "type": "Administrative Meeting",
+        "title": "Administrative Meeting",
+        "details": "After working hours"
+      },
+      {
+        "id": "nov-18-trip-2026",
+        "date": "18 Nov 2026",
+        "type": "Student Trip",
+        "title": "Student Trip to Banjul",
+        "details": "Secondary section only - National Museum and capital landmarks"
+      },
+      {
+        "id": "nov-18-lecture-2026",
+        "date": "18 Nov 2026",
+        "type": "Lecture",
+        "title": "Virtue of Beneficial Knowledge and Action",
+        "speaker": "Sheikh Mahmoud Al-Lay"
+      },
+      {
+        "id": "nov-25-2026",
+        "date": "25 Nov 2026",
+        "type": "Administrative Meeting",
+        "title": "Administrative Meeting",
+        "details": "After working hours"
+      },
+      {
+        "id": "dec-23-2026",
+        "date": "23 Dec 2026",
+        "type": "Seminar on Tarbiyah",
+        "title": "Responsibility of Mothers in Raising Children",
+        "speaker": "Dr. Fodi Jagana"
+      },
+      {
+        "id": "dec-30-2026",
+        "date": "30 Dec 2026",
+        "type": "Administrative Meeting",
+        "title": "Administrative Meeting",
+        "details": "After working hours"
+      }
+    ],
+    "2027": [
+      {
+        "id": "jan-20-2027",
+        "date": "20 Jan 2027",
+        "type": "Lecture",
+        "title": "Importance of Sports for Human Health",
+        "speaker": "Sheikh Muhammad Toure"
+      },
+      {
+        "id": "jan-27-2027",
+        "date": "27 Jan 2027",
+        "type": "Administrative Meeting",
+        "title": "Administrative Meeting",
+        "details": "After working hours"
+      },
+      {
+        "id": "feb-20-2027",
+        "date": "20 Feb 2027",
+        "type": "Exams",
+        "title": "First Term Exams Begin"
+      },
+      {
+        "id": "mar-24-2027",
+        "date": "24 Mar 2027",
+        "type": "Student Trip",
+        "title": "Kachikally Crocodile Pool in Bakau and Abuko Zoo",
+        "details": "Primary 4 to Preparatory 3"
+      },
+      {
+        "id": "mar-26-2027",
+        "date": "26 Mar 2027",
+        "type": "Lecture",
+        "title": "Importance of Applied Science in Society Welfare (Economic, Health, Social, Political)",
+        "speaker": "Sheikh Muhammad Saad Al-Damardashi Al-Misri"
+      },
+      {
+        "id": "mar-31-2027",
+        "date": "31 Mar 2027",
+        "type": "Administrative Meeting",
+        "title": "Administrative Meeting",
+        "details": "After working hours"
+      },
+      {
+        "id": "apr-21-2027",
+        "date": "21 Apr 2027",
+        "type": "Trip",
+        "title": "Snake Village and Kartong City"
+      },
+      {
+        "id": "may-22-2027",
+        "date": "22 May 2027",
+        "type": "Cultural Week",
+        "title": "Cooking Traditional Foods",
+        "foods": ["Benachin", "Laro", "Nilini", "Sula", "Huto", "Tijaqifouti", "Tijaqin-Chobi", "Sanketi", "Baqari", "Tofoli"]
+      },
+      {
+        "id": "jun-5-2027",
+        "date": "5 Jun 2027",
+        "type": "Student Trip",
+        "title": "Fathala Zoo in Senegal"
+      },
+      {
+        "id": "jun-9-2027",
+        "date": "9 Jun 2027",
+        "type": "School Event",
+        "title": "Last Assembly"
+      },
+      {
+        "id": "jun-19-2027",
+        "date": "19 Jun 2027",
+        "type": "Exams",
+        "title": "Second Term Exams Begin",
+        "details": "Academic Year 2026/2027"
+      },
+      {
+        "id": "aug-7-2027",
+        "date": "7 Aug 2027",
+        "type": "Graduation Ceremony",
+        "title": "19th Batch of General Secondary Certificate Graduates"
+      }
+    ]
   }
 }

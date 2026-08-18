@@ -23,6 +23,51 @@
         });
     }
 
+    function renderEventsAndNews(dictionary) {
+        var eventsAndNews = dictionary.eventsAndNews;
+        if (!eventsAndNews) {
+            return;
+        }
+
+        document.querySelectorAll("[data-events-heading]").forEach(function (heading) {
+            var year = heading.dataset.eventsHeading;
+            var headingText = eventsAndNews["heading" + year];
+            if (typeof headingText === "string") {
+                heading.textContent = headingText;
+            }
+        });
+
+        document.querySelectorAll("[data-events-year]").forEach(function (list) {
+            var events = eventsAndNews[list.dataset.eventsYear];
+            if (!Array.isArray(events)) {
+                return;
+            }
+
+            list.replaceChildren();
+            events.forEach(function (event) {
+                var item = document.createElement("li");
+                var label = [event.date, event.type].filter(Boolean).join(" - ");
+                var strong = document.createElement("strong");
+                strong.textContent = label + (label && event.title ? ": " : "");
+                item.appendChild(strong);
+                item.appendChild(document.createTextNode(event.title || ""));
+
+                if (Array.isArray(event.speakers)) {
+                    event.speakers.forEach(function (speaker) {
+                        item.appendChild(document.createElement("br"));
+                        item.appendChild(document.createTextNode(speaker.name + ": " + speaker.topic));
+                    });
+                }
+
+                [event.speaker, event.details, event.note, Array.isArray(event.foods) ? event.foods.join("، ") : ""].filter(Boolean).forEach(function (detail) {
+                    item.appendChild(document.createElement("br"));
+                    item.appendChild(document.createTextNode(detail));
+                });
+                list.appendChild(item);
+            });
+        });
+    }
+
     function applyTranslations(language) {
         var dictionary = translations[language];
         if (!dictionary) {
@@ -74,6 +119,7 @@
             document.title = title;
         }
 
+        renderEventsAndNews(dictionary);
         updateLanguageButtons(language);
         document.dispatchEvent(new CustomEvent("site-language-change", { detail: { language: language, dictionary: dictionary } }));
     }
