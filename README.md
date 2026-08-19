@@ -141,5 +141,5 @@ Configure active payment URLs before enabling any donation option for public use
 
 ## Developer 
 
-**Malamin** - <https://malamin-profile.vercel.app/>
+**Malamin Jagana** - <https://malamin-profile.vercel.app/>
 
