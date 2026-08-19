@@ -2,89 +2,180 @@
 <html lang="en" data-translate-title="security.pageTitle">
 <head>
     <meta charset="UTF-8">
-    <title>Information Security Policy – Al-Imam Malik Islamic Institute</title>
+    <title>Information Security Policy – Al-Imam Malick Islamic Institute</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <style>
+        :root {
+            --primary: #0a2a5a;
+            --accent: #c7a24e;
+            --green: #0a5a3a;
+            --bg: #f4f6f8;
+            --card: #ffffff;
+            --text: #1e293b;
+            --muted: #64748b;
+            --border: #e2e8f0;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             max-width: 900px;
-            margin: 40px auto;
-            line-height: 1.7;
-            padding: 0 20px;
-            color: #333;
+            margin: 0 auto;
+            line-height: 1.8;
+            padding: 0 20px 60px;
+            background: var(--bg);
+            color: var(--text);
         }
-
-        h1 {
+        .header {
             text-align: center;
-            margin-bottom: 30px;
+            padding: 40px 20px 10px;
         }
-
-        h2 {
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+            color: var(--primary);
+            font-weight: 800;
+        }
+        .header .sub {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+        .policy-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 18px rgba(10,42,90,0.05);
             margin-top: 25px;
-            color: #444;
         }
-
-        p {
-            margin-bottom: 15px;
+        h2 {
+            margin-top: 28px;
+            color: var(--primary);
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
         }
-
+        h2 .num {
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+        h2.gold .num { background: var(--accent); color: #1e293b; }
+        h2.green .num { background: var(--green); }
+        p { margin-bottom: 14px; font-size: 15px; color: #334155; }
         ul {
-            margin-left: 20px;
+            margin: 10px 0 16px 20px;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 6px;
+            font-size: 14.5px;
+            color: #334155;
+        }
+        ul li::marker { color: var(--accent); }
+        .highlight-box {
+            background: #f0f7ff;
+            border-left: 4px solid var(--primary);
+            padding: 14px 16px;
+            border-radius: 8px;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        .highlight-box.gold {
+            background: #fffbeb;
+            border-left-color: var(--accent);
+        }
+        .footer-meta {
+            margin-top: 35px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--border);
+            font-size: 13px;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
         }
     </style>
 </head>
-
 <body>
 
-    <h1><span data-translate="security.title">Information Security Policy</span></h1>
+    <div class="header">
+        <h1><span data-translate="security.title">Information Security Policy</span></h1>
+        <div class="sub">
+            <span data-translate="security.subtitle">Al-Imam Malick Islamic Institute - Under Sumpundoukati Society, Kanifing, The Gambia</span><br>
+            <span data-translate="security.motto">Knowledge is Light, Action is Worship - العلم نور والعمل عبادة</span>
+        </div>
+    </div>
 
-    <p>
-        <span data-translate="security.introduction">Al-Imam Malik Islamic Institute is committed to protecting the confidentiality, integrity, and availability of all information collected, stored, or processed through our website and internal systems. This policy outlines the principles and practices we follow to ensure secure and responsible handling of information.</span>
-    </p>
+    <div class="policy-card">
 
-    <h2><span data-translate="security.dataProtectionTitle">1. Data Protection</span></h2>
-    <p>
-        <span data-translate="security.dataProtectionText">We take appropriate measures to safeguard personal and institutional data from unauthorized access, disclosure, alteration, or destruction.</span>
-    </p>
+        <p>
+            <span data-translate="security.introduction"><strong>Al-Imam Malick Islamic Institute (AMII)</strong> under Sumpundoukati Society, Kanifing, The Gambia, is committed to protecting the confidentiality, integrity, and availability of all information collected, stored, or processed through our official website, student portal, and internal systems. This policy applies to students, parents, staff, and visitors of our Islamic and Arabic educational programs.</span>
+        </p>
 
-    <h2><span data-translate="security.practicesTitle">2. Secure Website Practices</span></h2>
-    <p>
-        <span data-translate="security.practicesText">Our website uses modern security standards, including encrypted connections (HTTPS), secure hosting, and regular updates to reduce vulnerabilities.</span>
-    </p>
+        <div class="highlight-box">
+            <span data-translate="security.scopeNote"><strong>Scope:</strong> This policy covers our website, student records, Tahfiz & examination data, administrative meetings, and award certificates recognized by the Ministry of Education of KSA and the General Secretariat for Islamic and Arabic Education.</span>
+        </div>
 
-    <h2><span data-translate="security.privacyTitle">3. User Privacy</span></h2>
-    <p>
-        <span data-translate="security.privacyText">Personal information submitted through forms or communication channels is handled with care and used only for legitimate institutional purposes.</span>
-    </p>
+        <h2><span class="num">1</span> <span data-translate="security.dataProtectionTitle">Data Protection & Confidentiality</span></h2>
+        <p><span data-translate="security.dataProtectionText">We take appropriate technical and organizational measures to safeguard personal and institutional data from unauthorized access, disclosure, alteration, or destruction. Student personal data (admission forms, birth certificates, exam results for Junior/Senior Secondary) is classified as confidential.</span></p>
+        <ul>
+            <li data-translate="security.dataPoint1">Encryption of admission and graduation records (19th Batch 2027 included)</li>
+            <li data-translate="security.dataPoint2">No sharing of student Tahfiz progress without parental consent</li>
+        </ul>
 
-    <h2><span data-translate="security.accessTitle">4. Access Control</span></h2>
-    <p>
-        <span data-translate="security.accessText">Only authorized staff members have access to sensitive information. Access is granted based on role and responsibility.</span>
-    </p>
+        <h2 class="gold"><span class="num">2</span> <span data-translate="security.practicesTitle">Secure Website & Infrastructure</span></h2>
+        <p><span data-translate="security.practicesText">Our official website uses modern security standards:</span></p>
+        <ul>
+            <li data-translate="security.practice1">Encrypted connections (HTTPS/TLS 1.3), secure hosting with regular updates</li>
+            <li data-translate="security.practice2">Protection of Events & News 2026/2027, Awards (/awards/*.webp) and student trip galleries</li>
+            <li data-translate="security.practice3">Daily backups and firewall protection</li>
+        </ul>
 
-    <h2><span data-translate="security.storageTitle">5. Data Storage</span></h2>
-    <p>
-        <span data-translate="security.storageText">Information is stored securely and retained only as long as necessary for administrative, educational, or legal purposes.</span>
-    </p>
+        <h2><span class="num">3</span> <span data-translate="security.privacyTitle">User Privacy & Consent</span></h2>
+        <p><span data-translate="security.privacyText">Personal information submitted through admission forms, contact forms, or during administrative meetings after working hours is handled with care and used only for legitimate educational purposes: enrollment, examinations (First Term 20 Feb 2027, Second Term 19 June 2027), and communication about cultural week and student trips to Banjul, Kachikally, Abuko, and Fathala Zoo Senegal.</span></p>
 
-    <h2><span data-translate="security.thirdPartyTitle">6. Third-Party Services</span></h2>
-    <p>
-        <span data-translate="security.thirdPartyText">When using external services (such as hosting or analytics), we ensure they follow industry-standard security practices.</span>
-    </p>
+        <h2><span class="num">4</span> <span data-translate="security.accessTitle">Access Control & Staff Responsibility</span></h2>
+        <p><span data-translate="security.accessText">Only authorized staff have access to sensitive information. Access is granted based on role:</span></p>
+        <ul>
+            <li data-translate="security.access1">Academic Committee (Sheikhs: Muhammad Isa Haidara, Omar Isa Dukure, Mahmoud Al-Lay, Muhammad Toure)</li>
+            <li data-translate="security.access2">Administration - full access to enrollment and financial records</li>
+            <li data-translate="security.access3">Teachers - limited to their class sections (Primary 4 to Preparatory 3)</li>
+        </ul>
 
-    <h2><span data-translate="security.incidentTitle">7. Incident Response</span></h2>
-    <p>
-        <span data-translate="security.incidentText">In the event of a security breach or suspicious activity, we take immediate action to investigate, contain, and resolve the issue.</span>
-    </p>
+        <h2 class="green"><span class="num">5</span> <span data-translate="security.storageTitle">Data Storage & Retention</span></h2>
+        <p><span data-translate="security.storageText">Information is stored securely on encrypted servers and retained only as long as necessary for administrative, educational, or legal purposes. Graduation certificates, WAMY membership documents, and KSA recognition letters are archived permanently with restricted access.</span></p>
 
-    <h2><span data-translate="security.updatesTitle">8. Policy Updates</span></h2>
-    <p>
-        <span data-translate="security.updatesText">This Information Security Policy may be updated periodically to reflect improvements, new regulations, or changes in technology.</span>
-    </p>
+        <h2><span class="num">6</span> <span data-translate="security.thirdPartyTitle">Third-Party Services & WAMY</span></h2>
+        <p><span data-translate="security.thirdPartyText">When using external services (hosting, analytics, or World Assembly of Muslim Youth - WAMY platform), we ensure they follow industry-standard security practices and do not sell student data. We are an official member of WAMY.</span></p>
 
-    <p><strong><span data-translate="common.lastUpdated">Last updated:</span></strong> 2026</p>
+        <h2 class="gold"><span class="num">7</span> <span data-translate="security.incidentTitle">Incident Response & National Compliance</span></h2>
+        <p><span data-translate="security.incidentText">In the event of a security breach or suspicious activity, we take immediate action to investigate, contain, and resolve the issue in coordination with the General Secretariat for Islamic and Arabic Education in The Gambia. Incidents affecting our Best Performing Institute award data or Quran Competition results are reported within 24 hours.</span></p>
 
+        <h2><span class="num">8</span> <span data-translate="security.updatesTitle">Policy Updates & Contact</span></h2>
+        <p><span data-translate="security.updatesText">This Information Security Policy may be updated periodically to reflect improvements, new regulations, or changes in technology. For questions about this policy, contact the institute administration in Kanifing after working hours. Students are encouraged to review this policy during Cultural Week and administrative sessions.</span></p>
+
+        <div class="highlight-box gold">
+            <span data-translate="security.commitment"><strong>Our Commitment:</strong> As the Best Performing Islamic Institute in The Gambia and 1st Place holder in National Quran Competition (Full Quran twice), we uphold the highest standards of Amanah (trust) in protecting your information, following Islamic principles of privacy and trustworthiness.</span>
+        </div>
+
+        <div class="footer-meta">
+            <span><strong><span data-translate="common.lastUpdated">Last updated:</span></strong> <span data-translate="security.lastDate">January 2026 - Academic Year 2026/2027</span></span>
+            <span data-translate="security.owner">Owner: Al-Imam Malick Islamic Institute - Sumpundoukati Society</span>
+        </div>
+    </div>
+
+<script defer src="/assets/js/footer-loader.js"></script>
 <script defer src="search.js"></script>
 </body>
 </html>

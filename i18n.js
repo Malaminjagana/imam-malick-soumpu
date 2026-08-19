@@ -12,6 +12,10 @@
         }, source);
     }
 
+    function t(dictionary, key) {
+        return getValue(dictionary, key);
+    }
+
     function getSavedLanguage() {
         var savedLanguage = localStorage.getItem("site-language");
         return supportedLanguages.indexOf(savedLanguage) !== -1 ? savedLanguage : "en";
@@ -68,6 +72,48 @@
         });
     }
 
+    function renderAwards(dictionary) {
+        var awardsList = t(dictionary, "awards.awardsList");
+        var awardsGrid = document.querySelector("[data-awards-list]");
+        if (!awardsGrid || !Array.isArray(awardsList)) {
+            return;
+        }
+
+        awardsGrid.replaceChildren();
+        awardsList.forEach(function (award) {
+            var card = document.createElement("article");
+            card.className = "award-card";
+
+            var image = document.createElement("img");
+            image.className = "award-card-image";
+            image.src = award.image;
+            image.alt = award.title || "";
+            image.loading = "lazy";
+            card.appendChild(image);
+
+            var content = document.createElement("div");
+            content.className = "award-card-content";
+
+            var title = document.createElement("h3");
+            title.className = "award-card-title";
+            title.textContent = award.title || "";
+            content.appendChild(title);
+
+            var description = document.createElement("p");
+            description.className = "award-card-description";
+            description.textContent = award.description || "";
+            content.appendChild(description);
+
+            var issuer = document.createElement("p");
+            issuer.className = "award-card-issuer";
+            issuer.textContent = [award.issuer, award.year].filter(Boolean).join(" | ");
+            content.appendChild(issuer);
+
+            card.appendChild(content);
+            awardsGrid.appendChild(card);
+        });
+    }
+
     function applyTranslations(language) {
         var dictionary = translations[language];
         if (!dictionary) {
@@ -120,6 +166,7 @@
         }
 
         renderEventsAndNews(dictionary);
+        renderAwards(dictionary);
         updateLanguageButtons(language);
         document.dispatchEvent(new CustomEvent("site-language-change", { detail: { language: language, dictionary: dictionary } }));
     }

@@ -885,6 +885,59 @@ online application -->
         }
     }
 
+    .awards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .award-card {
+        overflow: hidden;
+        border: 1px solid transparent;
+        border-radius: 16px;
+        background: #1e2d3d;
+        color: #fff;
+        transition: border-color .2s ease;
+    }
+
+    .award-card:hover {
+        border-color: #c7a24e;
+    }
+
+    .award-card-image {
+        display: block;
+        width: 100%;
+        height: 220px;
+        border-radius: 16px 16px 0 0;
+        object-fit: cover;
+    }
+
+    .award-card-content {
+        padding: 20px;
+    }
+
+    .award-card-title {
+        margin: 0 0 12px;
+        color: #fff;
+        font-weight: 700;
+    }
+
+    .award-card-description {
+        margin: 0;
+    }
+
+    .award-card-issuer {
+        margin: 16px 0 0;
+        color: #b8c0c8;
+        font-size: .875rem;
+    }
+
+    @media (max-width: 767px) {
+        .awards-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
     .accredited.nds-section-action {
         height: 72px;
     }
@@ -1293,8 +1346,11 @@ online application -->
                        <h2 class="nds-section-title"><span data-translate="pages.index.text046">Why Choose Imam Malick Islamic Institute?</span></h2>
                        <p class="nds-section-description"><span data-translate="pages.index.text047">Rooted in the teachings of Imam Malik, the institute offers disciplined Islamic education through its Tahfiz program and Islamic School program, providing strong moral guidance and a learning environment that shapes confident, value‑driven students.</span></p>
                     </div>
-                    <!-- Donate Button YOUR_FLUTTERWAVE_LINK -->
+                    <!-- Donate Button YOUR_FLUTTERWAVE_LINK 
                      <a href="#" class="donate-btn"><span data-translate="pages.index.text048">Donate Now</span></a>
+                     -->
+
+
                     <div class="accredited nds-section-action">
                         <div class="nds-grid">
                             <div class="nds-card nds-center">
@@ -3058,101 +3114,11 @@ Gambian university lecturer, Imam, Khateeb, preacher and distinguished Qur'an re
             <section id="awards" class="nds-content-section nds-brand">
                 <div class="nds-section-wrapper">
                     <div class="nds-section-head">
-                        <h2 class="nds-section-title"><span data-translate="pages.index.text180">School
-                            Awards</span></h2>
-                        <p class="nds-section-description"><span data-translate="pages.index.text181">Some of the awards achieved by the Islamic school</span></p>
+                        <h2 class="nds-section-title"><span data-translate="awards.sectionTitle">Awards &amp; Recognitions</span></h2>
                     </div>
                 </div>
                 <div class="nds-section-body nds-max-width">
-                    <div class="nds-swiper" slides-max="3" slides-mid="2" slides-min="1">
-                        <div class="nds-swiper-wrapper">
-                            <!-- Outstanding Award 2024 -->
-                            <div class="nds-swiper-slide">
-                                <div class="nds-card nds-stroke">
-                                    <div class="award-image">
-                                        <div class="nds-card-header">
-                                            <div class="nds-card-image"
-                                                style="--img-ratio:1/1; --img-pos-x:50%; --img-pos-y:10%;">
-                                                <img data-src="#"
-                                                    width="318" height="321" loading="lazy"
-                                                    alt="#" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="award-info">
-                                        <div class="nds-card-content">
-                                            <div class="nds-card-text">
-                                                <h3 class="nds-card-title">###</h3>
-                                                <p class="nds-card-description">####.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Guinness Award -->
-                            <div class="nds-swiper-slide">
-                                <div class="nds-card nds-stroke">
-                                    <div class="award-image">
-                                        <div class="nds-card-header">
-                                            <div class="nds-card-image"
-                                                style="--img-ratio:1/1; --img-pos-x:50%; --img-pos-y:10%;">
-                                                <img data-src="#"
-                                                    width="318" height="321" loading="lazy"
-                                                    alt="#" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="award-info">
-                                        <div class="nds-card-content">
-                                            <div class="nds-card-text">
-                                                <h3 class="nds-card-title">##</h3>
-                                                <p class="nds-card-description">###</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <!-- Madinah Award -->
-                            <div class="nds-swiper-slide">
-                                <div class="nds-card nds-stroke">
-                                    <div class="award-image">
-                                        <div class="nds-card-header">
-                                            <div class="nds-card-image"
-                                                style="--img-ratio:1/1; --img-pos-x:50%; --img-pos-y:10%;">
-                                                <img data-src=""
-                                                    width="318" height="321" loading="lazy"
-                                                    alt="#" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="award-info">
-                                        <div class="nds-card-content">
-                                            <div class="nds-card-text">
-                                                <h3 class="nds-card-title">####</h3>
-                                                <p class="nds-card-description">####.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="nds-swiper-navigation">
-                            <div class="nds-swiper-buttons">
-                                <button
-                                    class="nds-btn nds-primary nds-icon-only nds-circle nds-md nds-prev"
-                                    type="button"
-                                    aria-label="Previous" data-translate-attr="aria-label:pages.index.attr066">
-                                </button>
-                                <button
-                                    class="nds-btn nds-primary nds-icon-only nds-circle nds-md nds-next"
-                                    type="button"
-                                    aria-label="Next" data-translate-attr="aria-label:pages.index.attr067">
-                                </button>
-                            </div>
-                            <div class="nds-swiper-pagination"></div>
-                        </div>
-                    </div>
+                    <div class="awards-grid" data-awards-list></div>
                 </div>
             </section>
 
@@ -3475,8 +3441,10 @@ Gambian university lecturer, Imam, Khateeb, preacher and distinguished Qur'an re
 
 </div>
                         
-                          <!-- Donate Button YOUR_FLUTTERWAVE_LINK -->
+                          <!-- Donate Button YOUR_FLUTTERWAVE_LINK 
                      <a href="#" class="donate-btn"><span data-translate="pages.index.text188">Donate Now</span></a>
+                     -->
+
                     </div>
                     
                 </div>
@@ -3496,24 +3464,16 @@ Gambian university lecturer, Imam, Khateeb, preacher and distinguished Qur'an re
     <nav class="nds-footer-content" aria-label="Footer navigation" data-translate-attr="aria-label:pages.index.attr103">
         <!-- Column 1: About imam malick  -->
         <div class="nds-footer-column">
-            <h3 class="nds-footer-heading"><span data-translate="pages.index.text189">About Imam Malick Soumpu</span></h3>
+            <h3 class="nds-footer-heading"><span data-translate="pages.index.text189">About Al-Imam Malick Islamic Institute</span></h3>
             <ul class="nds-footer-list">
+              
                 <li>
-                    <a class="nds-link nds-footer-link" href="#">
-                        <span class="nds-label"><span data-translate="pages.index.text190">Virtual Tour</span></span>
-                    </a>
-                </li>
-                <li>
-                    <a class="nds-link nds-footer-link" href="#">
+                    <a class="nds-link nds-footer-link" href="/School-rolls.html">
                         <span class="nds-label"><span data-translate="pages.index.text191">Rules and Regulations</span></span>
                     </a>
                 </li>
                
-                <li>
-                    <a class="nds-link nds-footer-link" href="#" target="_blank" rel="noopener noreferrer">
-                        <span class="nds-label"><span data-translate="pages.index.text192">Phone Directory</span></span>
-                    </a>
-                </li>
+                
                 <li>
                     <a class="nds-link nds-footer-link" href="./faq.html">
                         <span class="nds-label"><span data-translate="pages.index.text193">FAQs</span></span>
@@ -3525,11 +3485,11 @@ Gambian university lecturer, Imam, Khateeb, preacher and distinguished Qur'an re
 
         <!-- Column 2: University Registration -->
         <div class="nds-footer-column">
-            <h3 class="nds-footer-heading"><span data-translate="pages.index.text195">school Registration</span></h3>
+            <h3 class="nds-footer-heading"><span data-translate="pages.index.text195">School Registration</span></h3>
             <ul class="nds-footer-list">
                 <li>
-                    <a class="nds-link nds-footer-link" href="#">
-                        <span class="nds-label"><span data-translate="pages.index.text196">school Admission</span></span>
+                    <a class="nds-link nds-footer-link" href="/school-rolls.html">
+                        <span class="nds-label"><span data-translate="pages.index.text196">School Admission</span></span>
                     </a>
                 </li>
         
@@ -3548,7 +3508,7 @@ Gambian university lecturer, Imam, Khateeb, preacher and distinguished Qur'an re
                 </li>
                 <li>
                     <a class="nds-link nds-footer-link" href="/security.html" target="_blank" rel="noopener noreferrer">
-                        <span class="nds-label"><span data-translate="pages.index.text199">Information Security Policy</span></span>
+                        <span class="nds-label"><span data-translate="pages.index.text199">Security Policy</span></span>
                     </a>
                 </li>
                
@@ -3559,11 +3519,12 @@ Gambian university lecturer, Imam, Khateeb, preacher and distinguished Qur'an re
         <div class="nds-footer-column">
             <h3 class="nds-footer-heading"><span data-translate="pages.index.text200">Contact Us</span></h3>
             <ul class="nds-footer-list">
-                <li>
-                    <a class="nds-link nds-footer-link" href="tel:920022042">
-                        <i class="nds-icon nds-hgi-headphones" aria-hidden="true"></i>
-                        <span class="nds-label"><span data-translate="pages.index.text201">Gambian Number</span></span>
-                    </a>
+              
+                <li aria-label="+220 3210002 / +220 5065335 / +220 2079601" data-translate-attr="aria-label:pages.index.text201">
+                    <i class="nds-icon nds-hgi-headphones" aria-hidden="true"></i>
+                    <a class="nds-link nds-footer-link" href="tel:+2203210002">+220 3210002</a> /
+                    <a class="nds-link nds-footer-link" href="tel:+2205065335">+220 5065335</a> /
+                    <a class="nds-link nds-footer-link" href="tel:+2202079601">+220 2079601</a>
                 </li>
                 <li>
                     <a class="nds-link nds-footer-link" href="https://maps.app.goo.gl/57gzYFUxtX2he31D9?g_st=ic" target="_blank" rel="noopener noreferrer">
@@ -3637,7 +3598,7 @@ Gambian university lecturer, Imam, Khateeb, preacher and distinguished Qur'an re
             </div>
             <div class="nds-footer-legal">
                 <div class="nds-footer-copyright">
-                    <span><span data-translate="pages.index.text208">Imam Malick Soumpu</span> &copy; <span class="copyright-year"></span><span data-translate="pages.index.text209">. All Rights Reserved.</span></span>
+                    <span><span data-translate="pages.index.text208">Al-Imam Malick Islamic Institute</span> &copy; <span class="copyright-year"></span><span data-translate="pages.index.text209">. All Rights Reserved.</span></span>
                 </div>
                 <div class="nds-footer-policy">
                     <a class="nds-link" href="/terms.html" target="_blank" rel="noopener noreferrer">
