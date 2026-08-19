@@ -16,7 +16,7 @@ footer.nds-footer .nds-footer-heading { margin: 0 0 14px; color: #fff !important
 .nds-footer-list { margin: 0; padding: 0; list-style: none; }
 .nds-footer-list li { margin: 0 0 10px; }
 footer.nds-footer a, footer.nds-footer .nds-footer-link { color: #fff !important; text-decoration: none; }
-.nds-footer a:hover, .nds-footer a:focus-visible { color: #e9c46a; text-decoration: underline; }
+.nds-footer a:hover, .nds-footer a:focus-visible { color: #f2d98a; text-decoration: underline; }
 .nds-footer-phone-list { line-height: 1.7; }
 .nds-footer-icon-group + .nds-footer-icon-group { margin-top: 22px; }
 .nds-footer-icon-row { display: flex; flex-wrap: wrap; gap: 8px; }
