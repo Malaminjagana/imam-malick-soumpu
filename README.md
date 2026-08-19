@@ -48,20 +48,21 @@ The institute also provides Islamic Studies, Arabic language, primary, preparato
 ## Scholars and Biographies
 
 Biography pages and their transparent biography poster assets are kept in [biography/](biography/) and [assets/img/](assets/img/). No personal contact details are published in this documentation.
-
+- [Muhammad Kaba Musa](biography/Muhammad-Kaba-Musa.html) - [poster](assets/img/muhamad-kaba-musa-biography.webp)
+- [Ebrahima Marry Jagana](biography/Ebrahim-Marry-Jagana.html) - [poster](assets/img/Ebrahima-marry-jagana-biography.webp)
 - [Dr. Ali Jagana](biography/dr-ali-jagana.html) - [poster](assets/img/dr_ali_jagana_biography.webp)
 - [Dr. Fodi Jagana](biography/dr-fodi-jagana.html) - [poster](assets/img/fodi_jagana_biography.webp)
 - [Dr. Kisma Sheikh Sahoo](biography/dr-kisma-sahoo.html) - [poster](assets/img/dr_kisma_sheikh_sahoo_biography.webp)
 - [Dr. Suleiman Muhammad Kamara](biography/dr-suleiman-kamara.html) - [poster](assets/img/dr_suleiman_muhammad_camara_bigraphy.webp)
 - [Baguri Kisma Sangare](biography/baguri_kisma_sangare.html) - [poster](assets/img/baguri_kisma_sangare_biography.webp)
-- [Ebrahima Marry Jagana](biography/Ebrahim-Marry-Jagana.html) - [poster](assets/img/Ebrahima-marry-jagana-biography.webp)
+
 - [Jaafar Fodi Gumani](biography/jaafar_fodi_gumani.html) - [poster](assets/img/jaafar_fodi_gumani_biography.webp)
 - [Malamin Zakaria Jagana](biography/Malamin-zakaria-jagana.html) - [poster](assets/img/Malamin-zakaria-jagana-biography.webp)
 - [Muhammad Issa Haydar](biography/muhammad_issa_haydar.html) - [poster](assets/img/muhammad_issa_haydara_biography.webp)
 - [Muhammad Jola Kamara](biography/muhammad_jola_camara.html) - [poster](assets/img/muhammad_jola_camara_biography.webp)
 - [Muhammad Kaowjed Kamara](biography/muhammad_kaowjed_camara.html) - [poster](assets/img/muhammad_kaowjed_camara_biography.webp)
 - [Muhammad Muhammad Touray](biography/muhammad_muhammad_touray.html) - [poster](assets/img/muhammad_muhammad_touray_biography.webp)
-- [Muhammad Kaba Musa](biography/Muhammad-Kaba-Musa.html) - [poster](assets/img/muhamad-kaba-musa-biography.webp)
+
 - [Musa Muhammad Jibo](biography/musa_muhammad_jibo.html) - [poster](assets/img/musa_muhammad_jibo_biography.webp)
 - [Omar Issa Dukureh](biography/omar_issa_dukureh.html) - [poster](assets/img/omar_issa_dukureh_biography.webp)
 - [Sheikh Shondi Muhammad Samba Drammeh](biography/shiek-drameh.html) - [poster](assets/img/Shondi-Muhammad%20Samba-Drammeh-biography.webp)
@@ -138,14 +139,7 @@ Supported or planned donation options:
 
 Configure active payment URLs before enabling any donation option for public use.
 
-## Developer and Sadaqah Services
+## Developer 
 
 **Malamin** - <https://malamin-profile.vercel.app/>
 
-| Service | Contribution |
-| --- | ---: |
-| Google Business Profile | D5000 |
-| Website template | D20000 |
-| Social setup | D10000 |
-
-These services are offered as Sadaqah support for the institute.
