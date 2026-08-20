@@ -78,6 +78,10 @@ Biography pages and their transparent biography poster assets are kept in [biogr
 
 The header uses the transparent institute logo with no white background, border, or image-frame shadow, following the clean presentation of the Islamic University of Madinah logo.
 
+## Design System - IMDS v1.0
+
+Previously used a third-party NDS-iu v110 CDN for Islamic regulation compliance. The site now uses the independent Imam Malick Design System (IMDS v1.0), inspired by NDS but owned by Al-Imam Malick Islamic Institute. It has no external CDN dependency, is optimized for Gambia, and includes the Wave/PayPal donation modal, four-column footer, dark cards, and navy, gold, and green color system.
+
 ## Translation Requirements
 
 English and Arabic content is maintained in [languages/en.json](languages/en.json) and [languages/ar.json](languages/ar.json). Page markup must use translation keys and the site translation helper rather than hard-coded English copy.

@@ -21,8 +21,8 @@ footer.nds-footer a, footer.nds-footer .nds-footer-link { color: #fff !important
 .nds-footer-icon-group + .nds-footer-icon-group { margin-top: 22px; }
 .nds-footer-icon-row { display: flex; flex-wrap: wrap; gap: 8px; }
 .nds-footer .nds-btn { display: inline-grid; width: 50px; height: 50px; place-items: center; border: 1px solid rgba(255,255,255,.72); border-radius: 4px; color: #fff; font: 700 13px/1 Arial, sans-serif; text-decoration: none; }
-.nds-footer .nds-icon, .nds-footer .hgi { margin-inline-end: 8px; font-size: 20px; vertical-align: middle; }
-.nds-footer .nds-icon-only .nds-icon, .nds-footer .nds-icon-only .hgi { margin: 0; font-size: 26px; }
+.nds-footer .nds-icon, .nds-footer .hgi, .nds-footer .imam-footer-icon { width: 20px; height: 20px; margin-inline-end: 8px; vertical-align: middle; filter: brightness(0) invert(1); }
+.nds-footer .nds-icon-only .nds-icon, .nds-footer .nds-icon-only .hgi, .nds-footer .nds-icon-only .imam-footer-icon { width: 26px; height: 26px; margin: 0; }
 .nds-footer .nds-divider { margin: 34px auto 22px; border: 0; border-top: 1px solid rgba(255,255,255,.28); max-width: 1320px; }
 .nds-footer-bottom, .nds-footer-meta, .nds-footer-legal, .nds-footer-policy { display: flex; gap: 18px; }
 .nds-footer-bottom, .nds-footer-meta { max-width: 1320px; margin: 0 auto; }

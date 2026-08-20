@@ -26,50 +26,19 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Al-Imam Malick Islamic Institute</title>
+    <title>Al-Imam Malick Islamic Institute Sumpundoukati Society</title>
 
-    <!-- Warm the CDN handshake before critical CSS (separate origin) -->
-    <link rel="preconnect" href="https://cdn.iu.edu.sa">
-
-    
     <link rel="canonical" href="https://imam-malick-soumpu.vercel.app/">
 <link as="image" fetchpriority="high" href="../media/Slides/IU_Gate_Night.jpg?width=480&amp;height=500&amp;rmode=crop&amp;format=webp&amp;quality=60&amp;token=fo2XkxYGYJPQkQqVQWhkEOQvs5S3vKFbx16xB4o10y0=" media="(max-width: 768px)" rel="preload" />
 <link as="image" fetchpriority="high" href="../media/Slides/IU_Gate_Night.jpg?width=1200&amp;format=webp&amp;quality=60&amp;token=fiMp6xjkbCqdHGX9qGh7QxIrn9E41p%252FrxPbR4gxk38g=" imagesizes="(min-width: 1440px) 1440px, 100vw" imagesrcset="/media/Slides/IU_Gate_Night.jpg?width=480&amp;height=500&amp;rmode=crop&amp;format=webp&amp;quality=60&amp;token=fo2XkxYGYJPQkQqVQWhkEOQvs5S3vKFbx16xB4o10y0%3D 600w, /media/Slides/IU_Gate_Night.jpg?width=1200&amp;format=webp&amp;quality=60&amp;token=fiMp6xjkbCqdHGX9qGh7QxIrn9E41p%2FrxPbR4gxk38g%3D 1200w" media="(min-width: 769px)" rel="preload" />
 
 
-    <!-- Icons — UI icons inlined (core) + HGI font (content/demo/doc).
-         Both pulled in by loadDeferredAssets() off the main-CSS onload below so they
-         never compete with the critical bundle during the LCP window. -->
+    <link rel="preload" href="/assets/css/imam-malick-design-system.css?v=1.0" as="style" fetchpriority="high">
+    <link rel="stylesheet" href="/assets/css/imam-malick-design-system.css?v=1.0">
+    <script>document.documentElement.setAttribute('data-nds-loaded', '');</script>
 
     <!-- Inline fold gate: above-the-fold FCP gates + chrome reservations, mirrors NDS-vanilla _fold.scss compile -->
     <style>html{background-color:var(--background-body, #f9fafb)}html :where(header){display:contents}html :where(.nds-topbar){height:40px}html :where(.nds-main-nav){height:var(--nds-nav-height, 72px)}html .nds-swiper.nds-hero:not([data-nds-swiper-initialized]) .nds-swiper-slide:not(:first-child){display:none}:where(.nds-topbar>*,.nds-main-nav>*,.nds-hero-section .nds-section-action,.nds-content-layout,.nds-user-feedback-section,.nds-accessibility-toggle,.nds-footer){visibility:hidden}html:not([data-nds-loaded]) main{overflow-x:clip}:root{--nds-icons-opacity: 0}i.hgi-stroke{opacity:0}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}:is(.nds-hidden,[hidden],[data-state~=hidden],[data-filtered]){display:none !important}html[data-theme~=dark]{background-color:var(--background-body, #111927)}:where(.nds-topbar){background-color:var(--background-topbar, #f3f4f6)}:where(.nds-main-nav){background-color:var(--background-nav, #fff)}html[data-theme~=dark] :where(.nds-topbar){background-color:var(--background-topbar, #111927)}html[data-theme~=dark] :where(.nds-main-nav){background-color:var(--background-nav, #1f2a37)}:where(.nds-hero-section){position:relative;height:550px}:where(.nds-hero-section.nds-sub){height:auto;min-height:220px}:where(.nds-hero-image-wrapper)::before{content:"";position:absolute;inset:0;background:color-mix(in srgb, var(--img-overlay-color, #092a1e) calc(var(--overlay, 0.7) * 100%), transparent);pointer-events:none}:where(.nds-hero-section :is(.nds-section-body,.nds-section-wrapper,.nds-breadcrumb-nav)){visibility:hidden}</style>
-
-    <!-- Critical CSS — preloaded high-priority, swapped to stylesheet on load -->
-    <link rel="preload" href="https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds.critical.min.css?ver=1.013" as="style" fetchpriority="high"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds.critical.min.css?ver=1.013">
-    </noscript>
-
-    <!-- Main CSS - Deferred loading for below-the-fold content -->
-    <link rel="preload" href="https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds-main.min.css?ver=1.069" as="style" fetchpriority="low"
-        onload="this.onload=null;this.rel='stylesheet';window.loadDeferredAssets?loadDeferredAssets():window.__ndsDeferredPending=true">
-    <noscript>
-        <link rel="stylesheet" href="https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds-main.min.css?ver=1.069">
-    </noscript>
-    <noscript>
-        <link rel="stylesheet" href="https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/hgi-rounded-stroke-min.css?ver=1.003">
-    </noscript>
-    <noscript>
-        <link rel="stylesheet" href="https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds-icons.min.css?ver=1.000">
-    </noscript>
-
-    <!-- Accessibility add-on (optional) - a11y panel + mode overrides -->
-    <link rel="preload" href="https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds-accessibility.min.css?ver=1.000" as="style" fetchpriority="low"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds-accessibility.min.css?ver=1.000">
-    </noscript>
 
     <!-- Favicon - low-priority -->
 
@@ -108,23 +77,6 @@
             }
         })();
     </script>
-    <script>
-        // Loads icons + HGI after main CSS — keeps them out of the LCP window.
-        function loadDeferredAssets() {
-            var icons = document.createElement('link');
-            icons.rel = 'stylesheet';
-            icons.href = 'https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds-icons.min.css?ver=1.000';
-            icons.onload = function () { document.documentElement.setAttribute('data-nds-icons-loaded', ''); };
-            document.head.appendChild(icons);
-            var hgi = document.createElement('link');
-            hgi.rel = 'stylesheet';
-            hgi.href = 'https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/hgi-rounded-stroke-min.css?ver=1.003';
-            document.head.appendChild(hgi);
-        }
-        // Cached main.css can fire onload before this script parses — flush the pending flag.
-        if (window.__ndsDeferredPending) loadDeferredAssets();
-    </script>
-
     <!-- Analytics — deferred on first user gesture, 10s fallback -->
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -2014,7 +1966,7 @@ tahfizBody.innerHTML = tahfizGraduates.map(item => `
     <div class="nds-section-body nds-max-width">
         <div class="nds-swiper" slides-max="1" slides-mid="1" slides-min="1">
             <div class="nds-swiper-wrapper nds-expand-all"
-                style="--mask-url:url(https://cdn.iu.edu.sa/NDS-iu/assets/img/blob.svg);">
+                style="--mask-url:url(/assets/icons/blob.svg);">
 
                 <!-- Mahmadu Kabba Musa -->
                 <div class="nds-swiper-slide">
@@ -3303,26 +3255,26 @@ Gambian university lecturer, Imam, Khateeb, preacher and distinguished Qur'an re
             <ul class="nds-footer-list">
               
                 <li aria-label="+220 3210002 / +220 5065335 / +220 2079601" data-translate-attr="aria-label:pages.index.text201">
-                    <i class="nds-icon nds-hgi-headphones" aria-hidden="true"></i>
+                    <img class="imam-footer-icon" src="/assets/icons/phone.svg" alt="" aria-hidden="true">
                     <a class="nds-link nds-footer-link" href="tel:+2203210002">+220 3210002</a> /
                     <a class="nds-link nds-footer-link" href="tel:+2205065335">+220 5065335</a> /
                     <a class="nds-link nds-footer-link" href="tel:+2202079601">+220 2079601</a>
                 </li>
                 <li>
                     <a class="nds-link nds-footer-link" href="https://maps.app.goo.gl/57gzYFUxtX2he31D9?g_st=ic" target="_blank" rel="noopener noreferrer">
-                        <i class="nds-icon nds-hgi-location-01" aria-hidden="true"></i>
+                        <img class="imam-footer-icon" src="/assets/icons/map-pin.svg" alt="" aria-hidden="true">
                         <span class="nds-label"><span data-translate="pages.index.text202">Google Map</span></span>
                     </a>
                 </li>
                 <li>
                     <span class="nds-footer-link">
-                        <i class="nds-icon nds-hgi-location-01" aria-hidden="true"></i>
+                        <img class="imam-footer-icon" src="/assets/icons/map-pin.svg" alt="" aria-hidden="true">
                         <span class="nds-label"><span data-translate="pages.index.text203">National Address: Kanifing</span></span>
                     </span>
                 </li>
                 <li>
                     <a class="nds-link nds-footer-link" href="mailto:ImmamMalick@gmail.com">
-                        <i class="nds-icon nds-hgi-mail-01" aria-hidden="true"></i>
+                        <img class="imam-footer-icon" src="/assets/icons/mail.svg" alt="" aria-hidden="true">
                         <span class="nds-label"><span data-translate="pages.index.text204">ImmamMalick@gmail.com</span></span>
                     </a>
                 </li>
@@ -3335,19 +3287,19 @@ Gambian university lecturer, Imam, Khateeb, preacher and distinguished Qur'an re
                 <h3 class="nds-footer-heading"><span data-translate="pages.index.text205">Follow Us</span></h3>
                 <div class="nds-footer-icon-row">
                     <a class="nds-btn nds-secondary-outline nds-icon-only" href="https://www.facebook.com/share/1LKGze4Cby/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" data-translate-attr="aria-label:pages.index.attr104">
-                        <i class="nds-icon nds-hgi-facebook-02" aria-hidden="true"></i>
+                        <img class="imam-footer-icon" src="/assets/icons/facebook.svg" alt="" aria-hidden="true">
                     </a>
                     <a class="nds-btn nds-secondary-outline nds-icon-only" href="#" target="_blank" rel="noopener noreferrer" aria-label="X" data-translate-attr="aria-label:pages.index.attr105">
-                        <i class="nds-icon nds-hgi-new-twitter" aria-hidden="true"></i>
+                        <img class="imam-footer-icon" src="/assets/icons/x.svg" alt="" aria-hidden="true">
                     </a>
                     <a class="nds-btn nds-secondary-outline nds-icon-only" href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube" data-translate-attr="aria-label:pages.index.attr106">
-                        <i class="nds-icon nds-hgi-youtube" aria-hidden="true"></i>
+                        <img class="imam-footer-icon" src="/assets/icons/youtube.svg" alt="" aria-hidden="true">
                     </a>
                     <a class="nds-btn nds-secondary-outline nds-icon-only" href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-translate-attr="aria-label:pages.index.attr107">
-                        <i class="nds-icon nds-hgi-linkedin-02" aria-hidden="true"></i>
+                        <img class="imam-footer-icon" src="/assets/icons/linkedin.svg" alt="" aria-hidden="true">
                     </a>
                     <a class="nds-btn nds-secondary-outline nds-icon-only" href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-translate-attr="aria-label:pages.index.attr108">
-                        <i class="hgi hgi-stroke hgi-instagram" aria-hidden="true"></i>
+                        <img class="imam-footer-icon" src="/assets/icons/instagram.svg" alt="" aria-hidden="true">
                     </a>
                 </div>
             </div>
@@ -3684,8 +3636,6 @@ So tracking only runs if user accepted.
         
     </aside>
 
-    <script defer src="https://cdn.iu.edu.sa/NDS-iu/v110/assets/js/nds-main.min.js?ver=1.120"></script>
-    <script defer src="https://cdn.iu.edu.sa/NDS-iu/v110/assets/js/nds-accessibility.min.js?ver=1.000"></script>
     <script>
     (function() {
         var bc = document.querySelector('.nds-breadcrumb');

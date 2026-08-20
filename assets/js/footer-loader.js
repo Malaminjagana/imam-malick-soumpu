@@ -3,12 +3,8 @@
 
     var footerUrl = "/components/footer.html";
     var styleUrl = "/assets/css/footer.css";
+    var designSystemUrl = "/assets/css/imam-malick-design-system.css?v=1.0";
     var i18nUrl = "/i18n.js";
-    var ndsStyles = [
-        "https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds-main.min.css?ver=1.069",
-        "https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds-icons.min.css?ver=1.000",
-        "https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/hgi-rounded-stroke-min.css?ver=1.003"
-    ];
 
     function loadScript(url, attribute) {
         return new Promise(function (resolve, reject) {
@@ -28,15 +24,14 @@
     }
 
     function loadStyles() {
+        if (!document.querySelector('link[href^="/assets/css/imam-malick-design-system.css"]')) {
+            var designSystem = document.createElement("link");
+            designSystem.rel = "stylesheet";
+            designSystem.href = designSystemUrl;
+            designSystem.dataset.imdsStyles = "";
+            document.head.appendChild(designSystem);
+        }
         if (document.querySelector('link[data-footer-styles]')) return;
-        ndsStyles.forEach(function (url) {
-            if (document.querySelector('link[href="' + url + '"]')) return;
-            var ndsStylesheet = document.createElement("link");
-            ndsStylesheet.rel = "stylesheet";
-            ndsStylesheet.href = url;
-            ndsStylesheet.dataset.footerNdsStyles = "";
-            document.head.appendChild(ndsStylesheet);
-        });
         var stylesheet = document.createElement("link");
         stylesheet.rel = "stylesheet";
         stylesheet.href = styleUrl;
