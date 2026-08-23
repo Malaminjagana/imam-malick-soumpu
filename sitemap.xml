@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.imammalicksoumpu.com/</loc><priority>1.0</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://www.imammalicksoumpu.com/</loc><xhtml:link rel="alternate" hreflang="en" href="https://www.imammalicksoumpu.com/"/><xhtml:link rel="alternate" hreflang="ar" href="https://www.imammalicksoumpu.com/ar"/><priority>1.0</priority></url>
+  <url><loc>https://www.imammalicksoumpu.com/ar</loc><xhtml:link rel="alternate" hreflang="en" href="https://www.imammalicksoumpu.com/"/><xhtml:link rel="alternate" hreflang="ar" href="https://www.imammalicksoumpu.com/ar"/></url>
   <url><loc>https://www.imammalicksoumpu.com/academic-programs</loc><priority>0.9</priority></url>
   <url><loc>https://www.imammalicksoumpu.com/faq</loc></url>
   <url><loc>https://www.imammalicksoumpu.com/privacy</loc></url>

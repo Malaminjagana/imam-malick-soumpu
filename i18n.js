@@ -16,9 +16,27 @@
         return getValue(dictionary, key);
     }
 
-    function getSavedLanguage() {
+    function getInitialLanguage() {
+        var path = window.location.pathname.replace(/\/+$/, "") || "/";
+        if (path === "/ar") {
+            return "ar";
+        }
+        if (path === "/") {
+            return "en";
+        }
         var savedLanguage = localStorage.getItem("site-language");
         return supportedLanguages.indexOf(savedLanguage) !== -1 ? savedLanguage : "en";
+    }
+
+    function updateHomepagePath(language) {
+        var path = window.location.pathname.replace(/\/+$/, "") || "/";
+        if (path !== "/" && path !== "/ar") {
+            return;
+        }
+        var nextPath = language === "ar" ? "/ar" : "/";
+        if (path !== nextPath) {
+            window.history.replaceState(null, "", nextPath + window.location.search + window.location.hash);
+        }
     }
 
     function updateLanguageButtons(language) {
@@ -207,7 +225,7 @@
         document.head.appendChild(styles);
     }
 
-    window.setLanguage = function (language) {
+    window.setLanguage = function (language, updatePath) {
         if (supportedLanguages.indexOf(language) === -1) {
             return Promise.reject(new Error("Unsupported language: " + language));
         }
@@ -223,6 +241,9 @@
                 translations[language] = dictionary;
                 localStorage.setItem("site-language", language);
                 applyTranslations(language);
+                if (updatePath !== false) {
+                    updateHomepagePath(language);
+                }
             })
             .catch(function (error) {
                 console.error("Translation loading failed:", error);
@@ -231,5 +252,5 @@
 
     addStyles();
     createLanguageSwitcher();
-    window.setLanguage(getSavedLanguage());
+    window.setLanguage(getInitialLanguage(), false);
 })();
