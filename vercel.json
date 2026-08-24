@@ -2,6 +2,14 @@
   "cleanUrls": true,
   "rewrites": [
     {
+      "source": "/llms.txt",
+      "destination": "/public/llms.txt"
+    },
+    {
+      "source": "/llms-full.txt",
+      "destination": "/public/llms-full.txt"
+    },
+    {
       "source": "/ar",
       "destination": "/index.html"
     }

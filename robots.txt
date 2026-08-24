@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
 Disallow: /search-results
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://www.imammalicksoumpu.com/sitemap.xml
