@@ -327,6 +327,17 @@
     outline: none;
 
     font-size: 14px;
+
+    color: #111827;
+
+    caret-color: #111827;
+}
+
+
+#chat-input::placeholder {
+    color: #9ca3af;
+
+    opacity: 1;
 }
 
 
@@ -3760,7 +3771,9 @@ Gambian university lecturer, Imam, Khateeb, preacher and distinguished Qur'an re
                 <!--
                 <img class="nds-oncolor" src="#" loading="lazy" width="71"
                     height="40" alt="Immam Malick Islamic Institute Logo">
+                -->
             </a>
+            <!--
             <a href="#" target="_blank" aria-label="Ministry of Education" rel="nofollow noopener">
                 <img class="nds-oncolor" src="#" loading="lazy"
                     width="99" height="40" alt="Ministry of Education Logo">
@@ -4169,8 +4182,17 @@ So tracking only runs if user accepted.
         
     </script>
     <!-- AI CHATBOT JAVASCRIPT -->
+<!-- =========================================
+     AI CHATBOT JAVASCRIPT
+========================================= -->
+
 <script>
+
 document.addEventListener("DOMContentLoaded", function () {
+
+    // =========================================
+    // GET CHATBOT ELEMENTS
+    // =========================================
 
     const chatToggle =
         document.getElementById("chat-toggle");
@@ -4191,13 +4213,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("chat-messages");
 
 
-    /*
-     * Safety check
-     *
-     * If one of the required chatbot elements
-     * is missing from the HTML, stop here instead
-     * of breaking the rest of the JavaScript.
-     */
+    // =========================================
+    // SAFETY CHECK
+    // =========================================
 
     if (
         !chatToggle ||
@@ -4212,15 +4230,6 @@ document.addEventListener("DOMContentLoaded", function () {
             "AI Chatbot: Required HTML element is missing."
         );
 
-        console.error({
-            chatToggle,
-            chatWindow,
-            chatClose,
-            chatInput,
-            sendButton,
-            chatMessages
-        });
-
         return;
     }
 
@@ -4229,10 +4238,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // OPEN CHAT
     // =========================================
 
-    chatToggle.addEventListener("click", function (event) {
-
-        event.preventDefault();
-        event.stopPropagation();
+    function openChat() {
 
         chatWindow.classList.add("open");
 
@@ -4243,29 +4249,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         chatInput.focus();
 
-    });
-
-    chatWindow.addEventListener("click", function (event) {
-        event.stopPropagation();
-    });
-
-    function keepChatInteractionLocal(event) {
-        event.stopPropagation();
     }
-
-    ["pointerdown", "mousedown", "touchstart", "focusin"].forEach(function (eventName) {
-        chatWindow.addEventListener(eventName, keepChatInteractionLocal);
-    });
 
 
     // =========================================
     // CLOSE CHAT
     // =========================================
 
-    chatClose.addEventListener("click", function (event) {
-
-        event.preventDefault();
-        event.stopPropagation();
+    function closeChat() {
 
         chatWindow.classList.remove("open");
 
@@ -4274,25 +4265,106 @@ document.addEventListener("DOMContentLoaded", function () {
             "true"
         );
 
+    }
+
+
+    // =========================================
+    // CHAT TOGGLE BUTTON
+    // =========================================
+
+    chatToggle.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+            if (
+                chatWindow.classList.contains("open")
+            ) {
+
+                closeChat();
+
+            } else {
+
+                openChat();
+
+            }
+
+        }
+    );
+
+
+    // =========================================
+    // KEEP CHAT INTERACTION INSIDE CHAT
+    // =========================================
+
+    function keepChatInteractionLocal(event) {
+
+        event.stopPropagation();
+
+    }
+
+
+    [
+        "click",
+        "pointerdown",
+        "mousedown",
+        "touchstart",
+        "focusin"
+    ].forEach(function (eventName) {
+
+        chatWindow.addEventListener(
+            eventName,
+            keepChatInteractionLocal
+        );
+
     });
 
 
     // =========================================
-    // SEND MESSAGE
+    // CLOSE BUTTON
     // =========================================
 
-    function sendChatMessage() {
+    chatClose.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+            closeChat();
+
+        }
+    );
+
+
+    // =========================================
+    // SEND MESSAGE TO FASTAPI
+    // =========================================
+
+    async function sendChatMessage() {
+
+        // Get message from input
 
         const message =
             chatInput.value.trim();
 
 
+        // Don't send empty messages
+
         if (message === "") {
+
             return;
+
         }
 
 
-        // Add user's message
+        // =====================================
+        // SHOW USER MESSAGE
+        // =====================================
 
         addChatMessage(
             message,
@@ -4300,29 +4372,106 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        // Clear input
+        // =====================================
+        // CLEAR INPUT
+        // =====================================
 
         chatInput.value = "";
 
 
-        // Show typing indicator
+        // SHOW TYPING
+        // =====================================
 
         showTyping();
 
 
-        // Temporary response
-        // Day 3 will replace this with the API call.
+        try {
 
-        setTimeout(function () {
+            // CALL FASTAPI BACKEND
+
+            const response = await fetch(
+                "http://127.0.0.1:8000/ask",
+                {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        message: message
+                    })
+
+                }
+            );
+
+
+            // =================================
+            // CHECK HTTP RESPONSE
+            // =================================
+
+            if (!response.ok) {
+
+                throw new Error(
+                    `API error: ${response.status}`
+                );
+
+            }
+
+
+            // =================================
+            // CONVERT RESPONSE TO JSON
+            // =================================
+
+            const data =
+                await response.json();
+
+
+            // =================================
+            // REMOVE TYPING
+            // =================================
 
             removeTyping();
 
+
+            // =================================
+            // SHOW AI RESPONSE
+            // =================================
+
             addChatMessage(
-                "Hello! I received your message. Tomorrow we will connect this chatbot to your FastAPI API.",
+                data.answer,
                 "assistant"
             );
 
-        }, 1000);
+        }
+
+
+        // =====================================
+        // ERROR HANDLING
+        // =====================================
+
+        catch (error) {
+
+            console.error(
+                "Chatbot API error:",
+                error
+            );
+
+
+            // Remove typing indicator
+
+            removeTyping();
+
+
+            // Show error message
+
+            addChatMessage(
+                "Sorry, I couldn't connect to the AI server. Please try again later.",
+                "assistant"
+            );
+
+        }
 
     }
 
@@ -4357,11 +4506,13 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    // =========================================
-    // ADD MESSAGE
-    // =========================================
+    
+    // ADD MESSAGE TO CHAT
 
-    function addChatMessage(text, sender) {
+    function addChatMessage(
+        text,
+        sender
+    ) {
 
         const messageElement =
             document.createElement("div");
@@ -4372,13 +4523,20 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
+        // User message
+
         if (sender === "user") {
 
             messageElement.classList.add(
                 "ai-user-message"
             );
 
-        } else {
+        }
+
+
+        // AI message
+
+        else {
 
             messageElement.classList.add(
                 "ai-assistant-message"
@@ -4396,7 +4554,8 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        contentElement.textContent = text;
+        contentElement.textContent =
+            text;
 
 
         messageElement.appendChild(
@@ -4418,10 +4577,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================
-    // SHOW TYPING
+    // SHOW TYPING INDICATOR
     // =========================================
 
     function showTyping() {
+
+        // Don't create multiple indicators
+
+        if (
+            document.getElementById("ai-typing")
+        ) {
+
+            return;
+
+        }
+
 
         const typingElement =
             document.createElement("div");
@@ -4451,9 +4621,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // =========================================
-    // REMOVE TYPING
-    // =========================================
+    // REMOVE TYPING INDICATOR
 
     function removeTyping() {
 
@@ -4472,13 +4640,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+    // =========================================
+    // INITIALIZATION MESSAGE
+    // =========================================
+
     console.log(
         "AI Chatbot initialized successfully."
     );
 
 });
+
 </script>
-    
     
     
 <script defer src="i18n.js"></script>
@@ -4486,4 +4658,4 @@ document.addEventListener("DOMContentLoaded", function () {
 <script defer async src="search.js"></script>
 </body>
 
-</html>
+</html>
