@@ -133,8 +133,7 @@ Supported or planned donation options:
 
 - Wave PayLink
 - PayPal.me
-- LaunchGood
-- Stripe card payment
+- Ajib Bank Limited
 
 Configure active payment URLs before enabling any donation option for public use.
 
