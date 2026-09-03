@@ -125,7 +125,7 @@ The official footer is defined in [components/footer.html](components/footer.htm
 - IT Department: <https://malamin-profile.vercel.app/>.
 - Security Policy, telephone links, and [Google Map](https://maps.app.goo.gl/57gzYFUxtX2he31D9).
 - Social links and planned mobile-app links.
-- Donation modal options for Wave, PayPal, Stripe, and Remitly.
+- Donation modal options for Wave, PayPal, and bank transfer.
 
 ## Donations
 
@@ -135,7 +135,6 @@ Supported or planned donation options:
 - PayPal.me
 - LaunchGood
 - Stripe card payment
-- Remitly
 
 Configure active payment URLs before enabling any donation option for public use.
 

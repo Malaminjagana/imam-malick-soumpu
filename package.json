@@ -4,6 +4,7 @@
     "compress-images": "node scripts/compress-images.js"
   },
   "devDependencies": {
+    "qrcode": "^1.5.4",
     "sharp": "^0.35.3"
   }
 }

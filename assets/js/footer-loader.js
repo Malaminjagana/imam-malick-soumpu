@@ -12,7 +12,7 @@
 
     function loadScript(url, attribute) {
         return new Promise(function (resolve, reject) {
-            var existing = document.querySelector("script[" + attribute + "], script[data-site-i18n]");
+            var existing = document.querySelector("script[" + attribute + "]");
             if (existing) {
                 if (window.setLanguage) resolve();
                 else existing.addEventListener("load", resolve, { once: true });
@@ -62,8 +62,10 @@
             if (document.querySelector("footer.nds-footer")) return;
             document.body.insertAdjacentHTML("beforeend", html);
             document.querySelectorAll(".copyright-year").forEach(function (element) { element.textContent = new Date().getFullYear(); });
-            initialiseDonationModal();
-            return loadScript(i18nUrl, "data-footer-i18n");
+            return loadScript("/lib/donationAccounts.js", "data-donation-accounts")
+                .then(function () { return loadScript("/lib/donationModal.js", "data-donation-modal"); })
+                .then(function () { window.initialiseDonationModal(); })
+                .then(function () { return loadScript(i18nUrl, "data-footer-i18n"); });
         })
         .then(function () {
             if (window.setLanguage) return window.setLanguage(localStorage.getItem("site-language") === "ar" ? "ar" : "en");

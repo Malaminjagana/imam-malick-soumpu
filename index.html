@@ -578,6 +578,43 @@
             line-height: 1.5;
         }
 
+        .donation-endowment-info {
+            margin-top: 1rem;
+            padding: 1rem;
+            border: 1px solid #b6dfc5;
+            border-radius: 12px;
+            background: #f0faef;
+            color: #20382b;
+            font-size: .9rem;
+            line-height: 1.55;
+        }
+
+        .donation-endowment-info h4 {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            margin: 0 0 .35rem;
+            color: #0f3b2e;
+            font-size: .95rem;
+        }
+
+        .donation-endowment-info h4::before {
+            display: inline-grid;
+            width: 1.2rem;
+            height: 1.2rem;
+            place-items: center;
+            border-radius: 50%;
+            background: #cdebd4;
+            color: #0b6e3d;
+            content: "i";
+            font-family: Georgia, serif;
+            font-weight: 700;
+        }
+
+        .donation-endowment-info p { margin: 0; }
+        .donation-endowment-info > div { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; margin-top: .65rem; color: #176b4d; font-size: .78rem; }
+        .donation-endowment-info > div span { padding: .2rem .5rem; border-radius: 4px; background: #cdebd4; }
+
         .donate-close-btn {
             border: 0;
             background: #f2f6f8;
@@ -643,6 +680,33 @@
             text-decoration: none;
         }
 
+        .donate-options { grid-template-columns: 1fr; }
+        .donation-bank-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; padding: 1.25rem; border: 2px solid #8cc7a7; border-radius: 18px; background: #f5fbf7; }
+        .donation-kicker, .donation-role { color: #16734a; font-size: .8rem; font-weight: 700; }
+        .donation-bank-card h4, .donation-wave-section h4, .donation-wave-card h4 { margin: .3rem 0; color: #10372d; }
+        .donation-account-name, .donation-card-note { margin: 0; color: #576575; line-height: 1.5; }
+        .donation-bank-number { display: grid; gap: .3rem; align-content: start; }
+        .donation-bank-number span { color: #526173; font-size: .8rem; font-weight: 700; }
+        .donation-bank-number code, .donation-number-row code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: #10372d; font-size: 1.05rem; font-weight: 800; }
+        .donation-copy-button, .donation-secondary-button, .donation-copy-icon, .donation-disabled-button { border: 0; border-radius: 6px; cursor: pointer; font: inherit; font-weight: 700; }
+        .donation-copy-button { padding: .6rem .75rem; background: #0b8a4a; color: #fff; }
+        .donation-secondary-button { grid-column: 1 / -1; justify-self: start; padding: .55rem .75rem; background: transparent; color: #0b8a4a; border: 1px solid #0b8a4a; }
+        .donation-wave-section { padding-top: .25rem; }
+        .donation-wave-section > h4 span, .donate-option-title span { display: block; margin-top: .2rem; color: #576575; font-size: .85rem; font-weight: 500; }
+        .donation-wave-grid, .donation-options-bottom { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+        .donation-wave-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .donation-wave-card { display: flex; flex-direction: column; gap: .75rem; padding: 1rem; border: 1px solid #e3ebef; border-radius: 14px; background: #fbfcfd; }
+        .donation-wave-card h4 { font-size: 1rem; }
+        .donation-role { margin: -.5rem 0 0; }
+        .donation-number-list { display: grid; gap: .5rem; }
+        .donation-number-row { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+        .donation-copy-icon { padding: .35rem .5rem; background: #e8f5ed; color: #0b6e3d; font-size: .78rem; }
+        .donation-card-note { margin-top: auto; font-size: .8rem; }
+        .donation-options-bottom .donation-option-card { min-height: 170px; }
+        .donation-disabled-button { align-self: flex-start; padding: .6rem .75rem; background: #e4e8eb; color: #65717c; }
+        .donation-toast { position: fixed; z-index: 100000; bottom: 1.5rem; left: 50%; padding: .75rem 1rem; border-radius: 6px; background: #10372d; color: #fff; box-shadow: 0 8px 22px rgba(0, 0, 0, .2); opacity: 0; transform: translate(-50%, 1rem); transition: opacity .2s ease, transform .2s ease; pointer-events: none; }
+        .donation-toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+
         @media (max-width: 640px) {
             .donate-modal {
                 padding: 1rem;
@@ -655,6 +719,8 @@
             .donate-option-card {
                 min-height: auto;
             }
+
+            .donation-bank-card, .donation-wave-grid, .donation-options-bottom { grid-template-columns: 1fr; }
         }
     </style>
     <link rel="icon" type="image/png" href="/assets/img/imam-malick-logo-transparent.png" />
@@ -1507,9 +1573,7 @@
                        <h2 class="nds-section-title"><span data-translate="pages.index.text046">Top English School in Kanifing &amp; Serekunda - Quality English Education in Gambia</span></h2>
                        <p class="nds-section-description"><span data-translate="pages.index.text047">Al-Imam Malick Islamic Institute, under Sumpundoukati Society, provides English, Quran, Arabic and Islamic education for students in Kanifing and Serekunda.</span> <a href="#academic-programs" class="nds-link" data-translate="pages.index.text048">Explore our programs</a>.</p>
                     </div>
-                    <!-- Donate Button YOUR_FLUTTERWAVE_LINK 
-                     <a href="#" class="donate-btn"><span data-translate="pages.index.text048">Donate Now</span></a>
-                     -->
+                          <a href="#" class="donate-btn"><span data-translate="pages.index.text188">Donate Now</span></a>
 
 
                     <div class="accredited nds-section-action">
@@ -1528,6 +1592,7 @@
                                         <img src="assets/img/imamMalick-preparatory-school-logo.png" width="72" height="72" loading="lazy"
                                             alt="Preparatory school emblem of Al-Imam Malick Islamic Institute, highlighting Islamic scholarship, discipline, and academic preparation."  data-translate-attr="alt:pages.index.attr016"/>
                                     </div>
+                                    
                                 </div>
                             </div>
                             <div class="nds-card nds-center">
@@ -3596,9 +3661,9 @@ Gambian university lecturer, Imam, Khateeb, preacher and distinguished Qur'an re
 
 </div>
                         
-                          <!-- Donate Button YOUR_FLUTTERWAVE_LINK 
+                           <Button YOUR_FLUTTERWAVE_LINK >
                      <a href="#" class="donate-btn"><span data-translate="pages.index.text188">Donate Now</span></a>
-                     -->
+                    </Button>
 
                     </div>
                     
@@ -3881,47 +3946,17 @@ Gambian university lecturer, Imam, Khateeb, preacher and distinguished Qur'an re
         <div class="donate-modal-header">
             <div>
                 <h3 class="donate-modal-title" id="donateModalTitle"><span data-translate="pages.index.text213">Choose a donation method</span></h3>
-                <p class="donate-modal-subtitle"><span data-translate="pages.index.text214">Your generosity helps support the Imam Malick Islamic Institute and its students. Select the option that works best for you.</span></p>
+                <p class="donate-modal-subtitle">Your generosity helps support the Imam Malick Islamic Institute and its students. Select the option that works best for you. 100% Sadaqah Jariyah.</p>
+                <aside class="donation-endowment-info" id="donationEndowmentInfo" aria-labelledby="donationEndowmentTitle">
+                    <h4 id="donationEndowmentTitle">About the Endowment Project:</h4>
+                    <p></p>
+                    <div><strong></strong><span></span></div>
+                </aside>
             </div>
             <button class="donate-close-btn" id="donateModalClose" type="button" aria-label="Close donation options" data-translate-attr="aria-label:pages.index.attr113">✕</button>
         </div>
 
-        <div class="donate-options">
-            <a class="donate-option-card is-unconfigured" aria-disabled="true" tabindex="-1">
-                <div>
-                    <div class="donate-option-title"><span data-translate="pages.index.text215">Wave Mobile Money</span></div>
-                    <p class="donate-option-text"><span data-translate="pages.index.text216">For Gambian donors. Send your donation directly to Wave using the number below.</span></p>
-                </div>
-                <div>
-                    <div class="donate-option-text"><strong><span data-translate="pages.index.text217">Wave</span> </strong> #</div>
-                    <div class="donate-option-link"><span data-translate="pages.index.text218">Open Wave PayLink →</span></div>
-                </div>
-            </a>
-
-            <a class="donate-option-card is-unconfigured" aria-disabled="true" tabindex="-1">
-                <div>
-                    <div class="donate-option-title"><span data-translate="pages.index.text219">PayPal Donate Button</span></div>
-                    <p class="donate-option-text"><span data-translate="pages.index.text220">For international donors. Pay securely with PayPal, Visa, or Mastercard.</span></p>
-                </div>
-                <div class="donate-option-link"><span data-translate="pages.index.text221">Donate with PayPal →</span></div>
-            </a>
-
-            <a class="donate-option-card is-unconfigured" aria-disabled="true" tabindex="-1">
-                <div>
-                    <div class="donate-option-title"><span data-translate="pages.index.text222">Stripe Card Payment</span></div>
-                    <p class="donate-option-text"><span data-translate="pages.index.text223">For donors using credit or debit cards. Accepts Visa, Mastercard, Apple Pay, and Google Pay.</span></p>
-                </div>
-                <div class="donate-option-link"><span data-translate="pages.index.text224">Pay by card →</span></div>
-            </a>
-
-            <a class="donate-option-card is-unconfigured" aria-disabled="true" tabindex="-1">
-                <div>
-                    <div class="donate-option-title"><span data-translate="pages.index.text225">Remitly</span></div>
-                    <p class="donate-option-text"><span data-translate="pages.index.text226">For Gambians abroad. Send money directly to the Wave number listed above.</span></p>
-                </div>
-                <div class="donate-option-link"><span data-translate="pages.index.text227">Use Remitly →</span></div>
-            </a>
-        </div>
+        <div class="donate-options" id="donateModalOptions"></div>
     </div>
 </div>
 
@@ -3963,45 +3998,11 @@ Gambian university lecturer, Imam, Khateeb, preacher and distinguished Qur'an re
     </div>
 </div>
 
+<script src="/lib/donationAccounts.js"></script>
+<script src="/lib/donationModal.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const donateButtons = document.querySelectorAll('.donate-btn');
-        const backdrop = document.getElementById('donateModalBackdrop');
-        const modal = backdrop ? backdrop.querySelector('.donate-modal') : null;
-        const closeBtn = document.getElementById('donateModalClose');
-
-        if (backdrop && modal) {
-            const openModal = function (event) {
-                if (event) event.preventDefault();
-                backdrop.classList.add('is-open');
-                backdrop.setAttribute('aria-hidden', 'false');
-                modal.focus();
-                document.body.style.overflow = 'hidden';
-            };
-
-            const closeModal = function () {
-                backdrop.classList.remove('is-open');
-                backdrop.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
-            };
-
-            donateButtons.forEach(function (button) {
-                button.addEventListener('click', openModal);
-            });
-
-            closeBtn.addEventListener('click', closeModal);
-            backdrop.addEventListener('click', function (event) {
-                if (event.target === backdrop) {
-                    closeModal();
-                }
-            });
-
-            document.addEventListener('keydown', function (event) {
-                if (event.key === 'Escape' && backdrop.classList.contains('is-open')) {
-                    closeModal();
-                }
-            });
-        }
+        window.initialiseDonationModal();
 
         const popup = document.getElementById('ndsCookiesPopup');
         const acceptBtn = document.getElementById('ndsCookiesAcceptBtn');
@@ -4339,9 +4340,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
-    // =========================================
     // SEND MESSAGE TO FASTAPI
-    // =========================================
 
     async function sendChatMessage() {
 
