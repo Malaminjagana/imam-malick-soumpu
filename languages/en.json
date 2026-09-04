@@ -7,7 +7,14 @@
     "academicPrograms": "Academic Programs",
     "schoolRolls": "School Rolls",
     "faq": "Frequently Asked Questions",
+    "fridayImams": "Friday Imams",
     "backToScholars": "Back to Scholars"
+  },
+  "fridayImams": {
+    "pageTitle": "Friday Khutbah Speakers for Public Mosques Affiliated with Imam Malick Islamic Institute",
+    "title": "Friday Khutbah Speakers for Public Mosques Affiliated with Imam Malick Islamic Institute",
+    "documentLabel": "September 2026 Schedule",
+    "download": "Download PDF"
   },
   "common": {
     "search": "Search",

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-translate-title="fridayImams.pageTitle">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Friday khutbah speakers schedule for public mosques affiliated with Imam Malick Islamic Institute.">
+    <title>Friday Khutbah Speakers for Public Mosques Affiliated with Imam Malick Islamic Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #102f29;
+            --green: #0b6047;
+            --gold: #c59b45;
+            --paper: #f4f6f2;
+            --line: #d4ddd5;
+        }
+        * { box-sizing: border-box; }
+        body { margin: 0; background: var(--paper); color: var(--ink); font-family: Cairo, sans-serif; }
+        .site-header { border-bottom: 4px solid var(--gold); background: var(--ink); color: #fff; }
+        .header-content, .page-content { width: min(1100px, calc(100% - 32px)); margin: 0 auto; }
+        .header-content { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 70px; }
+        .brand { color: #fff; font-weight: 800; text-decoration: none; }
+        .language-switcher { display: flex; gap: .5rem; }
+        .language-switcher button { border: 1px solid rgba(255,255,255,.5); border-radius: 4px; background: transparent; color: #fff; cursor: pointer; font: 700 .85rem/1 Cairo, sans-serif; padding: .45rem .65rem; }
+        .language-switcher button[aria-pressed="true"] { border-color: var(--gold); background: var(--gold); color: var(--ink); }
+        main { padding: clamp(2.5rem, 7vw, 5rem) 0; }
+        .page-title { max-width: 940px; margin: 0 auto 2rem; color: var(--ink); font-family: Merriweather, Cairo, serif; font-size: clamp(1.7rem, 4vw, 3rem); line-height: 1.35; text-align: center; }
+        .document-panel { overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 18px 45px rgba(16,47,41,.12); }
+        .document-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--line); background: #fbfcfa; }
+        .document-toolbar p { margin: 0; font-weight: 700; }
+        .download-link { display: inline-flex; align-items: center; min-height: 42px; padding: .55rem .85rem; border-radius: 4px; background: var(--green); color: #fff; font-weight: 700; text-decoration: none; white-space: nowrap; }
+        .download-link:hover, .download-link:focus-visible { background: var(--ink); }
+        .pdf-viewer { display: block; width: 100%; height: min(78vh, 1050px); border: 0; }
+        .pdf-fallback { margin: 0; padding: 1.25rem; text-align: center; }
+        @media (max-width: 560px) { .header-content { min-height: 60px; }.brand { font-size: .82rem; }.document-toolbar { align-items: flex-start; flex-direction: column; }.pdf-viewer { height: 72vh; } }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <a class="brand" href="/index.html">Al-Imam Malick Islamic Institute</a>
+            <div class="language-switcher" data-language-switcher role="group" aria-label="Language selection">
+                <button type="button" data-language-button="en" onclick="setLanguage('en')">English</button>
+                <button type="button" data-language-button="ar" onclick="setLanguage('ar')">العربية</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="page-content">
+            <h1 class="page-title" data-translate="fridayImams.title">Friday Khutbah Speakers for Public Mosques Affiliated with Imam Malick Islamic Institute</h1>
+            <section class="document-panel" aria-label="Friday Imams schedule">
+                <div class="document-toolbar">
+                    <p data-translate="fridayImams.documentLabel">September 2026 Schedule</p>
+                    <a class="download-link" href="/assets/September%20%D8%AC%D8%AF%D9%88%D9%84%20%D8%B3%D8%A8%D8%AA%D9%85%D8%A8%D8%B12026%D9%85.pdf" download data-translate="fridayImams.download">Download PDF</a>
+                </div>
+                <object class="pdf-viewer" data="/assets/September%20%D8%AC%D8%AF%D9%88%D9%84%20%D8%B3%D8%A8%D8%AA%D9%85%D8%A8%D8%B12026%D9%85.pdf" type="application/pdf">
+                    <p class="pdf-fallback"><a href="/assets/September%20%D8%AC%D8%AF%D9%88%D9%84%20%D8%B3%D8%A8%D8%AA%D9%85%D8%A8%D8%B12026%D9%85.pdf">Download the Friday Imams PDF</a></p>
+                </object>
+            </section>
+        </div>
+    </main>
+    <script defer src="/i18n.js"></script>
+</body>
+</html>
