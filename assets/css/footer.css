@@ -20,6 +20,14 @@ footer.nds-footer a, footer.nds-footer .nds-footer-link { color: #fff !important
 .nds-footer-phone-list { line-height: 1.7; }
 .nds-footer-icon-group + .nds-footer-icon-group { margin-top: 22px; }
 .nds-footer-icon-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.nds-footer-icons { grid-column: 1 / -1; }
+.whatsapp-groups-description { margin: -6px 0 12px; color: rgba(255,255,255,.78); font-size: 13px; line-height: 1.5; }
+.whatsapp-groups-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.nds-footer .whatsapp-group-item { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 8px; background: rgba(255,255,255,.1); color: #fff !important; font-size: 14px; font-weight: 700; line-height: 1.35; text-decoration: none; transition: background .2s ease, transform .2s ease; }
+.nds-footer .whatsapp-group-item:hover, .nds-footer .whatsapp-group-item:focus-visible { background: rgba(255,255,255,.2); color: #fff !important; text-decoration: none; transform: scale(1.02); }
+.whatsapp-group-icon { display: inline-grid; flex: 0 0 auto; width: 36px; height: 36px; place-items: center; border-radius: 50%; background: #25d366; color: #fff; }
+.nds-footer .whatsapp-group-icon .hgi { margin: 0; font-size: 20px; }
+.whatsapp-group-arrow { margin-inline-start: auto; font-size: 17px; }
 .nds-footer .nds-btn { display: inline-grid; width: 50px; height: 50px; place-items: center; border: 1px solid rgba(255,255,255,.72); border-radius: 4px; color: #fff; font: 700 13px/1 Arial, sans-serif; text-decoration: none; }
 .nds-footer .nds-icon, .nds-footer .hgi { margin-inline-end: 8px; font-size: 20px; vertical-align: middle; }
 .nds-footer .nds-icon-only .nds-icon, .nds-footer .nds-icon-only .hgi { margin: 0; font-size: 26px; }
@@ -79,4 +87,4 @@ footer.nds-footer a, footer.nds-footer .nds-footer-link { color: #fff !important
 .donation-toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
 html[dir="rtl"] .nds-footer { direction: rtl; }
 @media (max-width: 1100px) { .nds-footer-content { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 640px) { .nds-footer-content { grid-template-columns: 1fr; } .nds-footer-bottom, .nds-footer-meta, .nds-footer-legal { align-items: flex-start; flex-direction: column; } .donate-option-card { align-items: flex-start; flex-direction: column; } .donation-bank-card, .donation-wave-grid, .donation-options-bottom { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .nds-footer-content { grid-template-columns: 1fr; } .whatsapp-groups-list { grid-template-columns: 1fr; } .whatsapp-group-item { width: 100%; } .nds-footer-bottom, .nds-footer-meta, .nds-footer-legal { align-items: flex-start; flex-direction: column; } .donate-option-card { align-items: flex-start; flex-direction: column; } .donation-bank-card, .donation-wave-grid, .donation-options-bottom { grid-template-columns: 1fr; } }
