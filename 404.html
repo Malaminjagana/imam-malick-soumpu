@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <title data-en="404 - Page Not Found - Imam Malick" data-ar="404 - الصفحة غير موجودة - الإمام مالك">404 - Page Not Found - Imam Malick</title>
+    <link rel="icon" type="image/png" href="/assets/img/imam-malick-logo-transparent.png">
+    <link rel="stylesheet" href="https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds-main.min.css?ver=1.069">
+    <link rel="stylesheet" href="https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/nds-icons.min.css?ver=1.000">
+    <link rel="stylesheet" href="https://cdn.iu.edu.sa/NDS-iu/v110/assets/css/hgi-rounded-stroke-min.css?ver=1.003">
+    <style>
+        html { background: var(--background-body, #f9fafb); }
+        .imam-brand-logo { background: transparent !important; border: 0 !important; box-shadow: none !important; }
+        .error-page { text-align: center; padding: 80px 20px; min-height: 50vh; }
+        .error-page h1 { margin: 0; font-size: 80px; }
+        .error-page-actions { margin-top: 30px; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+        .error-page-actions .nds-btn { text-decoration: none; }
+        .error-page-search { margin-top: 30px; font-size: 14px; }
+        .error-page-search form { display: inline-flex; margin-top: 10px; gap: 8px; }
+        .error-page-search input { min-width: min(280px, 70vw); padding: 10px; border: 1px solid currentColor; border-radius: 4px; }
+    </style>
+</head>
+<body class="nds-minimal">
+    <nav class="nds-main-nav nds-content-wrapper" aria-label="Primary navigation">
+        <div class="nds-nav-container">
+            <a href="/" class="imam-brand" aria-label="Imam Malick Islamic Institute Homepage">
+                <img class="imam-brand-logo" src="/assets/img/imam-malick-logo-transparent.png" width="140" height="50" loading="lazy" alt="Official logo of Al-Imam Malick Islamic Institute">
+            </a>
+            <div class="nds-collapse">
+                <div class="nds-collapse-content">
+                    <ul class="nds-nav-primary">
+                        <li class="nds-nav-item"><a class="nds-nav-link nds-btn nds-subtle" href="/school-rolls.html">Departments</a></li>
+                        <li class="nds-nav-item"><a class="nds-nav-link nds-btn nds-subtle" href="/school-history/">School History</a></li>
+                        <li class="nds-nav-item"><a class="nds-nav-link nds-btn nds-subtle" href="/friday-imams/">Friday Imams</a></li>
+                    </ul>
+                    <ul class="nds-nav-actions">
+                        <li class="nds-nav-item"><button type="button" class="nds-nav-link nds-btn nds-subtle" data-404-language="en">English</button></li>
+                        <li class="nds-nav-item"><button type="button" class="nds-nav-link nds-btn nds-subtle" data-404-language="ar">العربية</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="error-page">
+        <h1>404</h1>
+        <h2 data-en="Page Not Found" data-ar="الصفحة غير موجودة">Page Not Found</h2>
+        <p data-en="Sorry, the page you are looking for doesn't exist or has been moved." data-ar="عذراً، الصفحة التي تبحث عنها غير موجودة أو تم نقلها.">Sorry, the page you are looking for doesn't exist or has been moved.</p>
+        <div class="error-page-actions">
+            <a href="/" class="nds-btn nds-primary" data-en="Go to Homepage" data-ar="العودة للرئيسية">Go to Homepage</a>
+            <a href="/#contact" class="nds-btn nds-secondary-outline" data-en="Contact Us" data-ar="اتصل بنا">Contact Us</a>
+        </div>
+        <div class="error-page-search">
+            <span data-en="Try searching:" data-ar="جرب البحث:">Try searching:</span>
+            <form action="/search-results.html" method="get" role="search">
+                <input type="search" name="q" data-en="Search the school website" data-ar="ابحث في موقع المدرسة" placeholder="Search the school website">
+                <button type="submit" class="nds-btn nds-primary" data-en="Search" data-ar="بحث">Search</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            function setLanguage(language) {
+                var isArabic = language === "ar";
+                document.documentElement.lang = isArabic ? "ar" : "en";
+                document.documentElement.dir = isArabic ? "rtl" : "ltr";
+                document.querySelectorAll("[data-en][data-ar]").forEach(function (element) {
+                    var value = element.dataset[isArabic ? "ar" : "en"];
+                    if (element.tagName === "INPUT") element.placeholder = value;
+                    else if (element.tagName === "TITLE") document.title = value;
+                    else element.textContent = value;
+                });
+                localStorage.setItem("site-language", language);
+            }
+
+            var preferredLanguage = window.location.pathname.indexOf("/ar/") === 0 || new URLSearchParams(window.location.search).get("lang") === "ar" || localStorage.getItem("site-language") === "ar" ? "ar" : "en";
+            setLanguage(preferredLanguage);
+            document.querySelectorAll("[data-404-language]").forEach(function (button) {
+                button.addEventListener("click", function () { setLanguage(button.dataset["404Language"]); });
+            });
+        })();
+    </script>
+    <script src="/assets/js/footer-loader.js" defer></script>
+</body>
+</html>
