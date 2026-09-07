@@ -21,6 +21,10 @@
         if (path === "/ar") {
             return "ar";
         }
+        var requestedLanguage = new URLSearchParams(window.location.search).get("lang");
+        if (supportedLanguages.indexOf(requestedLanguage) !== -1) {
+            return requestedLanguage;
+        }
         if (path === "/") {
             return "en";
         }
@@ -30,6 +34,9 @@
 
     function updateHomepagePath(language) {
         var path = window.location.pathname.replace(/\/+$/, "") || "/";
+        if (new URLSearchParams(window.location.search).get("lang") === "ar") {
+            return;
+        }
         if (path !== "/" && path !== "/ar") {
             return;
         }

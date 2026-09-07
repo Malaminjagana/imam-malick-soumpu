@@ -1,6 +1,23 @@
 {
-  "cleanUrls": true,
+  "cleanUrls": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "imammalicksoumpu.com"
+        }
+      ],
+      "destination": "https://www.imammalicksoumpu.com/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [
+    {
+      "source": "/School-rolls.html",
+      "destination": "/school-rolls.html"
+    },
     {
       "source": "/llms.txt",
       "destination": "/public/llms.txt"
