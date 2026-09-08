@@ -48,8 +48,8 @@ The institute also provides Islamic Studies, Arabic language, primary, preparato
 ## Scholars and Biographies
 
 Biography pages and their transparent biography poster assets are kept in [biography/](biography/) and [assets/img/](assets/img/). No personal contact details are published in this documentation.
-- [Muhammad Kaba Musa](biography/Muhammad-Kaba-Musa.html) - [poster](assets/img/muhamad-kaba-musa-biography.webp)
-- [Ebrahima Marry Jagana](biography/Ebrahim-Marry-Jagana.html) - [poster](assets/img/Ebrahima-marry-jagana-biography.webp)
+- [Muhammad Kaba Musa](biography/muhammad-kaba-musa.html) - [poster](assets/img/muhamad-kaba-musa-biography.webp)
+- [Ebrahima Marry Jagana](biography/ebrahim-marry-jagana.html) - [poster](assets/img/Ebrahima-marry-jagana-biography.webp)
 - [Dr. Ali Jagana](biography/dr-ali-jagana.html) - [poster](assets/img/dr_ali_jagana_biography.webp)
 - [Dr. Fodi Jagana](biography/dr-fodi-jagana.html) - [poster](assets/img/fodi_jagana_biography.webp)
 - [Dr. Kisma Sheikh Sahoo](biography/dr-kisma-sahoo.html) - [poster](assets/img/dr_kisma_sheikh_sahoo_biography.webp)
@@ -57,7 +57,7 @@ Biography pages and their transparent biography poster assets are kept in [biogr
 - [Baguri Kisma Sangare](biography/baguri_kisma_sangare.html) - [poster](assets/img/baguri_kisma_sangare_biography.webp)
 
 - [Jaafar Fodi Gumani](biography/jaafar_fodi_gumani.html) - [poster](assets/img/jaafar_fodi_gumani_biography.webp)
-- [Malamin Zakaria Jagana](biography/Malamin-zakaria-jagana.html) - [poster](assets/img/Malamin-zakaria-jagana-biography.webp)
+- [Malamin Zakaria Jagana](biography/malamin-zakaria-jagana.html) - [poster](assets/img/Malamin-zakaria-jagana-biography.webp)
 - [Muhammad Issa Haydar](biography/muhammad_issa_haydar.html) - [poster](assets/img/muhammad_issa_haydara_biography.webp)
 - [Muhammad Jola Kamara](biography/muhammad_jola_camara.html) - [poster](assets/img/muhammad_jola_camara_biography.webp)
 - [Muhammad Kaowjed Kamara](biography/muhammad_kaowjed_camara.html) - [poster](assets/img/muhammad_kaowjed_camara_biography.webp)

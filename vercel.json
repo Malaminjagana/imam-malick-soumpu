@@ -29,6 +29,18 @@
     {
       "source": "/ar",
       "destination": "/index.html"
+    },
+    {
+      "source": "/biography/Muhammad-Kaba-Musa.html",
+      "destination": "/biography/muhammad-kaba-musa.html"
+    },
+    {
+      "source": "/biography/Ebrahim-Marry-Jagana.html",
+      "destination": "/biography/ebrahim-marry-jagana.html"
+    },
+    {
+      "source": "/biography/Malamin-zakaria-jagana.html",
+      "destination": "/biography/malamin-zakaria-jagana.html"
     }
   ],
   "headers": [
