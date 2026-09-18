@@ -11,13 +11,94 @@
       ],
       "destination": "https://www.imammalicksoumpu.com/$1",
       "permanent": true
+    },
+    {
+      "source": "/ar",
+      "destination": "/ar/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/academic-programs.html",
+      "destination": "/academic-programs/",
+      "permanent": true
+    },
+    {
+      "source": "/faq.html",
+      "destination": "/faq/",
+      "permanent": true
+    },
+    {
+      "source": "/friday-imams.html",
+      "destination": "/friday-imams/",
+      "permanent": true
+    },
+    {
+      "source": "/school-history.html",
+      "destination": "/school-history/",
+      "permanent": true
+    },
+    {
+      "source": "/school-rolls.html",
+      "destination": "/school-rolls/",
+      "permanent": true
+    },
+    {
+      "source": "/School-rolls.html",
+      "destination": "/school-rolls/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy.html",
+      "destination": "/privacy/",
+      "permanent": true
+    },
+    {
+      "source": "/security.html",
+      "destination": "/security/",
+      "permanent": true
+    },
+    {
+      "source": "/terms.html",
+      "destination": "/terms/",
+      "permanent": true
+    },
+    {
+      "source": "/search-results.html",
+      "destination": "/search-results/",
+      "permanent": true
+    },
+    {
+      "source": "/biography/Muhammad-Kaba-Musa.html",
+      "destination": "/biography/muhammad-kaba-musa/",
+      "permanent": true
+    },
+    {
+      "source": "/biography/Ebrahim-Marry-Jagana.html",
+      "destination": "/biography/ebrahim-marry-jagana/",
+      "permanent": true
+    },
+    {
+      "source": "/biography/Malamin-zakaria-jagana.html",
+      "destination": "/biography/malamin-zakaria-jagana/",
+      "permanent": true
+    },
+    {
+      "source": "/biography/:slug.html",
+      "destination": "/biography/:slug/",
+      "permanent": true
     }
   ],
   "rewrites": [
-    {
-      "source": "/School-rolls.html",
-      "destination": "/school-rolls.html"
-    },
     {
       "source": "/llms.txt",
       "destination": "/public/llms.txt"
@@ -25,22 +106,6 @@
     {
       "source": "/llms-full.txt",
       "destination": "/public/llms-full.txt"
-    },
-    {
-      "source": "/ar",
-      "destination": "/index.html"
-    },
-    {
-      "source": "/biography/Muhammad-Kaba-Musa.html",
-      "destination": "/biography/muhammad-kaba-musa.html"
-    },
-    {
-      "source": "/biography/Ebrahim-Marry-Jagana.html",
-      "destination": "/biography/ebrahim-marry-jagana.html"
-    },
-    {
-      "source": "/biography/Malamin-zakaria-jagana.html",
-      "destination": "/biography/malamin-zakaria-jagana.html"
     }
   ],
   "headers": [
